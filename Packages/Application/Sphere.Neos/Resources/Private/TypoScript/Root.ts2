@@ -1,0 +1,5 @@
+
+prototype(Sphere.Neos:ProductTeaser) < prototype(TYPO3.Neos:Content) {
+   productId = ${q(node).property('productId')}
+   product = ${q(SphereProducts.findProduct(node, this.productId)).get(0)}
+}

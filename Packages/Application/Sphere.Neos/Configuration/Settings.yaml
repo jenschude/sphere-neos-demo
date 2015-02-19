@@ -1,0 +1,24 @@
+Sphere:
+  Neos:
+    client:
+      oAuthUrl: 'https://auth.sphere.io/oauth/token'
+      apiUrl: 'https://api.sphere.io'
+      clientId: ~
+      clientSecret: ~
+      project: ~
+
+TYPO3:
+  Neos:
+    nodeTypes:
+      groups:
+        'teasers':
+          position: 110
+          label: 'Teasers'
+
+    typoScript:
+      autoInclude:
+        'Sphere.Neos': TRUE
+
+  TypoScript:
+    defaultContext:
+      SphereProducts: 'Sphere\Neos\Eel\ProductsHelper'
