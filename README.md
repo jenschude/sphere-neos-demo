@@ -1,6 +1,6 @@
 # sphere-neos-demo
 
-A Content Commerce technology demo that shows how to create a [Typo3 neos](http://neos.typo3.org/) based website with eCommerce functionalities using the [SPHERE.IO](http://dev.sphere.io) eCommerce-as-an-API Platform.
+A Content Commerce technology demo that shows how to create a [Neos](http://neos.typo3.org/) based website with eCommerce functionalities using the [SPHERE.IO](http://dev.sphere.io) eCommerce-as-an-API Platform.
 
 TODO link to a live URL with demo data
 
