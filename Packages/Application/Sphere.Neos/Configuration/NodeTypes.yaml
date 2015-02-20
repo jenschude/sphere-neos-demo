@@ -14,13 +14,13 @@
     inspector:
       groups:
         'teaser':
-          label: 'Teaser'
+          label: 'Product Teaser'
           position: 10
   properties:
-    productId:
+    sku:
       type: string
       ui:
-        label: 'Product Identifier'
+        label: 'SKU'
         reloadIfChanged: true
         inspector:
           group: 'teaser'

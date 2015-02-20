@@ -1,4 +1,4 @@
 
 prototype(Sphere.Neos:ProductTeaser) < prototype(TYPO3.Neos:Content) {
-   product = ${q(SphereProducts.findProduct(this.productId)).get(0)}
+   product = ${q(SphereProducts.findProduct(this.sku)).get(0)}
 }

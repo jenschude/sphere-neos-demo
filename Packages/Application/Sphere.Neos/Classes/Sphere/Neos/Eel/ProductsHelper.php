@@ -6,9 +6,10 @@ namespace Sphere\Neos\Eel;
 
 use Sphere\Core\Client;
 use Sphere\Core\Model\Common\Context;
-use Sphere\Core\Model\Common\LocalizedString;
 use Sphere\Core\Model\Product\Product;
+use Sphere\Core\Model\Product\ProductProjection;
 use Sphere\Core\Request\Products\ProductProjectionFetchBySkuRequest;
+use Sphere\Core\Response\PagedQueryResponse;
 use TYPO3\Eel\ProtectedContextAwareInterface;
 use TYPO3\Flow\Annotations as Flow;
 
@@ -32,8 +33,6 @@ class ProductsHelper implements ProtectedContextAwareInterface {
 	 * @return void
 	 */
 	public function initializeObject() {
-		LocalizedString::setDefaultLanguage('en');
-
 		$this->client = new Client($this->settings['client']);
 	}
 
@@ -41,19 +40,19 @@ class ProductsHelper implements ProtectedContextAwareInterface {
 	 *
 	 *
 	 * @param string $sku
-	 * @return object
-	 * @throws \Exception
+	 * @return Product
 	 */
 	public function findProduct($sku) {
+		if ($sku == '') {
+			return NULL;
+		}
 #		$context = new Context();
 #		$context->setLanguages(array('en', 'de'));
 
 		$response = $this->client->execute(new ProductProjectionFetchBySkuRequest($sku));
+		/** @var PagedQueryResponse $response*/
 
-#		$product = $response->toArray();
-#		\TYPO3\Flow\var_dump($product);
-		return;
-		return Product::fromArray($product['masterData']['current']);
+		return ProductProjection::fromArray($response[0]);
 	}
 
 	/**

@@ -1224,12 +1224,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sphereio/sphere-php-sdk.git",
-                "reference": "5ec2958ea853b30211ed467a15428b5e6a8d1946"
+                "reference": "b782cb22d15690784512799a54ca971622110479"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sphereio/sphere-php-sdk/zipball/5ec2958ea853b30211ed467a15428b5e6a8d1946",
-                "reference": "5ec2958ea853b30211ed467a15428b5e6a8d1946",
+                "url": "https://api.github.com/repos/sphereio/sphere-php-sdk/zipball/b782cb22d15690784512799a54ca971622110479",
+                "reference": "b782cb22d15690784512799a54ca971622110479",
                 "shasum": ""
             },
             "require": {
@@ -1266,7 +1266,7 @@
                 "MIT"
             ],
             "description": "The Sphere.IO PHP SDK",
-            "time": "2015-02-20 13:49:03"
+            "time": "2015-02-20 14:42:29"
         },
         {
             "name": "symfony/console",
