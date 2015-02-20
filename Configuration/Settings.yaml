@@ -1,0 +1,10 @@
+#
+# instructions tbd.
+#
+
+Sphere:
+  Neos:
+    client:
+      clientId: 'your client id'
+      clientSecret: 'your client secret'
+      project: 'your-project-name'
