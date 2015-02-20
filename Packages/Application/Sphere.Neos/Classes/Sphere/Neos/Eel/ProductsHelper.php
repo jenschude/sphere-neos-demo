@@ -5,31 +5,17 @@ namespace Sphere\Neos\Eel;
  *                                                                                                  */
 
 use Sphere\Core\Client;
+use Sphere\Core\Model\Common\Context;
 use Sphere\Core\Model\Common\LocalizedString;
 use Sphere\Core\Model\Product\Product;
-use Sphere\Core\Request\Products\ProductFetchByIdRequest;
+use Sphere\Core\Request\Products\ProductProjectionFetchBySkuRequest;
 use TYPO3\Eel\ProtectedContextAwareInterface;
 use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Resource\ResourceManager;
-use TYPO3\Media\Domain\Repository\ImageRepository;
-use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 
 /**
  * ProductHelper
  */
 class ProductsHelper implements ProtectedContextAwareInterface {
-
-	/**
-	 * @Flow\Inject
-	 * @var ResourceManager
-	 */
-	protected $resourceManager;
-
-	/**
-	 * @Flow\Inject
-	 * @var ImageRepository
-	 */
-	protected $imageRepository;
 
 	/**
 	 * @Flow\InjectConfiguration
@@ -54,15 +40,19 @@ class ProductsHelper implements ProtectedContextAwareInterface {
 	/**
 	 *
 	 *
-	 * @param \TYPO3\TYPO3CR\Domain\Model\NodeInterface $node
-	 * @param string $productId
+	 * @param string $sku
 	 * @return object
 	 * @throws \Exception
 	 */
-	public function findProduct(NodeInterface $node, $productId) {
-		$response = $this->client->execute(new ProductFetchByIdRequest($productId));
+	public function findProduct($sku) {
+#		$context = new Context();
+#		$context->setLanguages(array('en', 'de'));
 
-		$product = $response->json();
+		$response = $this->client->execute(new ProductProjectionFetchBySkuRequest($sku));
+
+#		$product = $response->toArray();
+#		\TYPO3\Flow\var_dump($product);
+		return;
 		return Product::fromArray($product['masterData']['current']);
 	}
 

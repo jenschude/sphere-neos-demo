@@ -6,6 +6,8 @@
 /Packages/*
 !/Packages/Application
 !/Packages/Application/Sphere.Neos
+/Packages/Sites/*
+!/Packages/Sites/Sphere.Neos.DemoSite
 /Web/
 /bin/
 /Readme.txt

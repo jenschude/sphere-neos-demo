@@ -9,7 +9,6 @@
   "require": {
     "typo3/neos": "dev-master",
     "typo3/neos-nodetypes": "dev-master",
-    "typo3/neosdemotypo3org": "dev-master",
     "typo3/neos-kickstarter": "dev-master",
 
     "doctrine/migrations": "@dev",

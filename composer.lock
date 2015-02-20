@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "74b6e1f3c7dd955a60e047042bc8631d",
+    "hash": "ef954d405776af6da77019fdd7bd1709",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -623,12 +623,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "1ac14fac3ced533047d8feae8edc7c283d5b8a67"
+                "reference": "058a4635ac9b80a5b1997df28a754e64b1425a1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/1ac14fac3ced533047d8feae8edc7c283d5b8a67",
-                "reference": "1ac14fac3ced533047d8feae8edc7c283d5b8a67",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/058a4635ac9b80a5b1997df28a754e64b1425a1d",
+                "reference": "058a4635ac9b80a5b1997df28a754e64b1425a1d",
                 "shasum": ""
             },
             "require": {
@@ -673,7 +673,7 @@
                 "database",
                 "migrations"
             ],
-            "time": "2015-01-19 02:26:02"
+            "time": "2015-02-19 08:13:05"
         },
         {
             "name": "doctrine/orm",
@@ -1224,12 +1224,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sphereio/sphere-php-sdk.git",
-                "reference": "473ccb0604ccc4941b72c38a7713d3d7999ec49c"
+                "reference": "5ec2958ea853b30211ed467a15428b5e6a8d1946"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sphereio/sphere-php-sdk/zipball/473ccb0604ccc4941b72c38a7713d3d7999ec49c",
-                "reference": "473ccb0604ccc4941b72c38a7713d3d7999ec49c",
+                "url": "https://api.github.com/repos/sphereio/sphere-php-sdk/zipball/5ec2958ea853b30211ed467a15428b5e6a8d1946",
+                "reference": "5ec2958ea853b30211ed467a15428b5e6a8d1946",
                 "shasum": ""
             },
             "require": {
@@ -1266,7 +1266,7 @@
                 "MIT"
             ],
             "description": "The Sphere.IO PHP SDK",
-            "time": "2015-02-18 09:51:10"
+            "time": "2015-02-20 13:49:03"
         },
         {
             "name": "symfony/console",
@@ -1431,7 +1431,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.Eel.git",
-                "reference": "2202ff3050039e3564585afbf34749dbab04bdc7"
+                "reference": "52655bbc62ed491b25e7311f841711b77f0d33a0"
             },
             "require": {
                 "typo3/flow": "*"
@@ -1447,7 +1447,7 @@
                 "LGPL-3.0+"
             ],
             "description": "The Embedded Expression Language (Eel) is a building block for creating Domain Specific Languages",
-            "time": "2015-02-04 11:52:44"
+            "time": "2015-02-19 19:27:39"
         },
         {
             "name": "typo3/flow",
@@ -1455,7 +1455,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.Flow.git",
-                "reference": "eae922decf042adb4f84a6cc5c14f9a1fee0e15b"
+                "reference": "3e302d2428d3c2c3caa5aafd4ae1a9c21c5e7f5c"
             },
             "require": {
                 "composer/installers": "~1.0.2",
@@ -1490,7 +1490,7 @@
             ],
             "description": "TYPO3 Flow Application Framework",
             "homepage": "http://flow.typo3.org",
-            "time": "2015-02-18 16:26:33"
+            "time": "2015-02-19 23:44:37"
         },
         {
             "name": "typo3/fluid",
@@ -1620,7 +1620,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.Neos.git",
-                "reference": "8bd0858d9989f5240ee05b628d0abe677fb6d9a8"
+                "reference": "951300101f74e61ef14d933363230a81dd7fa4f9"
             },
             "require": {
                 "typo3/flow": "*",
@@ -1650,7 +1650,7 @@
                 "GPL-3.0+"
             ],
             "description": "The next generation of the popular open-source CMS.",
-            "time": "2015-02-18 15:53:59"
+            "time": "2015-02-20 13:29:36"
         },
         {
             "name": "typo3/neos-kickstarter",
@@ -1725,31 +1725,6 @@
             ],
             "description": "SEO configuration and tools for TYPO3 Neos",
             "time": "2014-12-02 17:37:52"
-        },
-        {
-            "name": "typo3/neosdemotypo3org",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://git.typo3.org/Packages/NeosDemoTypo3Org.git",
-                "reference": "5d1d12eb6cc3a2fe99503779eb29d7ba57f564a4"
-            },
-            "require": {
-                "typo3/neos": "*",
-                "typo3/neos-seo": "dev-master"
-            },
-            "type": "typo3-flow-site",
-            "autoload": {
-                "psr-0": {
-                    "TYPO3\\NeosDemoTypo3Org": "Classes"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0+"
-            ],
-            "description": "Site package for the TYPO3 Neos Demo Site",
-            "time": "2015-02-15 11:18:28"
         },
         {
             "name": "typo3/party",
@@ -1857,7 +1832,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.TypoScript.git",
-                "reference": "565da9530a73fa83b9bbd36259a3c2e287a2344e"
+                "reference": "07df64b00c4377f9931a3caa8e2239d60ef74adb"
             },
             "require": {
                 "typo3/eel": "*",
@@ -1874,7 +1849,7 @@
                 "GPL-3.0+"
             ],
             "description": "TypoScript is a hierarchical, prototype based processing language",
-            "time": "2015-02-15 23:52:56"
+            "time": "2015-02-19 19:27:30"
         }
     ],
     "packages-dev": [
@@ -2966,7 +2941,6 @@
     "stability-flags": {
         "typo3/neos": 20,
         "typo3/neos-nodetypes": 20,
-        "typo3/neosdemotypo3org": 20,
         "typo3/neos-kickstarter": 20,
         "doctrine/migrations": 20,
         "typo3/eel": 20,
