@@ -1,4 +1,5 @@
 .idea
+nginx.conf
 /Build/
 /Configuration/Production/
 /Configuration/Testing/

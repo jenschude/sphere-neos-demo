@@ -81,4 +81,3 @@ server {
 			  expires max;
 	 }
 }
-}
