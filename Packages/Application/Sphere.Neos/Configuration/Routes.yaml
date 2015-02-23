@@ -1,0 +1,15 @@
+-
+  name:  'Product single view'
+  uriPattern: 'en/product/{productSlug}.html'
+  defaults:
+    '@package':    'TYPO3.Neos'
+    '@subpackage': ''
+    '@controller': 'Frontend\Node'
+    '@action':     'show'
+    '@format':     'html'
+    'node':        '/sites/spheredemosite/product'
+  routeParts:
+    'node':
+      handler:     'TYPO3\Neos\Routing\FrontendNodeRoutePartHandlerInterface'
+    'productSlug':
+      handler:     'Sphere\Neos\Routing\ProductRoutePartHandler'

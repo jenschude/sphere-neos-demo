@@ -8,6 +8,18 @@
 #                                                                        #
 
 ##
+#
+
+-
+  name: 'Sphere Neos Routes'
+  uriPattern: '<SphereNeosSubroutes>'
+  subRoutes:
+    'SphereNeosSubroutes':
+      package: 'Sphere.Neos'
+      variables:
+        'defaultUriSuffix': '.html'
+
+##
 # TYPO3 Neos subroutes
 
 -

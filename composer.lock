@@ -1224,12 +1224,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sphereio/sphere-php-sdk.git",
-                "reference": "b782cb22d15690784512799a54ca971622110479"
+                "reference": "5e4cc973eb82f15d0938cdb8ca20626b439f18ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sphereio/sphere-php-sdk/zipball/b782cb22d15690784512799a54ca971622110479",
-                "reference": "b782cb22d15690784512799a54ca971622110479",
+                "url": "https://api.github.com/repos/sphereio/sphere-php-sdk/zipball/5e4cc973eb82f15d0938cdb8ca20626b439f18ec",
+                "reference": "5e4cc973eb82f15d0938cdb8ca20626b439f18ec",
                 "shasum": ""
             },
             "require": {
@@ -1266,7 +1266,7 @@
                 "MIT"
             ],
             "description": "The Sphere.IO PHP SDK",
-            "time": "2015-02-20 14:42:29"
+            "time": "2015-02-20 16:40:11"
         },
         {
             "name": "symfony/console",
@@ -1498,7 +1498,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.Fluid.git",
-                "reference": "36e7bab93978da233f05edd33263112117cd5554"
+                "reference": "8d1496afed84f59f18b32e8bc0bbeead173d2f1e"
             },
             "require": {
                 "typo3/flow": "*"
@@ -1514,7 +1514,7 @@
                 "LGPL-3.0+"
             ],
             "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 Neos, also backported to TYPO3 CMS",
-            "time": "2015-02-15 16:33:07"
+            "time": "2015-02-17 17:41:11"
         },
         {
             "name": "typo3/form",
@@ -1620,7 +1620,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.Neos.git",
-                "reference": "951300101f74e61ef14d933363230a81dd7fa4f9"
+                "reference": "61ec1fe3dbe680763b63f7d1c39f271a6862879a"
             },
             "require": {
                 "typo3/flow": "*",
@@ -1650,7 +1650,7 @@
                 "GPL-3.0+"
             ],
             "description": "The next generation of the popular open-source CMS.",
-            "time": "2015-02-20 13:29:36"
+            "time": "2015-02-20 15:33:14"
         },
         {
             "name": "typo3/neos-kickstarter",
@@ -1806,7 +1806,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.TYPO3CR.git",
-                "reference": "86f0909b2ab483b45e45dd04c2a7b10639478452"
+                "reference": "0fddd5b811aee0ef4446841a0638d3e0db8a0bbc"
             },
             "require": {
                 "gedmo/doctrine-extensions": "2.3.*",
@@ -1824,7 +1824,7 @@
                 "GPL-3.0+"
             ],
             "description": "Content repository based on TYPO3 Flow, specifically made for TYPO3 Neos.",
-            "time": "2015-02-17 23:12:12"
+            "time": "2015-02-20 15:04:46"
         },
         {
             "name": "typo3/typoscript",
