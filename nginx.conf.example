@@ -1,8 +1,9 @@
 server {
-	 listen 8080;
+	 listen 80;
 	 server_name sphere-neos-demo.vmdev;
 
-	 root /Users/robert/Sites/sphere-neos-demo/Web;
+	 set $target_path /var/www/sphere-neos-demo;
+	 root $target_path/Web;
 
 	 client_max_body_size 50M;
 	 index index.php;
@@ -18,12 +19,12 @@ server {
 	 location ~ \.php$ {
 			  include fastcgi_params;
 
-			  fastcgi_pass localhost:9000;
+			  fastcgi_pass unix:/var/run/php5-fpm.sock;
 			  fastcgi_index index.php;
 
 			  fastcgi_param FLOW_CONTEXT Development;
 			  fastcgi_param FLOW_REWRITEURLS 1;
-			  fastcgi_param FLOW_ROOTPATH /Users/robert/Sites/sphere-neos-demo;
+			  fastcgi_param FLOW_ROOTPATH $target_path;
 
 			  fastcgi_split_path_info ^(.+\.php)(.*)$;
 			  fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
@@ -41,10 +42,11 @@ server {
 }
 
 server {
-	 listen 8080;
+	 listen 80;
 	 server_name sphere-neos-demo.vm;
 
-	 root /Users/robert/Sites/sphere-neos-demo/Web;
+	 set $target_path /var/www/sphere-neos-demo;
+	 root $target_path/Web;
 
 	 client_max_body_size 50M;
 	 index index.php;
@@ -65,7 +67,7 @@ server {
 
 			  fastcgi_param FLOW_CONTEXT Production;
 			  fastcgi_param FLOW_REWRITEURLS 1;
-			  fastcgi_param FLOW_ROOTPATH /Users/robert/Sites/sphere-neos-demo;
+			  fastcgi_param FLOW_ROOTPATH $target_path;
 
 			  fastcgi_split_path_info ^(.+\.php)(.*)$;
 			  fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
