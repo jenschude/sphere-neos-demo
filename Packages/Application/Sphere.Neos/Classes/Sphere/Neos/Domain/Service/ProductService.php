@@ -6,7 +6,6 @@ namespace Sphere\Neos\Domain\Service;
 
 use Sphere\Core\Client;
 use Sphere\Core\Model\Common\Context;
-use Sphere\Core\Model\Common\LocalizedString;
 use Sphere\Core\Model\Product\Product;
 use Sphere\Core\Request\Products\ProductProjectionFetchBySkuRequest;
 use Sphere\Core\Request\Products\ProductProjectionFetchBySlugRequest;
@@ -33,7 +32,6 @@ class ProductService{
 	 * @return void
 	 */
 	public function initializeObject() {
-		LocalizedString::setDefaultLanguage('en');
 		$this->client = new Client($this->settings['client']);
 	}
 
@@ -48,9 +46,9 @@ class ProductService{
 			return NULL;
 		}
 
-#		$context = new Context();
-#		$context->setLanguages(array('en', 'de'));
-		$response = $this->client->execute(new ProductProjectionFetchBySkuRequest($sku));
+		$context = new Context();
+		$context->setLanguages(array('en', 'de'));
+		$response = $this->client->execute(new ProductProjectionFetchBySkuRequest($sku, $context));
 		/** @var SingleResourceResponse $response*/
 		return $response->toObject();
 	}
