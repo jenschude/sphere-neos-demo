@@ -5,6 +5,7 @@ namespace Sphere\Neos\Domain\Service;
  *                                                                                                  */
 
 use Sphere\Core\Client;
+use Sphere\Core\Config;
 use Sphere\Core\Model\Common\Context;
 use Sphere\Core\Model\Product\Product;
 use Sphere\Core\Request\Products\ProductProjectionFetchBySkuRequest;
@@ -29,10 +30,35 @@ class ProductService{
 	protected $client;
 
 	/**
+	 * @Flow\Inject
+	 * @var \TYPO3\Flow\I18n\Service
+	 */
+	protected $i18nService;
+
+	protected $context;
+
+	/**
+	 * @return Context
+	 */
+	protected function getContext()
+	{
+		if (is_null($this->context)) {
+			$fallBack = $this->i18nService->getConfiguration()->getFallbackRule()['order'];
+			$languages = array_reverse($fallBack);
+			$this->context = new Context();
+			$this->context->setLanguages($languages);
+		}
+
+		return $this->context;
+	}
+
+	/**
 	 * @return void
 	 */
 	public function initializeObject() {
-		$this->client = new Client($this->settings['client']);
+		$config = new Config();
+		$config->fromArray($this->settings['client'])->setContext($this->getContext());
+		$this->client = new Client($config);
 	}
 
 	/**
@@ -45,10 +71,7 @@ class ProductService{
 		if ($sku == '') {
 			return NULL;
 		}
-
-		$context = new Context();
-		$context->setLanguages(array('en', 'de'));
-		$response = $this->client->execute(new ProductProjectionFetchBySkuRequest($sku, $context));
+		$response = $this->client->execute(new ProductProjectionFetchBySkuRequest($sku));
 		/** @var SingleResourceResponse $response*/
 		return $response->toObject();
 	}
@@ -60,10 +83,8 @@ class ProductService{
 	 * @return Product
 	 */
 	public function findProductBySlug($slug) {
-		$context = new Context();
-		$context->setLanguages(array('en', 'de'));
 
-		$response = $this->client->execute(new ProductProjectionFetchBySlugRequest($slug, $context));
+		$response = $this->client->execute(new ProductProjectionFetchBySlugRequest($slug, $this->getContext()));
 		return $response->toObject();
 	}
 }
