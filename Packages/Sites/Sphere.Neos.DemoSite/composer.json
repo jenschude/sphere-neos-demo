@@ -1,0 +1,15 @@
+{
+    "name": "sphere/neos-demosite",
+    "type": "typo3-flow-site",
+    "description": "SPHERE.IO Neos demo site package",
+    "license": "GPL-3.0+",
+    "require": {
+        "typo3/neos": "*",
+        "typo3/neos-seo": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Sphere\\Neos\\DemoSite": "Classes"
+        }
+    }
+}

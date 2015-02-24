@@ -5,11 +5,8 @@ namespace Sphere\Neos\Eel;
  *                                                                                                  */
 
 use Sphere\Core\Client;
-use Sphere\Core\Model\Common\Context;
 use Sphere\Core\Model\Product\Product;
-use Sphere\Core\Model\Product\ProductProjection;
-use Sphere\Core\Request\Products\ProductProjectionFetchBySkuRequest;
-use Sphere\Core\Response\PagedQueryResponse;
+use Sphere\Neos\Domain\Service\ProductService;
 use TYPO3\Eel\ProtectedContextAwareInterface;
 use TYPO3\Flow\Annotations as Flow;
 
@@ -19,22 +16,10 @@ use TYPO3\Flow\Annotations as Flow;
 class ProductsHelper implements ProtectedContextAwareInterface {
 
 	/**
-	 * @Flow\InjectConfiguration
-	 * @var array
+	 * @Flow\Inject
+	 * @var ProductService
 	 */
-	protected $settings;
-
-	/**
-	 * @var \Sphere\Core\Client;
-	 */
-	protected $client;
-
-	/**
-	 * @return void
-	 */
-	public function initializeObject() {
-		$this->client = new Client($this->settings['client']);
-	}
+	protected $productService;
 
 	/**
 	 *
@@ -42,17 +27,18 @@ class ProductsHelper implements ProtectedContextAwareInterface {
 	 * @param string $sku
 	 * @return Product
 	 */
-	public function findProduct($sku) {
-		if ($sku == '') {
-			return NULL;
-		}
-#		$context = new Context();
-#		$context->setLanguages(array('en', 'de'));
+	public function findProductBySku($sku) {
+		return $this->productService->findProductBySku($sku);
+	}
 
-		$response = $this->client->execute(new ProductProjectionFetchBySkuRequest($sku));
-		/** @var PagedQueryResponse $response*/
-
-		return ProductProjection::fromArray($response[0]);
+	/**
+	 *
+	 *
+	 * @param string $slug
+	 * @return Product
+	 */
+	public function findProductBySlug($slug) {
+		return $this->productService->findProductBySlug($slug);
 	}
 
 	/**

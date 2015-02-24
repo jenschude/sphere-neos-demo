@@ -1,4 +1,45 @@
+prototype(TYPO3.Neos:PrimaryContent).productDetails {
+	productDetailsNode = ${q(site).find('product').get(0)}
+
+	condition = ${q(node).is(this.productDetailsNode)}
+	type = 'Sphere.Neos:ProductDetails'
+}
+
+prototype(Sphere.Neos:ProductDetails) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://Sphere.Neos/Private/Templates/NodeTypes/ProductDetails.html'
+
+	productSlug = ${request.arguments.productSlug}
+	product = ${q(SphereProducts.findProductBySlug(this.productSlug)).get(0)}
+
+	@cache {
+		mode = 'cached'
+
+		maximumLifetime = 1
+
+		entryIdentifier {
+			node = ${node}
+			productSlug = ${this.product.slug}
+		}
+	}
+
+}
+
+#
+# Add the product details "product.slug" value to cache entry identifiers in cache layers above the product details node.
+#
+root.@cache.entryIdentifier.productSlug = ${request.arguments.productSlug}
+
+prototype(TYPO3.Neos:Page) {
+	@cache.entryIdentifier.productSlug = ${request.arguments.productSlug}
+}
 
 prototype(Sphere.Neos:ProductTeaser) < prototype(TYPO3.Neos:Content) {
-   product = ${q(SphereProducts.findProduct(this.sku)).get(0)}
+	productDetailsNode = ${q(site).find('product').get(0)}
+
+	product = ${q(SphereProducts.findProductBySku(this.sku)).get(0)}
+
+	# Slug is a LocalizedString at the moment, so we need to concatenate with empty string
+	# in order to trigger __toString(). FIX when SDK supports retrieval of slug for our purposes.
+	productSlug = ${q(this.product).property('slug') + ''}
 }
+

@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <site name="SPHERE.IO Demo Site" state="1" siteResourcesPackageKey="Sphere.Neos.DemoSite" siteNodeName="spheredemosite">
+  <nodes formatVersion="2.0">
+   <node identifier="995c9174-ddd6-4d5c-cfc0-1ffc82184677" nodeName="spheredemosite">
+    <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Page" version="17" removed="" hidden="" hiddenInIndex="1">
+     <dimensions>
+      <language>en</language>
+     </dimensions>
+     <accessRoles __type="array"/>
+     <creationDateTime __type="object" __classname="DateTime">2015-02-20T09:28:18+00:00</creationDateTime>
+     <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:47:41+00:00</lastModificationDateTime>
+     <properties>
+      <title __type="string">Home</title>
+      <uriPathSegment __type="string">home</uriPathSegment>
+     </properties>
+    </variant>
+    <node identifier="99f0677b-e0aa-8368-ab3d-dc0ddcbb39b8" nodeName="cart">
+     <variant sortingIndex="350" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Page" version="4" removed="" hidden="" hiddenInIndex="">
+      <dimensions>
+       <language>en</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:02:34+00:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastPublicationDateTime>
+      <properties>
+       <uriPathSegment __type="string">cart</uriPathSegment>
+       <title __type="string">Cart</title>
+      </properties>
+     </variant>
+     <node identifier="a799a85e-7ebc-6261-1f17-77a860f33389" nodeName="main">
+      <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>en</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:02:34+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastPublicationDateTime>
+       <properties/>
+      </variant>
+     </node>
+     <node identifier="b6d49eaa-1f4c-f603-4a8d-d72170574b3e" nodeName="teaser">
+      <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>en</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:02:35+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastPublicationDateTime>
+       <properties/>
+      </variant>
+     </node>
+    </node>
+    <node identifier="d26adfe2-0b44-c2e4-015b-b0f5940afa46" nodeName="categories">
+     <variant sortingIndex="250" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Page" version="7" removed="" hidden="" hiddenInIndex="">
+      <dimensions>
+       <language>en</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:02:50+00:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:47:41+00:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:22+00:00</lastPublicationDateTime>
+      <properties>
+       <uriPathSegment __type="string">categories</uriPathSegment>
+       <title __type="string">Categories</title>
+       <layout __type="string">default</layout>
+       <subpageLayout __type="string">default</subpageLayout>
+      </properties>
+     </variant>
+     <node identifier="eff08c73-57df-6a24-7434-fcb817faa701" nodeName="main">
+      <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>en</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:02:50+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:22+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:22+00:00</lastPublicationDateTime>
+       <properties/>
+      </variant>
+      <node identifier="98ae46ff-7f5d-0f2d-4b59-29316f100f5b" nodeName="node-54e7392ec5b9e">
+       <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos.NodeTypes:ThreeColumn" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions>
+         <language>en</language>
+        </dimensions>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:39:58+00:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:40:30+00:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:40:30+00:00</lastPublicationDateTime>
+        <properties>
+         <layout __type="string">4-4-4</layout>
+        </properties>
+       </variant>
+       <node identifier="8dd4618e-315c-9dbe-7755-fb66afd908f4" nodeName="column0">
+        <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+         <dimensions>
+          <language>en</language>
+         </dimensions>
+         <accessRoles __type="array"/>
+         <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:39:58+00:00</creationDateTime>
+         <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:40:30+00:00</lastModificationDateTime>
+         <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:40:30+00:00</lastPublicationDateTime>
+         <properties/>
+        </variant>
+        <node identifier="b111d365-9ce9-52a9-5968-8d1546f536b1" nodeName="node-54e73933cb2d2">
+         <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Image" version="6" removed="" hidden="" hiddenInIndex="">
+          <dimensions>
+           <language>en</language>
+          </dimensions>
+          <accessRoles __type="array"/>
+          <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:40:03+00:00</creationDateTime>
+          <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T14:35:03+00:00</lastModificationDateTime>
+          <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:40:30+00:00</lastPublicationDateTime>
+          <properties>
+           <image __type="object" __identifier="aaa9df7e-eeb0-789f-ac04-4f748d15e2f7" __classname="TYPO3\Media\Domain\Model\Image" __encoding="json">{&quot;__identity&quot;:&quot;aaa9df7e-eeb0-789f-ac04-4f748d15e2f7&quot;,&quot;title&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;dqm-spring-2009-shirts-1.jpg&quot;,&quot;hash&quot;:&quot;41d279b6822cfa8ef30384df852585174f052904&quot;,&quot;__identity&quot;:&quot;80b84fd0-5f68-942e-fe4e-684da9ea18b8&quot;}}</image>
+           <alternativeText __type="string">Shirts</alternativeText>
+           <title __type="string">Shirts</title>
+          </properties>
+         </variant>
+        </node>
+       </node>
+       <node identifier="73f79427-2369-8407-961d-a7482d31d0e2" nodeName="column1">
+        <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+         <dimensions>
+          <language>en</language>
+         </dimensions>
+         <accessRoles __type="array"/>
+         <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:39:58+00:00</creationDateTime>
+         <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:40:30+00:00</lastModificationDateTime>
+         <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:40:30+00:00</lastPublicationDateTime>
+         <properties/>
+        </variant>
+        <node identifier="d177fe4d-ea1a-7fd2-70b7-2b8693551e02" nodeName="node-54e73a05a1c9b">
+         <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Image" version="5" removed="" hidden="" hiddenInIndex="">
+          <dimensions>
+           <language>en</language>
+          </dimensions>
+          <accessRoles __type="array"/>
+          <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:43:33+00:00</creationDateTime>
+          <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T14:35:03+00:00</lastModificationDateTime>
+          <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:43:53+00:00</lastPublicationDateTime>
+          <properties>
+           <image __type="object" __identifier="f8a1fe51-2383-7d64-6cb6-2f4fdf4b7537" __classname="TYPO3\Media\Domain\Model\Image" __encoding="json">{&quot;__identity&quot;:&quot;f8a1fe51-2383-7d64-6cb6-2f4fdf4b7537&quot;,&quot;title&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;wallpaper-women-shoes-womens-shoes-10130007-800-600.jpg&quot;,&quot;hash&quot;:&quot;14ff55f5a646daac18fda96ba992257a6201494b&quot;,&quot;__identity&quot;:&quot;06a84249-7c7f-1b03-62c2-fa4ac69bb6c1&quot;}}</image>
+          </properties>
+         </variant>
+        </node>
+       </node>
+       <node identifier="8688881c-e666-518a-41c0-75f6efa20aa2" nodeName="column2">
+        <variant sortingIndex="300" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+         <dimensions>
+          <language>en</language>
+         </dimensions>
+         <accessRoles __type="array"/>
+         <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:39:58+00:00</creationDateTime>
+         <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:40:30+00:00</lastModificationDateTime>
+         <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:40:30+00:00</lastPublicationDateTime>
+         <properties/>
+        </variant>
+       </node>
+      </node>
+     </node>
+     <node identifier="6d1179db-8f1d-9cdf-5df2-8ffc0753ceda" nodeName="shirts">
+      <variant sortingIndex="300" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Page" version="4" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>en</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2015-02-20T14:35:31+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T14:35:49+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T14:35:49+00:00</lastPublicationDateTime>
+       <properties>
+        <uriPathSegment __type="string">shirts</uriPathSegment>
+        <title __type="string">Shirts</title>
+       </properties>
+      </variant>
+      <node identifier="69a0a94d-4c51-89d8-9890-04371acb8c44" nodeName="main">
+       <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions>
+         <language>en</language>
+        </dimensions>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2015-02-20T14:35:31+00:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T14:35:49+00:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T14:35:49+00:00</lastPublicationDateTime>
+        <properties/>
+       </variant>
+       <node identifier="529a7c92-62cc-f935-5d69-d30bd2528ad2" nodeName="node-54e7464a16877">
+        <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Headline" version="5" removed="" hidden="" hiddenInIndex="">
+         <dimensions>
+          <language>en</language>
+         </dimensions>
+         <accessRoles __type="array"/>
+         <creationDateTime __type="object" __classname="DateTime">2015-02-20T14:35:54+00:00</creationDateTime>
+         <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T14:36:04+00:00</lastModificationDateTime>
+         <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T14:36:04+00:00</lastPublicationDateTime>
+         <properties>
+          <title __type="string">&lt;h1&gt;Shirts&lt;/h1&gt;</title>
+         </properties>
+        </variant>
+       </node>
+       <node identifier="18210c0b-071f-e1bd-afe0-824509a76993" nodeName="node-54e7465123830">
+        <variant sortingIndex="150" workspace="live" nodeType="TYPO3.Neos.NodeTypes:ThreeColumn" version="4" removed="" hidden="" hiddenInIndex="">
+         <dimensions>
+          <language>en</language>
+         </dimensions>
+         <accessRoles __type="array"/>
+         <creationDateTime __type="object" __classname="DateTime">2015-02-20T14:36:01+00:00</creationDateTime>
+         <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T14:36:04+00:00</lastModificationDateTime>
+         <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T14:36:04+00:00</lastPublicationDateTime>
+         <properties>
+          <layout __type="string">4-4-4</layout>
+         </properties>
+        </variant>
+        <node identifier="b1cd2cf0-04af-ab88-b542-ca6f189839d4" nodeName="column0">
+         <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions>
+           <language>en</language>
+          </dimensions>
+          <accessRoles __type="array"/>
+          <creationDateTime __type="object" __classname="DateTime">2015-02-20T14:36:01+00:00</creationDateTime>
+          <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T14:36:04+00:00</lastModificationDateTime>
+          <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T14:36:04+00:00</lastPublicationDateTime>
+          <properties/>
+         </variant>
+         <node identifier="620a722f-9f61-73b8-0b59-2aef2aa88b6f" nodeName="node-54e74ccff04df">
+          <variant sortingIndex="100" workspace="live" nodeType="Sphere.Neos:ProductTeaser" version="5" removed="" hidden="" hiddenInIndex="">
+           <dimensions>
+            <language>en</language>
+           </dimensions>
+           <accessRoles __type="array"/>
+           <creationDateTime __type="object" __classname="DateTime">2015-02-20T15:03:43+00:00</creationDateTime>
+           <lastModificationDateTime __type="object" __classname="DateTime">2015-02-23T16:26:57+00:00</lastModificationDateTime>
+           <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T15:11:11+00:00</lastPublicationDateTime>
+           <properties>
+            <sku __type="string">102030</sku>
+           </properties>
+          </variant>
+         </node>
+        </node>
+        <node identifier="941f56b6-cb6b-d86a-5b60-08c24b0d82d4" nodeName="column1">
+         <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions>
+           <language>en</language>
+          </dimensions>
+          <accessRoles __type="array"/>
+          <creationDateTime __type="object" __classname="DateTime">2015-02-20T14:36:01+00:00</creationDateTime>
+          <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T14:36:04+00:00</lastModificationDateTime>
+          <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T14:36:04+00:00</lastPublicationDateTime>
+          <properties/>
+         </variant>
+        </node>
+        <node identifier="7777092d-8350-26fa-1024-9f4637b10e45" nodeName="column2">
+         <variant sortingIndex="300" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+          <dimensions>
+           <language>en</language>
+          </dimensions>
+          <accessRoles __type="array"/>
+          <creationDateTime __type="object" __classname="DateTime">2015-02-20T14:36:01+00:00</creationDateTime>
+          <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T14:36:04+00:00</lastModificationDateTime>
+          <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T14:36:04+00:00</lastPublicationDateTime>
+          <properties/>
+         </variant>
+        </node>
+       </node>
+      </node>
+     </node>
+     <node identifier="2ae61d49-5830-9fcd-3453-c5025693221b" nodeName="shoes">
+      <variant sortingIndex="350" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Page" version="4" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>en</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2015-02-20T14:35:41+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T14:35:44+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T14:35:44+00:00</lastPublicationDateTime>
+       <properties>
+        <uriPathSegment __type="string">shoes</uriPathSegment>
+        <title __type="string">Shoes</title>
+       </properties>
+      </variant>
+      <node identifier="6e4448e3-dd54-4800-e717-eb243f14221d" nodeName="main">
+       <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions>
+         <language>en</language>
+        </dimensions>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2015-02-20T14:35:41+00:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T14:35:44+00:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T14:35:44+00:00</lastPublicationDateTime>
+        <properties/>
+       </variant>
+      </node>
+     </node>
+     <node identifier="6e4a2e69-2a15-c315-48bc-595b9da04c99" nodeName="teaser">
+      <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>en</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:02:50+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:22+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:22+00:00</lastPublicationDateTime>
+       <properties/>
+      </variant>
+     </node>
+    </node>
+    <node identifier="e51d7f03-d55b-a904-8dce-f616f9c38df2" nodeName="main">
+     <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">
+      <dimensions>
+       <language>en</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:01:08+00:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:01:08+00:00</lastModificationDateTime>
+      <properties/>
+     </variant>
+     <node identifier="654b8300-09e1-6535-2fe7-77057227ff93" nodeName="node-54e744f3acc81">
+      <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Image" version="4" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>en</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2015-02-20T14:30:11+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T14:34:40+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T14:34:40+00:00</lastPublicationDateTime>
+       <properties>
+        <image __type="object" __identifier="e456bf11-7bf8-74a7-df05-a66bb5167980" __classname="TYPO3\Media\Domain\Model\ImageVariant" __encoding="json">{&quot;__identity&quot;:&quot;e456bf11-7bf8-74a7-df05-a66bb5167980&quot;,&quot;originalAsset&quot;:{&quot;__identity&quot;:&quot;9d48998a-f9e4-3b9c-aa3e-1d5441e35bfd&quot;,&quot;title&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;CUCINELLI-002459-019.jpg&quot;,&quot;hash&quot;:&quot;4db9935e7eb2bdd63243c01b90c467d34580b3b5&quot;,&quot;__identity&quot;:&quot;c80faf95-c273-118d-7d7b-99ba2161926a&quot;}},&quot;adjustments&quot;:[{&quot;height&quot;:932,&quot;maximumHeight&quot;:null,&quot;maximumWidth&quot;:null,&quot;minimumHeight&quot;:null,&quot;minimumWidth&quot;:null,&quot;ratioMode&quot;:null,&quot;width&quot;:1400,&quot;__identity&quot;:&quot;b7dc955a-41d8-7291-c2de-1236d1812c27&quot;,&quot;__type&quot;:&quot;TYPO3\\Media\\Domain\\Model\\Adjustment\\ResizeImageAdjustment&quot;}]}</image>
+       </properties>
+      </variant>
+     </node>
+    </node>
+    <node identifier="1798acb0-ab7d-b780-a7a0-c2906c848d41" nodeName="product">
+     <variant sortingIndex="300" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Page" version="6" removed="" hidden="" hiddenInIndex="1">
+      <dimensions>
+       <language>en</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:02:28+00:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:47:41+00:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastPublicationDateTime>
+      <properties>
+       <uriPathSegment __type="string">product</uriPathSegment>
+       <title __type="string">Product</title>
+      </properties>
+     </variant>
+     <node identifier="46458063-11de-167d-88b3-832f6577be24" nodeName="main">
+      <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>en</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:02:28+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastPublicationDateTime>
+       <properties/>
+      </variant>
+      <node identifier="a9eee33f-92fc-e9b5-514f-147460326f47" nodeName="node-54e76aa0dcb21">
+       <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Headline" version="5" removed="" hidden="" hiddenInIndex="">
+        <dimensions>
+         <language>en</language>
+        </dimensions>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2015-02-20T17:10:56+00:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T17:11:04+00:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T17:11:04+00:00</lastPublicationDateTime>
+        <properties>
+         <title __type="string">&lt;h1&gt;Product&lt;/h1&gt;</title>
+        </properties>
+       </variant>
+      </node>
+     </node>
+     <node identifier="d11b7754-eba2-40d1-b3a4-7a01534259ab" nodeName="teaser">
+      <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>en</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:02:28+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastPublicationDateTime>
+       <properties/>
+      </variant>
+     </node>
+    </node>
+    <node identifier="509fd387-0aab-a988-35b6-b8edd2ff5afa" nodeName="teaser">
+     <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">
+      <dimensions>
+       <language>en</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:01:08+00:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:01:08+00:00</lastModificationDateTime>
+      <properties/>
+     </variant>
+    </node>
+    <node identifier="00102c20-f5bc-b7a4-dd18-590d49ce5101" nodeName="tips">
+     <variant sortingIndex="400" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Page" version="4" removed="" hidden="" hiddenInIndex="">
+      <dimensions>
+       <language>en</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:02:40+00:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastPublicationDateTime>
+      <properties>
+       <uriPathSegment __type="string">tips</uriPathSegment>
+       <title __type="string">Tips</title>
+      </properties>
+     </variant>
+     <node identifier="746702ef-6c19-4fca-8fc6-8b0fbb82338c" nodeName="main">
+      <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>en</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:02:40+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastPublicationDateTime>
+       <properties/>
+      </variant>
+     </node>
+     <node identifier="b1f19441-cb8b-c278-9a3c-3eb065103f99" nodeName="teaser">
+      <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>en</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:02:40+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastPublicationDateTime>
+       <properties/>
+      </variant>
+     </node>
+    </node>
+   </node>
+  </nodes>
+ </site>
+</root>

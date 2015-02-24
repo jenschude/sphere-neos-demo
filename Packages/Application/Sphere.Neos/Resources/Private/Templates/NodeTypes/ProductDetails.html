@@ -1,0 +1,19 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<div>
+	<f:if condition="{product}">
+		<f:then>
+			<table>
+				<tbody>
+				<tr>
+					<th>Name</th><td>{product.name}</td>
+					<th>Slug</th><td>{productSlug}</td>
+					<th>Image</th><td><img src="{product.masterVariant.images.0.small}"></td>
+				</tr>
+				</tbody>
+			</table>
+		</f:then>
+		<f:else>
+			Please provide an SKU for this product teaser.
+		</f:else>
+	</f:if>
+</div>

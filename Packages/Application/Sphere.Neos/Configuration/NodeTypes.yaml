@@ -7,7 +7,7 @@
   superTypes:
     - 'TYPO3.Neos:Content'
   ui:
-    label: 'Teaser'
+    label: 'Product Teaser'
     group: 'teasers'
     icon: 'icon-tags'
     inlineEditable: FALSE

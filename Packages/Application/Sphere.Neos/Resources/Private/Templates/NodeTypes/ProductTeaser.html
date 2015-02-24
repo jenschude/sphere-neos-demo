@@ -1,17 +1,20 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
 <div>
 	<f:if condition="{product}">
 		<f:then>
-			<table>
-				<tbody>
-					<tr>
-						<th>Name</th><td>{product.name}</td>
-						<th>Image</th><td><img src="{product.masterVariant.images.0.url}"></td>
-					</tr>
-				</tbody>
-			</table>
+			<f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: '/sites/spheredemosite/product', productSlug: productSlug}">
+				<table>
+					<tbody>
+						<tr>
+							<th>Name</th><td>{product.name}</td>
+							<th>Image</th><td><img src="{product.masterVariant.images.0.small}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</f:link.action>
 		</f:then>
 		<f:else>
-			No product
+			Please provide an SKU for this product teaser.
 		</f:else>
 	</f:if>
 </div>

@@ -9,8 +9,7 @@ nginx.conf
 /Packages/*
 !/Packages/Application
 !/Packages/Application/Sphere.Neos
-/Packages/Sites/*
-!/Packages/Sites/Sphere.Neos.DemoSite
+!/Packages/Sites/
 /Web/
 /bin/
 /Readme.txt

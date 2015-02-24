@@ -1,0 +1,163 @@
+@font-face {
+	font-family: 'Noto Sans Regular';
+	src: url('../Fonts/NotoSans-Regular-webfont.eot'); /* IE9 Compat Modes */
+	src: url('../Fonts/NotoSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../Fonts/NotoSans-Regular-webfont.woff') format('woff'), /* Modern Browsers */
+		url('../Fonts/NotoSans-Regular-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../Fonts/NotoSans-Regular-webfont.svg#noto_sansregular') format('svg'); /* Legacy iOS */
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Noto Sans Bold';
+	src: url('../Fonts/NotoSans-Bold-webfont.eot'); /* IE9 Compat Modes */
+	src: url('../Fonts/NotoSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../Fonts/NotoSans-Bold-webfont.woff') format('woff'), /* Modern Browsers */
+	url('../Fonts/NotoSans-Bold-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+	url('../Fonts/NotoSans-Bold-webfont.svg#noto_sansregular') format('svg'); /* Legacy iOS */
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin font {
+	font-family: 'Noto Sans Regular', serif;
+}
+
+@mixin font-bold {
+	font-family: 'Noto Sans Bold', serif;
+}
+
+@mixin font-bolditalic {
+	font-family: 'Noto Sans Italic', serif;
+}
+
+body {
+	@include font;
+
+	@media #{$screen-sm} {
+		padding-top: 0px !important;
+	}
+}
+
+footer {
+	.panel {
+		margin-bottom: 0;
+
+		.panel-footer {
+			padding-top: 30px;
+		}
+
+		@media #{$screen-sm} {
+			.panel-body,
+			.panel-footer {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@include font;
+	line-height: 1.1;
+}
+
+h1 {
+	@include font-bold;
+	letter-spacing: -2.5px;
+}
+
+a {
+	color: $warning;
+	text-decoration: none;
+	@include transition(color, background-color 0.2s);
+
+	&:hover {
+		color: $warning;
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.row {
+	margin-bottom: 2em;
+}
+
+.main-header {
+	background-color: #141414;
+	overflow: hidden;
+	height: 100%;
+	padding-top: 85px;
+	padding-bottom: 115px;
+	margin-bottom: 115px;
+	@font font-bold;
+
+	&,
+	h1 {
+		color: #fff;
+	}
+
+	&.image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		padding: 0;
+		padding-top: calc(85px);
+		background-position: 50% 50%;
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		margin-bottom: 0;
+
+		.container {
+			margin-top: calc(33vh + 85px);
+			text-align: center;
+		}
+
+		h1 {
+			text-shadow: 1px 0 0 rgba(0, 0, 0, 0.5);
+			letter-spacing: -1px;
+		}
+	}
+
+	a {
+		color: #fff;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	@media #{$screen-sm} {
+		h1 {
+			font-size: 1.8rem;
+		}
+	}
+}
+
+.main-header.image + .container {
+	margin-top: calc(100vh);
+}
+
+// Inline alignments
+.typo3-neos-alignment-right {
+	float: right;
+	margin-left: 2em;
+	margin-bottom: 1em;
+}
+
+.typo3-neos-alignment-left {
+	float: left;
+	margin-right: 2em;
+	margin-bottom: 1em;
+}
