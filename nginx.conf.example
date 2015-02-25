@@ -1,7 +1,6 @@
 server {
 	 listen 80;
-	 server_name sphere-neos-demo.vmdev;
-
+	 server_name sphere-neos-demo.vm.dev;
 	 set $target_path /var/www/sphere-neos-demo;
 	 root $target_path/Web;
 

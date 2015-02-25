@@ -17,7 +17,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.hostname = PROJECT_NAME + ".vm"
     config.hostsupdater.aliases = [
-      PROJECT_NAME + ".vmdev"
+      PROJECT_NAME + ".dev.vm"
     ]
 
   # disable default shared folder
@@ -26,7 +26,8 @@ Vagrant.configure(2) do |config|
   # share site folder into releases folder
   config.vm.synced_folder ".", "/var/www/sphere-neos-demo",
     type: "rsync",
-    group: "web",
+    owner: "www-data",
+    group: "www-data",
     rsync__args: ["--verbose", "--archive", "--delete", "-z", "--perms", "--chmod=Dg+s,Dg+rwx"],
     rsync__exclude: [
       ".git/",
@@ -37,11 +38,11 @@ Vagrant.configure(2) do |config|
       "Configuration/Production/" + PROJECT_NAME.gsub(".", "").capitalize + "vm",
       "Configuration/Development/" + PROJECT_NAME.gsub(".", "").capitalize + "vm",
       "Configuration/Testing/Behat",
-      "Data/Sessions/**",
-      "Data/Temporary/**",
-      "Data/Persistent/**",
-      "Data/Surf/**",
-      "Data/Logs/**",
+      "Data/Sessions",
+      "Data/Temporary",
+      "Data/Persistent",
+      "Data/Surf",
+      "Data/Logs",
       "Web/_Resources/Persistent",
       "Web/_Resources/Static"
     ]
