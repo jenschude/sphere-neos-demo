@@ -41,5 +41,9 @@ prototype(Sphere.Neos:ProductTeaser) < prototype(TYPO3.Neos:Content) {
 	# Slug is a LocalizedString at the moment, so we need to concatenate with empty string
 	# in order to trigger __toString(). FIX when SDK supports retrieval of slug for our purposes.
 	productSlug = ${q(this.product).property('slug') + ''}
+
+	@cache {
+		maximumLifetime = 1
+	}
 }
 
