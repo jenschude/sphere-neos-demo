@@ -16,9 +16,12 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.hostname = PROJECT_NAME + ".vm"
+
+  if Vagrant.has_plugin?("vagrant-hostsupdater")
     config.hostsupdater.aliases = [
-      PROJECT_NAME + ".dev.vm"
+      PROJECT_NAME + ".vm.dev"
     ]
+  end
 
   # disable default shared folder
   config.vm.synced_folder ".", "/vagrant", disabled: true
