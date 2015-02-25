@@ -1,7 +1,13 @@
 #
 # instructions tbd.
 #
-
+TYPO3:
+  Flow:
+    persistence:
+      backendOptions:
+        dbname: 'sphere_neos_demo'
+        user: 'root'
+        password: 'password'
 Sphere:
   Neos:
     client:
