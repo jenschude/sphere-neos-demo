@@ -8,7 +8,6 @@ use Sphere\Core\Client;
 use Sphere\Core\Config;
 use Sphere\Core\Model\Common\Context;
 use Sphere\Core\Model\Product\Product;
-use Sphere\Core\Model\Product\ProductProjection;
 use Sphere\Core\Request\Products\ProductProjectionFetchBySkuRequest;
 use Sphere\Core\Request\Products\ProductProjectionFetchBySlugRequest;
 use Sphere\Core\Request\Products\ProductsSearchRequest;
@@ -38,6 +37,8 @@ class ProductService{
 	protected $i18nService;
 
 	protected $context;
+
+	protected $map;
 
 	/**
 	 * @return Context
@@ -73,9 +74,12 @@ class ProductService{
 		if ($sku == '') {
 			return NULL;
 		}
-		$response = $this->client->execute(new ProductProjectionFetchBySkuRequest($sku));
+		if (!isset($this->map[$sku])) {
+			$response = $this->client->execute(new ProductProjectionFetchBySkuRequest($sku));
+			$this->map[$sku] = $response->toObject();
+		}
 		/** @var SingleResourceResponse $response*/
-		return $response->toObject();
+		return $this->map[$sku];
 	}
 
 	/**
@@ -85,9 +89,15 @@ class ProductService{
 	 * @return Product
 	 */
 	public function findProductBySlug($slug) {
-
-		$response = $this->client->execute(new ProductProjectionFetchBySlugRequest($slug, $this->getContext()));
-		return $response->toObject();
+		if ($slug == '') {
+			return NULL;
+		}
+		if (!isset($this->map[$slug])) {
+			$response = $this->client->execute(new ProductProjectionFetchBySlugRequest($slug, $this->getContext()));
+			$this->map[$slug] = $response->toObject();
+		}
+		/** @var SingleResourceResponse $response*/
+		return $this->map[$slug];
 	}
 
 	/**
@@ -96,13 +106,15 @@ class ProductService{
 	 */
 	public function findProducts($search = null)
 	{
-		$request = new ProductsSearchRequest();
-		$request->addParam('text.en', $search);
+		if (!isset($this->map[$search])) {
+			$request = new ProductsSearchRequest();
+			$request->addParam('text.en', $search);
 
-		$response = $this->client->execute($request);
+			$response = $this->client->execute($request);
 
-		$products = $response->toObject();
+			$this->map[$search] = $response->toObject();
+		}
 
-		return $products;
+		return $this->map[$search];
 	}
 }
