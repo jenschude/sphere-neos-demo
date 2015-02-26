@@ -8,8 +8,10 @@ use Sphere\Core\Client;
 use Sphere\Core\Config;
 use Sphere\Core\Model\Common\Context;
 use Sphere\Core\Model\Product\Product;
+use Sphere\Core\Model\Product\ProductProjection;
 use Sphere\Core\Request\Products\ProductProjectionFetchBySkuRequest;
 use Sphere\Core\Request\Products\ProductProjectionFetchBySlugRequest;
+use Sphere\Core\Request\Products\ProductsSearchRequest;
 use Sphere\Core\Response\SingleResourceResponse;
 use TYPO3\Flow\Annotations as Flow;
 
@@ -86,5 +88,21 @@ class ProductService{
 
 		$response = $this->client->execute(new ProductProjectionFetchBySlugRequest($slug, $this->getContext()));
 		return $response->toObject();
+	}
+
+	/**
+	 * @param string $search
+	 * @return array
+	 */
+	public function findProducts($search = null)
+	{
+		$request = new ProductsSearchRequest();
+		$request->addParam('text.en', $search);
+
+		$response = $this->client->execute($request);
+
+		$products = $response->toObject();
+
+		return $products;
 	}
 }

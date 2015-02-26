@@ -38,12 +38,15 @@ prototype(Sphere.Neos:ProductTeaser) < prototype(TYPO3.Neos:Content) {
 
 	product = ${q(SphereProducts.findProductBySku(this.sku)).get(0)}
 
-	# Slug is a LocalizedString at the moment, so we need to concatenate with empty string
-	# in order to trigger __toString(). FIX when SDK supports retrieval of slug for our purposes.
-	productSlug = ${q(this.product).property('slug') + ''}
-
 	@cache {
 		maximumLifetime = 1
 	}
 }
 
+prototype(Sphere.Neos:ProductsList) < prototype(TYPO3.Neos:Content) {
+	products = ${q(SphereProducts.findProducts(this.search)).get()}
+
+	@cache {
+		maximumLifetime = 1
+	}
+}

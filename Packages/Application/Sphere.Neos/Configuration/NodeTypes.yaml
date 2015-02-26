@@ -26,3 +26,26 @@
           group: 'teaser'
           position: 1
 
+'Sphere.Neos:ProductsList':
+#  abstract: TRUE
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Products List'
+    group: 'teasers'
+    icon: 'icon-tags'
+    inlineEditable: FALSE
+    inspector:
+      groups:
+        'teaser':
+          label: 'Products List'
+          position: 10
+  properties:
+    search:
+      type: string
+      ui:
+        label: 'Search'
+        reloadIfChanged: true
+        inspector:
+          group: 'teaser'
+          position: 1

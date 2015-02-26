@@ -42,6 +42,14 @@ class ProductsHelper implements ProtectedContextAwareInterface {
 	}
 
 	/**
+	 * @param string $search
+	 * @return array
+	 */
+	public function findProducts($search = null)
+	{
+		return $this->productService->findProducts($search);
+	}
+	/**
 	 * All methods are considered safe
 	 *
 	 * @param string $methodName
