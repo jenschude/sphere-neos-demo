@@ -1,9 +1,11 @@
 .idea
 nginx.conf
 /Build/
-/Configuration/Production/
+/Configuration/Production/*
+!/Configuration/Production/Settings.yaml
 /Configuration/Testing/
-/Configuration/Development/
+/Configuration/Development/*
+!/Configuration/Development/Settings.yaml
 /Data/
 /Packages/Application/*
 /Packages/*

@@ -31,14 +31,14 @@ Steps to start the demo system:
 	`vagrant up`
  1. login to the vagrant box using `vagrant ssh` and run the setup script
    /var/www/sphere-neos-demo/setup-vagrant.sh
-   
+
 The Frontend is located at
 
-* [http://sphere-neos-demo.vm/](http://sphere-neos-demo.vm.dev/)
+* [http://sphere-neos-demo.vm/](http://sphere-neos-demo.vm/)
 
 The Backend is located at
 
- * [http://sphere-neos-demo.vm/neos/login](http://sphere-neos-demo.vm.dev/neos/login)
+ * [http://sphere-neos-demo.vm/neos/login](http://sphere-neos-demo.vm/neos/login)
 
  * User: admin
  * Password: password

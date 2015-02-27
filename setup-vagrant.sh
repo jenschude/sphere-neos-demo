@@ -4,7 +4,6 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y install nginx php5-fpm php5-apcu 
 mysqladmin -uroot password password
 yes '' | sudo pecl install gmagick-1.1.7RC2 igbinary yaml
 
-mysql -uroot -ppassword -e "CREATE DATABASE sphere_neos_demo DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_unicode_ci;"
 sudo cp /var/www/sphere-neos-demo/nginx.conf.example /etc/nginx/sites-available/sphere-neos-demo
 cd /etc/nginx/sites-enabled/
 sudo ln -s ../sites-available/sphere-neos-demo .
@@ -21,11 +20,4 @@ sudo ln -s ../../mods-available/sphere.ini 60-sphere.ini
 sudo service php5-fpm restart
 
 cd /var/www/sphere-neos-demo
-sudo ./flow core:setfilepermissions vagrant www-data www-data
-
-sudo -u www-data ./flow flow:core:compile
-sudo -u www-data ./flow doctrine:migrate
-sudo -u www-data ./flow site:import --package-key Sphere.Neos.DemoSite
-sudo -u www-data ./flow user:create admin password John Doe --roles TYPO3.Neos:Administrator
-sudo -u www-data ./flow resource:publish
-sudo -u www-data ./flow flow:cache:flush
+./setup-flow.sh
