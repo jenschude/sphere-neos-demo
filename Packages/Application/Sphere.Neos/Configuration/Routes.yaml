@@ -7,7 +7,22 @@
     '@controller': 'Frontend\Node'
     '@action':     'show'
     '@format':     'html'
-    'node':        '/sites/spheredemosite/product'
+    'node':        '/sites/spheredemosite/product@live;language=en'
+  routeParts:
+    'node':
+      handler:     'TYPO3\Neos\Routing\FrontendNodeRoutePartHandlerInterface'
+    'productSlug':
+      handler:     'Sphere\Neos\Routing\ProductRoutePartHandler'
+-
+  name:  'Product single view'
+  uriPattern: 'de/product/{productSlug}.html'
+  defaults:
+    '@package':    'TYPO3.Neos'
+    '@subpackage': ''
+    '@controller': 'Frontend\Node'
+    '@action':     'show'
+    '@format':     'html'
+    'node':        '/sites/spheredemosite/product@live;language=de,en'
   routeParts:
     'node':
       handler:     'TYPO3\Neos\Routing\FrontendNodeRoutePartHandlerInterface'

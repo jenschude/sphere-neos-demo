@@ -4,7 +4,7 @@
         <f:then>
             <ul>
             <f:for each="{products}" as="product">
-                <li><f:render section="productItem" arguments="{product: product}" /></li>
+                <li><f:render section="productItem" arguments="{product: product, productDetailsNode: productDetailsNode}" /></li>
             </f:for>
             </ul>
         </f:then>
@@ -18,7 +18,7 @@
     <div>
         <f:if condition="{product}">
             <f:then>
-                <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: '/sites/spheredemosite/product', productSlug: product.slug.localized}">
+                <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
                     <table>
                         <tbody>
                         <tr>

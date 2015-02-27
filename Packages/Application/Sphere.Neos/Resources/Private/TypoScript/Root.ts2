@@ -44,6 +44,7 @@ prototype(Sphere.Neos:ProductTeaser) < prototype(TYPO3.Neos:Content) {
 }
 
 prototype(Sphere.Neos:ProductsList) < prototype(TYPO3.Neos:Content) {
+	productDetailsNode = ${q(site).find('product').get(0)}
 	products = ${q(SphereProducts.findProducts(this.search)).get()}
 
 	@cache {
