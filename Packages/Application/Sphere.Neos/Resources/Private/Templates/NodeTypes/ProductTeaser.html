@@ -3,15 +3,14 @@
 	<f:if condition="{product}">
 		<f:then>
 			<f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
-				<table>
-					<tbody>
-						<tr>
-							<th>Name</th><td>{product.name}</td>
-							<th>Image</th><td><img src="{product.masterVariant.images.0.small}"></td>
-						</tr>
-					</tbody>
-				</table>
+				<div class="listing-image"><img src="{product.masterVariant.images.0.small}"></div>
 			</f:link.action>
+			<div class="listing-info">
+				<f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
+					<h3>{product.name}</h3>
+				</f:link.action>
+				<p>{product.description}</p>
+			</div>
 		</f:then>
 		<f:else>
 			Please provide an SKU for this product teaser.

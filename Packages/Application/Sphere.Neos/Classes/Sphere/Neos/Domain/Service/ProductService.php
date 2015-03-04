@@ -5,7 +5,6 @@ namespace Sphere\Neos\Domain\Service;
  *                                                                                                  */
 
 use Sphere\Core\Client;
-use Sphere\Core\Config;
 use Sphere\Core\Model\Common\Context;
 use Sphere\Core\Model\Product\Product;
 use Sphere\Core\Request\Products\ProductProjectionFetchBySkuRequest;
@@ -32,36 +31,34 @@ class ProductService{
 
 	/**
 	 * @Flow\Inject
+	 * @var ClientService
+	 */
+	protected $clientService;
+
+	/**
+	 * @Flow\Inject
 	 * @var \TYPO3\Flow\I18n\Service
 	 */
 	protected $i18nService;
 
-	protected $context;
-
 	protected $map;
+
+	protected $context;
 
 	/**
 	 * @return Context
 	 */
 	protected function getContext()
 	{
-		if (is_null($this->context)) {
-			$fallBack = $this->i18nService->getConfiguration()->getFallbackRule()['order'];
-			$languages = array_reverse($fallBack);
-			$this->context = new Context();
-			$this->context->setLanguages($languages);
-		}
-
-		return $this->context;
+		return $this->clientService->getContext();
 	}
 
 	/**
-	 * @return void
+	 * @return Client
 	 */
-	public function initializeObject() {
-		$config = new Config();
-		$config->fromArray($this->settings['client'])->setContext($this->getContext());
-		$this->client = new Client($config);
+	protected function getClient()
+	{
+		return $this->clientService->getClient();
 	}
 
 	/**
@@ -75,7 +72,7 @@ class ProductService{
 			return NULL;
 		}
 		if (!isset($this->map[$sku])) {
-			$response = $this->client->execute(new ProductProjectionFetchBySkuRequest($sku));
+			$response = $this->getClient()->execute(new ProductProjectionFetchBySkuRequest($sku));
 			$this->map[$sku] = $response->toObject();
 		}
 		/** @var SingleResourceResponse $response*/
@@ -93,7 +90,7 @@ class ProductService{
 			return NULL;
 		}
 		if (!isset($this->map[$slug])) {
-			$response = $this->client->execute(new ProductProjectionFetchBySlugRequest($slug, $this->getContext()));
+			$response = $this->getClient()->execute(new ProductProjectionFetchBySlugRequest($slug, $this->getContext()));
 			$this->map[$slug] = $response->toObject();
 		}
 		/** @var SingleResourceResponse $response*/
@@ -108,9 +105,11 @@ class ProductService{
 	{
 		if (!isset($this->map[$search])) {
 			$request = new ProductsSearchRequest();
-			$request->addParam('text.en', $search);
 
-			$response = $this->client->execute($request);
+			$language = $this->i18nService->getConfiguration()->getCurrentLocale()->getLanguage();
+			$request->addParam('text.' . $language, $search);
+
+			$response = $this->getClient()->execute($request);
 
 			$this->map[$search] = $response->toObject();
 		}

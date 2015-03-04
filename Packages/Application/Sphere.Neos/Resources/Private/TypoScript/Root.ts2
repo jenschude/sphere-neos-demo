@@ -44,8 +44,28 @@ prototype(Sphere.Neos:ProductTeaser) < prototype(TYPO3.Neos:Content) {
 }
 
 prototype(Sphere.Neos:ProductsList) < prototype(TYPO3.Neos:Content) {
+	searchForm = TYPO3.TypoScript:Template {
+		templatePath = 'resource://Sphere.Neos/Private/Templates/NodeTypes/SearchForm.html'
+	}
+
 	productDetailsNode = ${q(site).find('product').get(0)}
-	products = ${q(SphereProducts.findProducts(this.search)).get()}
+	searchQuery = ${request.arguments.q}
+
+	products = ${q(SphereProducts.findProducts(this.searchQuery)).get()}
+	firstProduct = ${q(this.products).get(0)}
+
+	@cache {
+		maximumLifetime = 1
+	}
+}
+
+prototype(Sphere.Neos:ProductTeaserContent) < prototype(TYPO3.Neos.NodeTypes:TwoColumn) {
+	templatePath = 'resource://TYPO3.Neos.NodeTypes/Private/Templates/NodeTypes/MultiColumn.html'
+}
+
+prototype(Sphere.Neos:ProductCart) < prototype(TYPO3.Neos:Content) {
+	productDetailsNode = ${q(site).find('product').get(0)}
+	cart = ${q(SphereProducts.getCart()).get(0)}
 
 	@cache {
 		maximumLifetime = 1

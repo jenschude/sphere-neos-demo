@@ -1,6 +1,21 @@
 # -----------------------------------------------------------------------------
 # Sphere.Neos:ProductTeaser
 # -----------------------------------------------------------------------------
+'Sphere.Neos:ProductCart':
+#  abstract: TRUE
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Cart'
+    group: 'teasers'
+    icon: 'icon-tags'
+    inlineEditable: FALSE
+    inspector:
+      groups:
+        'teaser':
+          label: 'Cart'
+          position: 10
+
 
 'Sphere.Neos:ProductTeaser':
 #  abstract: TRUE
@@ -49,3 +64,23 @@
         inspector:
           group: 'teaser'
           position: 1
+
+'Sphere.Neos:ProductTeaserContent':
+#  abstract: TRUE
+  superTypes:
+    - 'TYPO3.Neos.NodeTypes:TwoColumn'
+  childNodes:
+    column0:
+      type: 'Sphere.Neos.ProductTeaserCollection'
+    column1:
+      type: 'TYPO3.Neos:ContentCollection'
+  ui:
+    label: 'Product Teaser Content'
+    group: 'teasers'
+
+'Sphere.Neos.ProductTeaserCollection':
+  superTypes:
+    - 'TYPO3.Neos:ContentCollection'
+  childNodes:
+    element1:
+      type: 'Sphere.Neos:ProductTeaser'

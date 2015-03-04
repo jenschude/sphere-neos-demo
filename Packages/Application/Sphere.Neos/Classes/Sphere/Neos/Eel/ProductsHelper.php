@@ -6,13 +6,11 @@ namespace Sphere\Neos\Eel;
 
 use Sphere\Core\Client;
 use Sphere\Core\Model\Product\Product;
+use Sphere\Neos\Domain\Service\CartService;
 use Sphere\Neos\Domain\Service\ProductService;
 use TYPO3\Eel\ProtectedContextAwareInterface;
 use TYPO3\Flow\Annotations as Flow;
 
-/**
- * ProductHelper
- */
 class ProductsHelper implements ProtectedContextAwareInterface {
 
 	/**
@@ -21,6 +19,11 @@ class ProductsHelper implements ProtectedContextAwareInterface {
 	 */
 	protected $productService;
 
+	/**
+	 * @Flow\Inject
+	 * @var CartService
+	 */
+	protected $cartService;
 	/**
 	 *
 	 *
@@ -49,6 +52,12 @@ class ProductsHelper implements ProtectedContextAwareInterface {
 	{
 		return $this->productService->findProducts($search);
 	}
+
+	public function getCart()
+	{
+		return $this->cartService->getCart();
+	}
+
 	/**
 	 * All methods are considered safe
 	 *
