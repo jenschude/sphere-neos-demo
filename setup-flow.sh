@@ -1,6 +1,6 @@
 #!/bin/bash
-mysql -uroot -ppassword -e "DROP DATABASE sphere_neos_demo; CREATE DATABASE sphere_neos_demo DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_unicode_ci;"
-mysql -uroot -ppassword -e "DROP DATABASE sphere_neos_demo_dev; CREATE DATABASE sphere_neos_demo_dev DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_unicode_ci;"
+mysql -uroot -ppassword -e "DROP DATABASE IF EXISTS sphere_neos_demo; CREATE DATABASE sphere_neos_demo DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_unicode_ci;"
+mysql -uroot -ppassword -e "DROP DATABASE IF EXISTS sphere_neos_demo_dev; CREATE DATABASE sphere_neos_demo_dev DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_unicode_ci;"
 
 cd /var/www/sphere-neos-demo
 sudo ./flow core:setfilepermissions vagrant www-data www-data
