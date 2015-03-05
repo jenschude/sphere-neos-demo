@@ -623,12 +623,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "b5fc18ea1499b7e2295f0c486e7c81acb86a8473"
+                "reference": "93a9369ea7846e8ae2e9303c94bb36dbcbb2009b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/b5fc18ea1499b7e2295f0c486e7c81acb86a8473",
-                "reference": "b5fc18ea1499b7e2295f0c486e7c81acb86a8473",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/93a9369ea7846e8ae2e9303c94bb36dbcbb2009b",
+                "reference": "93a9369ea7846e8ae2e9303c94bb36dbcbb2009b",
                 "shasum": ""
             },
             "require": {
@@ -673,7 +673,7 @@
                 "database",
                 "migrations"
             ],
-            "time": "2015-03-03 09:38:17"
+            "time": "2015-03-04 08:37:18"
         },
         {
             "name": "doctrine/orm",
@@ -1225,12 +1225,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sphereio/sphere-php-sdk.git",
-                "reference": "1981b33c1caa965325d794710c5949377f5283ca"
+                "reference": "3acb8efbf1ca94eee649353a6ea235e8b14bfdb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sphereio/sphere-php-sdk/zipball/1981b33c1caa965325d794710c5949377f5283ca",
-                "reference": "1981b33c1caa965325d794710c5949377f5283ca",
+                "url": "https://api.github.com/repos/sphereio/sphere-php-sdk/zipball/3acb8efbf1ca94eee649353a6ea235e8b14bfdb6",
+                "reference": "3acb8efbf1ca94eee649353a6ea235e8b14bfdb6",
                 "shasum": ""
             },
             "require": {
@@ -1267,7 +1267,7 @@
                 "MIT"
             ],
             "description": "The Sphere.IO PHP SDK",
-            "time": "2015-03-04 15:29:07"
+            "time": "2015-03-05 13:38:40"
         },
         {
             "name": "symfony/console",
@@ -1456,7 +1456,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Flow.git",
-                "reference": "6be19dc896a854ea0b9d8d1d78275b8910ca3918"
+                "reference": "8cc135524fe2c012d5c4bb4b7b19e4db86a74399"
             },
             "require": {
                 "composer/installers": "~1.0.2",
@@ -1491,7 +1491,7 @@
             ],
             "description": "TYPO3 Flow Application Framework",
             "homepage": "http://flow.typo3.org",
-            "time": "2015-03-03 13:52:57"
+            "time": "2015-03-04 21:15:01"
         },
         {
             "name": "typo3/fluid",
@@ -1621,7 +1621,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Neos.git",
-                "reference": "80e82451a3776dc0b325143530102683a290a621"
+                "reference": "fb4b3697d37afaa9414e3915d5d616661de20b7f"
             },
             "require": {
                 "typo3/flow": "*",
@@ -1651,7 +1651,7 @@
                 "GPL-3.0+"
             ],
             "description": "The next generation of the popular open-source CMS.",
-            "time": "2015-03-04 14:33:24"
+            "time": "2015-03-05 09:09:42"
         },
         {
             "name": "typo3/neos-kickstarter",
@@ -2964,7 +2964,6 @@
         "typo3-ci/typo3flow": 20
     },
     "prefer-stable": false,
-    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }
