@@ -1,0 +1,23 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<div>
+    <f:if condition="{product}">
+        <f:then>
+            <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
+                <div class="listing-image"><img src="{product.masterVariant.images.0.small}"></div>
+            </f:link.action>
+            <div class="listing-info">
+                <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
+                    <h3>{product.name}</h3>
+                </f:link.action>
+                <p>{product.masterVariant.prices.0.value}</p>
+                <p>{product.description}</p>
+            </div>
+        </f:then>
+        <f:else>
+            Please provide an SKU for this product teaser.
+        </f:else>
+    </f:if>
+</div>
+<div{attributes -> f:format.raw()}>
+    {neos:contentElement.editable(property: 'text')}
+</div>

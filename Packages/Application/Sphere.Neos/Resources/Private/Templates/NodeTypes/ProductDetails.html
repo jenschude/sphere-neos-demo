@@ -6,7 +6,17 @@
 				<tbody>
 				<tr>
 					<th>Name</th><td>{product.name}</td>
+				</tr>
+				<tr>
 					<th>Slug</th><td>{productSlug}</td>
+				</tr>
+				<tr>
+					<th>Price</th><td>{product.masterVariant.prices.0.value}</td>
+				</tr>
+				<tr>
+					<th>Price</th><td>{product.description}</td>
+				</tr>
+				<tr>
 					<th>Image</th><td><img src="{product.masterVariant.images.0.small}"></td>
 				</tr>
 				</tbody>

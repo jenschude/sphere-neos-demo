@@ -68,19 +68,22 @@
 'Sphere.Neos:ProductTeaserContent':
 #  abstract: TRUE
   superTypes:
-    - 'TYPO3.Neos.NodeTypes:TwoColumn'
-  childNodes:
-    column0:
-      type: 'Sphere.Neos.ProductTeaserCollection'
-    column1:
-      type: 'TYPO3.Neos:ContentCollection'
+    - 'TYPO3.Neos.NodeTypes:Text'
   ui:
-    label: 'Product Teaser Content'
+    label: 'Products Teaser Content'
     group: 'teasers'
-
-'Sphere.Neos.ProductTeaserCollection':
-  superTypes:
-    - 'TYPO3.Neos:ContentCollection'
-  childNodes:
-    element1:
-      type: 'Sphere.Neos:ProductTeaser'
+    icon: 'icon-tags'
+    inspector:
+      groups:
+        'teaser':
+          label: 'Product Teaser'
+          position: 10
+  properties:
+    sku:
+      type: string
+      ui:
+        label: 'SKU'
+        reloadIfChanged: true
+        inspector:
+          group: 'teaser'
+          position: 1

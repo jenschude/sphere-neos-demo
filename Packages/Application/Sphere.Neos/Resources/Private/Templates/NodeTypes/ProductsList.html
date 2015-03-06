@@ -30,6 +30,7 @@
                     <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
                     <h3>{product.name}</h3>
                     </f:link.action>
+                    <p>{product.masterVariant.prices.0.value}</p>
                     <p>{product.description}</p>
                 </div>
             </f:then>

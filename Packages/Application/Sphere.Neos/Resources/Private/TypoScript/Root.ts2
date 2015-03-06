@@ -59,8 +59,13 @@ prototype(Sphere.Neos:ProductsList) < prototype(TYPO3.Neos:Content) {
 	}
 }
 
-prototype(Sphere.Neos:ProductTeaserContent) < prototype(TYPO3.Neos.NodeTypes:TwoColumn) {
-	templatePath = 'resource://TYPO3.Neos.NodeTypes/Private/Templates/NodeTypes/MultiColumn.html'
+prototype(Sphere.Neos:ProductTeaserContent) < prototype(TYPO3.Neos.NodeTypes:Text) {
+	productDetailsNode = ${q(site).find('product').get(0)}
+	product = ${q(SphereProducts.findProductBySku(this.sku)).get(0)}
+
+	@cache {
+		maximumLifetime = 1
+	}
 }
 
 prototype(Sphere.Neos:ProductCart) < prototype(TYPO3.Neos:Content) {
