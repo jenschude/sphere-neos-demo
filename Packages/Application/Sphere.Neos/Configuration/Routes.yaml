@@ -1,4 +1,11 @@
 -
+  name:  'Cart'
+  uriPattern: 'my/cart/{@action}'
+  defaults:
+    '@package': 'Sphere.Neos'
+    '@controller': 'Cart'
+  appendExceedingArguments: true
+-
   name:  'Product single view'
   uriPattern: 'en/product/{productSlug}.html'
   defaults:
