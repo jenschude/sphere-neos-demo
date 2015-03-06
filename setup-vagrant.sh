@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt-get update
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y install nginx php5-fpm php5-apcu php5-cli php5-imagick php5-gd php5-mysqlnd mariadb-server php5-dev php-pear php5-tidy php5-xdebug graphicsmagick libgraphicsmagick1-dev libyaml-dev
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y install nginx php5-fpm php5-apcu php5-cli php5-intl php5-imagick php5-gd php5-mysqlnd mariadb-server php5-dev php-pear php5-tidy php5-xdebug graphicsmagick libgraphicsmagick1-dev libyaml-dev
 mysqladmin -uroot password password
 yes '' | sudo pecl install gmagick-1.1.7RC2 igbinary yaml
 

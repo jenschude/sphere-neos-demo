@@ -61,8 +61,9 @@ class ClientService
             $fallBack = $this->i18nService->getConfiguration()->getFallbackRule()['order'];
             $languages = array_reverse($fallBack);
             $this->context = new Context();
-            $this->context->setGraceful(true);
-            $this->context->setLanguages($languages);
+            $this->context->setGraceful(true)
+                ->setLanguages($languages)
+                ->setLocale((string)$this->i18nService->getConfiguration()->getCurrentLocale());
         }
 
         return $this->context;
