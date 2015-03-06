@@ -24,4 +24,22 @@ class CartController extends ActionController
         }
         $this->redirectToUri('/en/cart.html');
     }
+
+    public function removeItemAction()
+    {
+        if ($this->request->hasArgument('itemId')) {
+            $itemId = $this->request->getArgument('itemId');
+            $this->cartService->removeLineItem($itemId);
+        }
+        $this->redirectToUri('/en/cart.html');
+    }
+
+    public function updateCartAction()
+    {
+        if ($this->request->hasArgument('items')) {
+            $items = $this->request->getArgument('items');
+            $this->cartService->updateQuantity($items);
+        }
+        $this->redirectToUri('/en/cart.html');
+    }
 }

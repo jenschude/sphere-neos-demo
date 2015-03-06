@@ -3,6 +3,7 @@
     <h3>Your cart</h3>
     <f:if condition="{cart}">
         <f:then>
+            <form action="/my/cart/updateCart">
             <table>
                 <tr>
                     <th></th>
@@ -15,11 +16,16 @@
                     <f:render section="productItem" arguments="{lineItem: lineItem, productDetailsNode: productDetailsNode}" />
                 </f:for>
                 <tr>
+                    <td colspan="2"></td>
+                    <td><input type="submit" value="update"></td>
+                </tr>
+                <tr>
                     <td colspan="3"></td>
                     <td>Total price</td>
                     <td>{cart.totalPrice}</td>
                 </tr>
             </table>
+            </form>
         </f:then>
     </f:if>
 </div>
@@ -38,9 +44,14 @@
                     {lineItem.name}
                     </f:link.action>
                 </td>
-                <td>{lineItem.quantity}</td>
+                <td><input type="text" name="items[{lineItem.id}]" size="3" value="{lineItem.quantity}"></td>
                 <td>{lineItem.price}</td>
                 <td>{lineItem.total}</td>
+                <td>
+                    <f:link.action package="Sphere.Neos" controller="Cart" action="removeItem" arguments="{itemId: lineItem.id}">
+                        x
+                    </f:link.action>
+                </td>
             </tr>
         </f:then>
     </f:if>

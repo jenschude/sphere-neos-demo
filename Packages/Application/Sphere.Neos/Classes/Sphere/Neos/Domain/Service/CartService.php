@@ -7,6 +7,8 @@ namespace Sphere\Neos\Domain\Service;
 
 use Sphere\Core\Model\Cart\LineItem;
 use Sphere\Core\Model\Common\LocalizedString;
+use Sphere\Core\Request\Carts\Command\CartChangeLineItemQuantityAction;
+use Sphere\Core\Request\Carts\Command\CartRemoveLineItemAction;
 use TYPO3\Flow\Annotations as Flow;
 use Sphere\Core\Model\Cart\Cart as SphereCart;
 use Sphere\Core\Model\Common\Money;
@@ -100,9 +102,30 @@ class CartService
     {
         $cart = $this->getOrCreateCart();
 
-        $addItemRequest = new CartUpdateRequest($cart->getId(), $cart->getVersion());
-        $addItemRequest->addAction(new CartAddLineItemAction($productId, (int)$variantId, (int)$quantity));
+        $updateItemRequest = new CartUpdateRequest($cart->getId(), $cart->getVersion());
+        $updateItemRequest->addAction(new CartAddLineItemAction($productId, (int)$variantId, (int)$quantity));
 
-        $this->cart = $this->clientService->getClient()->execute($addItemRequest)->toObject();
+        $this->cart = $this->clientService->getClient()->execute($updateItemRequest)->toObject();
+    }
+
+    public function removeLineItem($itemId)
+    {
+        $cart = $this->getOrCreateCart();
+
+        $updateItemRequest = new CartUpdateRequest($cart->getId(), $cart->getVersion());
+        $updateItemRequest->addAction(new CartRemoveLineItemAction($itemId));
+
+        $this->cart = $this->clientService->getClient()->execute($updateItemRequest)->toObject();
+    }
+
+    public function updateQuantity($items)
+    {
+        $cart = $this->getOrCreateCart();
+
+        $updateItemRequest = new CartUpdateRequest($cart->getId(), $cart->getVersion());
+        foreach ($items as $itemId => $quantity) {
+            $updateItemRequest->addAction(new CartChangeLineItemQuantityAction($itemId, (int)$quantity));
+        }
+        $this->cart = $this->clientService->getClient()->execute($updateItemRequest)->toObject();
     }
 }
