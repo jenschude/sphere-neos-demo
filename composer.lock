@@ -1225,12 +1225,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sphereio/sphere-php-sdk.git",
-                "reference": "98cf435f9609245513f78824206bc09d9235ac19"
+                "reference": "37133fe8117fe1b332e823dd2b0adbba2f06b09c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sphereio/sphere-php-sdk/zipball/98cf435f9609245513f78824206bc09d9235ac19",
-                "reference": "98cf435f9609245513f78824206bc09d9235ac19",
+                "url": "https://api.github.com/repos/sphereio/sphere-php-sdk/zipball/37133fe8117fe1b332e823dd2b0adbba2f06b09c",
+                "reference": "37133fe8117fe1b332e823dd2b0adbba2f06b09c",
                 "shasum": ""
             },
             "require": {
@@ -1267,7 +1267,7 @@
                 "MIT"
             ],
             "description": "The Sphere.IO PHP SDK",
-            "time": "2015-03-06 09:53:00"
+            "time": "2015-03-06 14:48:17"
         },
         {
             "name": "symfony/console",
@@ -1456,7 +1456,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Flow.git",
-                "reference": "e1fc9669266532c2a8604f624cef38809f8548d5"
+                "reference": "9c4f1b68e899e86fd2d10502be553fb363cb4201"
             },
             "require": {
                 "composer/installers": "~1.0.2",
@@ -1491,7 +1491,7 @@
             ],
             "description": "TYPO3 Flow Application Framework",
             "homepage": "http://flow.typo3.org",
-            "time": "2015-03-05 14:01:32"
+            "time": "2015-03-06 13:44:47"
         },
         {
             "name": "typo3/fluid",
@@ -1595,7 +1595,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Media.git",
-                "reference": "cc43b9a07afddc603bc865979bd9eb946da2c012"
+                "reference": "d31c312b94c9603b556fdfbd143584fcbf04a719"
             },
             "require": {
                 "php": ">=5.4.0",
@@ -1613,7 +1613,7 @@
                 "GPL-3.0+"
             ],
             "description": "The Media package",
-            "time": "2015-03-06 08:58:11"
+            "time": "2015-03-06 14:15:30"
         },
         {
             "name": "typo3/neos",
@@ -1621,7 +1621,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Neos.git",
-                "reference": "b8b8e6a9cdf89a4c4bdd593864e5cf6e88e79bae"
+                "reference": "9004c6f7b411f1b617692b96c7868bf5bef3e689"
             },
             "require": {
                 "typo3/flow": "*",
@@ -1651,7 +1651,7 @@
                 "GPL-3.0+"
             ],
             "description": "The next generation of the popular open-source CMS.",
-            "time": "2015-03-06 09:00:07"
+            "time": "2015-03-06 12:00:05"
         },
         {
             "name": "typo3/neos-kickstarter",
@@ -1757,7 +1757,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Setup.git",
-                "reference": "37ed910b3c9547879e9f8d541de414f7a004e14d"
+                "reference": "c8a78f4893697072486733f1a7aa921c081665e9"
             },
             "require": {
                 "typo3/flow": "*",
@@ -1775,7 +1775,7 @@
                 "LGPL-3.0+"
             ],
             "description": "An extensible setup tool for TYPO3 Flow based applications",
-            "time": "2015-03-05 17:48:25"
+            "time": "2015-03-06 12:52:38"
         },
         {
             "name": "typo3/twitter-bootstrap",
@@ -1807,7 +1807,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.TYPO3CR.git",
-                "reference": "6eaa204ebcb1ab0f5b594338ae2c636c420d9d2f"
+                "reference": "8c1232834bfe42cf6b5ee90cdd2e111d8c9300fd"
             },
             "require": {
                 "gedmo/doctrine-extensions": "2.3.*",
@@ -1825,7 +1825,7 @@
                 "GPL-3.0+"
             ],
             "description": "Content repository based on TYPO3 Flow, specifically made for TYPO3 Neos.",
-            "time": "2015-03-05 15:50:46"
+            "time": "2015-03-06 14:00:40"
         },
         {
             "name": "typo3/typoscript",
@@ -1833,7 +1833,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.TypoScript.git",
-                "reference": "5c883ecb1eb5e8aa375cc6e30848b6d1dd5012f9"
+                "reference": "064d2a549627222398356eeae33ca07a04f98ea7"
             },
             "require": {
                 "typo3/eel": "*",
@@ -1850,7 +1850,7 @@
                 "GPL-3.0+"
             ],
             "description": "TypoScript is a hierarchical, prototype based processing language",
-            "time": "2015-02-26 07:45:30"
+            "time": "2015-03-06 12:07:13"
         }
     ],
     "packages-dev": [

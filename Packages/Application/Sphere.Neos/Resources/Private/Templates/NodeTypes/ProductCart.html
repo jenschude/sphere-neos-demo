@@ -1,33 +1,48 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 <div>
+    <h3>Your cart</h3>
     <f:if condition="{cart}">
         <f:then>
-            <h1>Cart</h1>
-            <f:for each="{cart.lineItems}" as="lineItem">
-                <f:render section="productItem" arguments="{lineItem: lineItem, productDetailsNode: productDetailsNode}" />
-            </f:for>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+                <f:for each="{cart.lineItems}" as="lineItem">
+                    <f:render section="productItem" arguments="{lineItem: lineItem, productDetailsNode: productDetailsNode}" />
+                </f:for>
+                <tr>
+                    <td colspan="3"></td>
+                    <td>Total price</td>
+                    <td>{cart.totalPrice}</td>
+                </tr>
+            </table>
         </f:then>
-        <f:else>
-            No products in cart
-        </f:else>
     </f:if>
 </div>
 
 <f:section name="productItem">
-    <div class="col-sm-4">
-        <f:if condition="{lineItem}">
-            <f:then>
-                <div class="listing-info">
+    <f:if condition="{lineItem}">
+        <f:then>
+            <tr>
+                <td>
                     <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: lineItem.productId}">
-                        <h3>{lineItem.name}</h3>
-                        <h3>{lineItem.variant.sku}</h3>
+                        <img src="{lineItem.variant.images.0.small}">
                     </f:link.action>
-                </div>
-            </f:then>
-            <f:else>
-                Please provide an SKU for this product teaser.
-            </f:else>
-        </f:if>
-    </div>
+                </td>
+                <td>
+                    <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: lineItem.productId}">
+                    {lineItem.name}
+                    </f:link.action>
+                </td>
+                <td>{lineItem.quantity}</td>
+                <td>{lineItem.variant.prices.0}</td>
+                <td>{lineItem.price}</td>
+            </tr>
+        </f:then>
+    </f:if>
 </f:section>
 

@@ -22,6 +22,8 @@ use Sphere\Core\Request\Carts\CartFetchByIdRequest;
  */
 class CartService
 {
+    protected $currency = 'EUR';
+
     /**
      * @Flow\Inject
      * @var \Sphere\Neos\Domain\Service\ClientService
@@ -44,7 +46,7 @@ class CartService
      */
     public function getCreateCartRequest()
     {
-        $cartDraft = new CartDraft('EUR');
+        $cartDraft = new CartDraft($this->currency);
 
         $request = new CartCreateRequest($cartDraft);
 
@@ -89,14 +91,7 @@ class CartService
         }
 
         $this->cart = new SphereCart([], $this->clientService->getContext());
-
-        // @todo remove hardcoded line item stuff
-        $total = new Money('EUR', 0);
-        $this->cart->setTotalPrice($total);
-        $lineItem = new LineItem([], $this->clientService->getContext());
-        $lineItem->setProductId('1234');
-        $lineItem->setName(LocalizedString::of(['en' => 'Test']));
-        $this->cart->getLineItems()->setAt(null, $lineItem);
+        $this->cart->setTotalPrice(new Money($this->currency, 0));
 
         return $this->cart;
     }
@@ -106,7 +101,7 @@ class CartService
         $cart = $this->getOrCreateCart();
 
         $addItemRequest = new CartUpdateRequest($cart->getId(), $cart->getVersion());
-        $addItemRequest->addAction(new CartAddLineItemAction($productId, $variantId, $quantity));
+        $addItemRequest->addAction(new CartAddLineItemAction($productId, (int)$variantId, (int)$quantity));
 
         $this->cart = $this->clientService->getClient()->execute($addItemRequest)->toObject();
     }
