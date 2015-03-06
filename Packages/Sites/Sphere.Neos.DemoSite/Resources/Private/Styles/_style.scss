@@ -1,0 +1,48 @@
+// Variables
+
+$neos-gray: #FEFEFE;
+$neos-orange: #FF8700;
+
+// Product Teaser Box
+
+.product-teaser {
+	background-color: $neos-gray;
+	border-radius: 3px;
+}
+
+// Teaser Image
+
+.listing-image {
+	text-align: center;
+	padding: 20px;
+}
+
+// Product Name 
+
+.product-name {
+	font-size: 1.8em;
+	text-align: center;
+	color: $neos-orange;
+	padding: 20px 0 0;
+	margin: 0;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+// Product Price
+
+.product-price {
+	text-align: right;
+	padding-top: 15px;
+}
+
+// Product Description
+
+.product-description {
+	color: darken($neos-gray, 50%);
+}
+
+// Product Details
+

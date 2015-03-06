@@ -210,8 +210,8 @@ img { max-width: 100%; height: auto; }
 .second-level-navigation .nav-pills > li > a { font-size: 12px; line-height: 20px; font-family: 'Noto Sans Regular', serif; }
 .second-level-navigation .nav-pills > li:last-of-type { margin-right: 0; }
 
-.navbar-brand { background-image: url("../Images/commercetools-logo.png"); background-repeat: no-repeat; background-size: 144px 32px; text-indent: -999px; width: 144px; height: 32px; margin-right: 20px; }
-@media only screen and (max-width: 767px) { .navbar-brand { background-image: url("../Images/commercetools-logo@2.png"); background-size: 144px 32px; margin-left: 20px; } }
+.navbar-brand { background-image: url("../Images/logo.png"); background-repeat: no-repeat; background-size: 100px 32px; text-indent: -999px; width: 135px; height: 32px; margin-right: 20px; }
+@media only screen and (max-width: 767px) { .navbar-brand { background-image: url("../Images/logo@2x.png"); background-size: 100px 32px; margin-left: 20px; } }
 
 .navbar-default { background-color: transparent; border: none; }
 .navbar-default .navbar-header { padding-bottom: 18px; }
@@ -302,3 +302,15 @@ ol.neos-list-upper-latin { list-style-type: upper-latin; }
 ul.neos-list-disc { list-style-type: disc; }
 ul.neos-list-circle { list-style-type: circle; }
 ul.neos-list-square { list-style-type: square; }
+
+.product-teaser { background-color: #FEFEFE; border-radius: 3px; }
+
+.listing-image { text-align: center; padding: 20px; }
+
+.product-name { font-size: 1.8em; text-align: center; color: #FF8700; padding: 20px 0 0; margin: 0; }
+
+a:hover { text-decoration: none; }
+
+.product-price { text-align: right; padding-top: 15px; }
+
+.product-description { color: #7f7f7f; }

@@ -2,7 +2,29 @@
 <div>
 	<f:if condition="{product}">
 		<f:then>
-			<table>
+
+
+		<div class="container product-details">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="product-name">{product.name}</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<p class="product-price">{product.masterVariant.prices.0.value}</p>
+					<p class="product-description">{product.description}</p>
+					<p>{productSlug}</p>
+				</div>
+				<div class="col-md-6">
+					<div class="listing-image img-responsive product-teaser">
+						<img src="{product.masterVariant.images.0.small}">
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<!-- <table>
 				<tbody>
 				<tr>
 					<th>Name</th><td>{product.name}</td>
@@ -14,13 +36,18 @@
 					<th>Price</th><td>{product.masterVariant.prices.0.value}</td>
 				</tr>
 				<tr>
-					<th>Price</th><td>{product.description}</td>
+					<th>Description</th><td>{product.description}</td>
 				</tr>
 				<tr>
 					<th>Image</th><td><img src="{product.masterVariant.images.0.small}"></td>
 				</tr>
 				</tbody>
-			</table>
+			</table> -->
+
+
+
+
+
 		</f:then>
 		<f:else>
 			Please provide an SKU for this product teaser.
