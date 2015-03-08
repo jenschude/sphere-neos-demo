@@ -9,11 +9,18 @@
 				</div>
 			</f:link.action>
 			<div class="listing-info">
-				<f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
-				</f:link.action>
-				<p class="product-price">{product.masterVariant.prices.0.value}</p>
-				<p class="product-description">{product.description}</p>
+				<div class="row">
+					<div class="col-md-6">
+						<f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
+						</f:link.action>
+						<p class="product-description">{product.description}</p>
+					</div>
+					<div class="col-md-6">
+						<p class="product-price">{product.masterVariant.prices.0.value}</p>
+					</div>
+				</div>
 			</div>
+
 		</f:then>
 		<f:else>
 			Please provide an SKU for this product teaser.

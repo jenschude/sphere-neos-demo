@@ -4,15 +4,20 @@
         <f:then>
             <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
                 <div class="listing-image img-responsive product-teaser"><img src="{product.masterVariant.images.0.small}">
-                <h3 class="product-name">{product.name}</h3>
+                    <h3 class="product-name">{product.name}</h3>
                 </div>
             </f:link.action>
             <div class="listing-info">
-                <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
-                    
-                </f:link.action>
-                <p class="product-price">{product.masterVariant.prices.0.value}</p>
-                <p class="product-description">{product.description}</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
+                        </f:link.action>
+                        <p class="product-description">{product.description}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="product-price">{product.masterVariant.prices.0.value}</p>
+                    </div>
+                </div>
             </div>
         </f:then>
         <f:else>
