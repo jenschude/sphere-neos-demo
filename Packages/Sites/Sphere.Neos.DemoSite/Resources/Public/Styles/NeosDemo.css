@@ -311,6 +311,6 @@ ul.neos-list-square { list-style-type: square; }
 
 a:hover { text-decoration: none; }
 
-.product-price { text-align: right; padding-top: 15px; }
+.product-price { text-align: right; }
 
 .product-description { color: #7f7f7f; }
