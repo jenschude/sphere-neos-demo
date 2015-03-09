@@ -10,6 +10,7 @@ prototype(Sphere.Neos:ProductDetails) < prototype(TYPO3.TypoScript:Template) {
 
 	productSlug = ${request.arguments.productSlug}
 	product = ${q(SphereProducts.findProductBySlug(this.productSlug)).get(0)}
+	attributes = ${q(SphereProducts.getAttributes(this.product)).get()}
 
 	@cache {
 		mode = 'cached'

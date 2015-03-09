@@ -20,6 +20,17 @@
 						</div>
 					</div>
 					<div>
+						<h4>Attributes</h4>
+						<table>
+						<f:for each="{attributes}" as="attribute">
+							<tr>
+								<td>{attribute.label}<td>
+								<td>{attribute.value}<td>
+							</tr>
+						</f:for>
+						</table>
+					</div>
+					<div>
 						<f:link.action package="Sphere.Neos" controller="Cart" action="addItem" arguments="{productId: product.id}">
 							Add to cart
 						</f:link.action>

@@ -6,7 +6,9 @@ namespace Sphere\Neos\Domain\Service;
 
 use Sphere\Core\Client;
 use Sphere\Core\Model\Common\Context;
+use Sphere\Core\Model\Common\LocalizedString;
 use Sphere\Core\Model\Product\Product;
+use Sphere\Core\Model\Product\ProductProjection;
 use Sphere\Core\Request\Products\ProductProjectionFetchBySkuRequest;
 use Sphere\Core\Request\Products\ProductProjectionFetchBySlugRequest;
 use Sphere\Core\Request\Products\ProductsSearchRequest;
@@ -90,7 +92,9 @@ class ProductService{
 			return NULL;
 		}
 		if (!isset($this->map[$slug])) {
-			$response = $this->getClient()->execute(new ProductProjectionFetchBySlugRequest($slug, $this->getContext()));
+			$request = new ProductProjectionFetchBySlugRequest($slug, $this->getContext());
+			$request->expand('productType');
+			$response = $this->getClient()->execute($request);
 			$this->map[$slug] = $response->toObject();
 		}
 		/** @var SingleResourceResponse $response*/
@@ -115,5 +119,28 @@ class ProductService{
 		}
 
 		return $this->map[$search];
+	}
+
+	public function getAttributes($product)
+	{
+		/**
+		 * @var ProductProjection $product
+		 */
+		$productType = $product->getProductType()->getObj();
+
+		$labels = [];
+		foreach ($productType['attributes'] as $attribute) {
+			$labels[$attribute['name']] = new LocalizedString($attribute['label'], $this->getContext());
+		}
+		$attributes = [];
+		foreach ($product->getMasterVariant()->getAttributes() as $attribute) {
+			$data = [];
+			$data['name'] = $attribute->getName();
+			$data['value'] = $attribute->getValue();
+			$data['label'] = $labels[$data['name']];
+			$attributes[] = $data;
+		}
+
+		return $attributes;
 	}
 }
