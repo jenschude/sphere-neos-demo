@@ -31,6 +31,12 @@ a:hover {
 	text-decoration: none;
 }
 
+// Listing Row
+
+.listing-info {
+	padding: 20px 0 0;
+}
+
 // Product Price
 
 .product-price {
@@ -42,6 +48,47 @@ a:hover {
 .product-description {
 	color: darken($neos-gray, 50%);
 }
+
+// Add to cart button
+
+.cart-button {
+	padding: 7px 7px;
+	color: $neos-orange;
+	text-transform: uppercase;
+	border: 2px solid $neos-orange;
+	border-radius: 3px;
+}
+
+.cart-button:hover {
+	color: $neos-gray;
+	background-color: $neos-orange;
+}
+
+.cart-row {
+	padding: 20px 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

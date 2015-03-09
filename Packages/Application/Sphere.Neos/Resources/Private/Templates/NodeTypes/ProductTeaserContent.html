@@ -3,7 +3,7 @@
     <f:if condition="{product}">
         <f:then>
             <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
-                <div class="listing-image img-responsive product-teaser"><img src="{product.masterVariant.images.0.small}">
+                <div class="listing-image img-responsive product-teaser"><img src="{product.masterVariant.images.0.medium}">
                     <h3 class="product-name">{product.name}</h3>
                 </div>
             </f:link.action>
@@ -17,6 +17,11 @@
                     <div class="col-md-6">
                         <p class="product-price">{product.masterVariant.prices.0.value}</p>
                     </div>
+                    <div class="col-md-4">
+                        <div{attributes -> f:format.raw()}>
+                            {neos:contentElement.editable(property: 'text')}
+                        </div>
+                    </div>
                 </div>
             </div>
         </f:then>
@@ -24,7 +29,4 @@
             Please provide an SKU for this product teaser.
         </f:else>
     </f:if>
-</div>
-<div{attributes -> f:format.raw()}>
-    {neos:contentElement.editable(property: 'text')}
 </div>

@@ -9,20 +9,24 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-6">
-						<p class="product-price">{product.masterVariant.prices.0.value}</p>
+					<div class="col-md-4">
 						<p class="product-description">{product.description}</p>
 						<p class="product-description">{productSlug}</p>
 					</div>
+					<div class="col-md-2">
+						<p class="product-price">{product.masterVariant.prices.0.value}</p>
+					</div>
 					<div class="col-md-6">
 						<div class="listing-image img-responsive product-teaser">
-							<img src="{product.masterVariant.images.0.small}">
+							<img src="{product.masterVariant.images.0.medium}">
 						</div>
 					</div>
-					<div>
-						<f:link.action package="Sphere.Neos" controller="Cart" action="addItem" arguments="{productId: product.id}">
+					<div class="row cart-row">
+						<div class="col-md-12">
+							<f:link.action package="Sphere.Neos" class="cart-button" controller="Cart" action="addItem" arguments="{productId: product.id}">
 							Add to cart
-						</f:link.action>
+							</f:link.action>
+						</div>
 					</div>
 				</div>
 			</div>

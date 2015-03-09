@@ -311,6 +311,14 @@ ul.neos-list-square { list-style-type: square; }
 
 a:hover { text-decoration: none; }
 
+.listing-info { padding: 20px 0 0; }
+
 .product-price { text-align: right; }
 
 .product-description { color: #7f7f7f; }
+
+.cart-button { padding: 7px 7px; color: #FF8700; text-transform: uppercase; border: 2px solid #FF8700; border-radius: 3px; }
+
+.cart-button:hover { color: #FEFEFE; background-color: #FF8700; }
+
+.cart-row { padding: 20px 0 0; }
