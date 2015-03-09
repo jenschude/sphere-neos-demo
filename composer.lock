@@ -1225,12 +1225,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sphereio/sphere-php-sdk.git",
-                "reference": "8121edb2c85e3fed3428178c26f67ded2a68b78d"
+                "reference": "1c17098d9c603d222a05aae039b6749b1e693442"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sphereio/sphere-php-sdk/zipball/8121edb2c85e3fed3428178c26f67ded2a68b78d",
-                "reference": "8121edb2c85e3fed3428178c26f67ded2a68b78d",
+                "url": "https://api.github.com/repos/sphereio/sphere-php-sdk/zipball/1c17098d9c603d222a05aae039b6749b1e693442",
+                "reference": "1c17098d9c603d222a05aae039b6749b1e693442",
                 "shasum": ""
             },
             "require": {
@@ -1267,7 +1267,7 @@
                 "MIT"
             ],
             "description": "The Sphere.IO PHP SDK",
-            "time": "2015-03-09 09:49:41"
+            "time": "2015-03-09 13:38:16"
         },
         {
             "name": "symfony/console",
@@ -1595,7 +1595,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Media.git",
-                "reference": "1a30a720f3ed6f0416610c463616a3a514c6e22f"
+                "reference": "8e0179aab00a95e915b9b7676e0cd781a966b211"
             },
             "require": {
                 "php": ">=5.4.0",
@@ -1613,7 +1613,7 @@
                 "GPL-3.0+"
             ],
             "description": "The Media package",
-            "time": "2015-03-08 19:12:11"
+            "time": "2015-03-09 10:40:30"
         },
         {
             "name": "typo3/neos",
