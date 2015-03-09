@@ -24,7 +24,7 @@
 				</div>
 				<div class="row cart-row">
 					<div class="col-md-6">
-						<h4><f:translate>Attributes</f:translate></h4>
+						<h4><f:translate package="Sphere.Neos">Attributes</f:translate></h4>
 						<table>
 						<f:for each="{attributes}" as="attribute">
 							<tr>
@@ -36,14 +36,14 @@
 					</div>
 					<div class="col-md-6 button">
 						<f:link.action package="Sphere.Neos" class="cart-button" controller="Cart" action="addItem" arguments="{productId: product.id}">
-						<span>Add to cart</span>
+						<span><f:translate package="Sphere.Neos">Add to cart</f:translate></span>
 						</f:link.action>
 					</div>
 				</div>
 			</div>
 		</f:then>
 		<f:else>
-			<f:translate>Product not found.</f:translate>
+			<f:translate package="Sphere.Neos">Product not found</f:translate>
 		</f:else>
 	</f:if>
 </div>
