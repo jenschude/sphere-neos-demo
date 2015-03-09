@@ -317,7 +317,7 @@ a:hover { text-decoration: none; }
 
 .product-description { color: #7f7f7f; }
 
-.cart-button { padding: 7px 7px; color: #FF8700; text-transform: uppercase; border: 2px solid #FF8700; border-radius: 3px; }
+.cart-button { padding: 7px 7px; color: #FF8700; text-transform: uppercase; border: 2px solid #FF8700; border-radius: 3px; text-align: right; }
 
 .cart-button:hover { color: #FEFEFE; background-color: #FF8700; }
 
