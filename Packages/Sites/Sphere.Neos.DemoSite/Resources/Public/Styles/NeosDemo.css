@@ -303,7 +303,7 @@ ul.neos-list-disc { list-style-type: disc; }
 ul.neos-list-circle { list-style-type: circle; }
 ul.neos-list-square { list-style-type: square; }
 
-.product-teaser { background-color: #FEFEFE; border-radius: 3px; }
+.product-teaser { background-color: #FEFEFE; border-radius: 3px; border: 0.1em solid rgba(0, 0, 0, 0.1); box-shadow: 3px 3px 7px #bcbcbc; }
 
 .listing-image { text-align: center; padding: 20px; }
 
@@ -317,8 +317,20 @@ a:hover { text-decoration: none; }
 
 .product-description { color: #7f7f7f; }
 
-.cart-button { padding: 7px 7px; color: #FF8700; text-transform: uppercase; border: 2px solid #FF8700; border-radius: 3px; text-align: right; }
+.text-field { font-size: 1em; padding: 20px 15px; }
+
+.cart-button { padding: 7px 7px; color: #FF8700; text-transform: uppercase; border: 2px solid #FF8700; border-radius: 3px; }
 
 .cart-button:hover { color: #FEFEFE; background-color: #FF8700; }
 
 .cart-row { padding: 20px 0 0; }
+
+.button { text-align: center; }
+
+.cart-row h4 { color: #7f7f7f; }
+
+@media screen and (max-width: 767px) { h1 { font-size: 2.7em; }
+  .product-name { font-size: 1.4em; }
+  .product-description { font-size: 1em; }
+  .product-price { font-size: 0.9em; }
+  .cart-row h4 { font-size: 1em; } }

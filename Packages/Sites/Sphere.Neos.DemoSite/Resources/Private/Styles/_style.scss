@@ -3,11 +3,19 @@
 $neos-gray: #FEFEFE;
 $neos-orange: #FF8700;
 
+// General styles
+
+// .row {
+// 	margin-bottom: 0;
+// }
+
 // Product Teaser Box
 
 .product-teaser {
 	background-color: $neos-gray;
 	border-radius: 3px;
+	border: 0.1em solid rgba(0, 0, 0, 0.1);
+	box-shadow: 3px 3px 7px #bcbcbc;
 }
 
 // Teaser Image
@@ -49,6 +57,13 @@ a:hover {
 	color: darken($neos-gray, 50%);
 }
 
+// Text field
+
+.text-field {
+	font-size: 1em;
+	padding: 20px 15px;
+}
+
 // Add to cart button
 
 .cart-button {
@@ -57,7 +72,6 @@ a:hover {
 	text-transform: uppercase;
 	border: 2px solid $neos-orange;
 	border-radius: 3px;
-	text-align: right;
 }
 
 .cart-button:hover {
@@ -69,6 +83,41 @@ a:hover {
 	padding: 20px 0 0;
 }
 
+.button {
+	text-align: center;
+}
+
+// Attributes
+
+.cart-row h4 {
+	color: darken($neos-gray, 50%);
+}
+
+
+// Media Queries 
+
+@media screen and (max-width: 767px) {
+	
+	 h1 {
+	 	font-size: 2.7em;
+	 }
+
+	 .product-name {
+	 	font-size: 1.4em;
+	 }
+
+	 .product-description {
+	 	font-size: 1em;
+	 }
+
+	 .product-price {
+	 	font-size: 0.9em;
+	 }
+
+	 .cart-row h4 {
+	 	font-size: 1em;
+	 }
+}
 
 
 
