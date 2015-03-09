@@ -21,14 +21,9 @@
 							<img src="{product.masterVariant.images.0.medium}">
 						</div>
 					</div>
-					<div class="row cart-row">
-						<div class="col-md-12">
-							<f:link.action package="Sphere.Neos" class="cart-button" controller="Cart" action="addItem" arguments="{productId: product.id}">
-							Add to cart
-							</f:link.action>
-						</div>
-					</div>
-					<div>
+				</div>
+				<div class="row cart-row">
+					<div class="col-md-6">
 						<h4>Attributes</h4>
 						<table>
 						<f:for each="{attributes}" as="attribute">
@@ -38,6 +33,11 @@
 							</tr>
 						</f:for>
 						</table>
+					</div>
+					<div class="col-md-6">
+						<f:link.action package="Sphere.Neos" class="cart-button" controller="Cart" action="addItem" arguments="{productId: product.id}">
+						Add to cart
+						</f:link.action>
 					</div>
 				</div>
 			</div>
