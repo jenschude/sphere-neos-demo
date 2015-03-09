@@ -8,6 +8,8 @@ $neos-orange: #FF8700;
 .product-teaser {
 	background-color: $neos-gray;
 	border-radius: 3px;
+	border: 0.1em solid rgba(0, 0, 0, 0.1);
+	box-shadow: 3px 3px 10px #bcbcbc;
 }
 
 // Teaser Image
@@ -57,7 +59,7 @@ a:hover {
 	text-transform: uppercase;
 	border: 2px solid $neos-orange;
 	border-radius: 3px;
-	text-align: right;
+	margin: 0 auto;
 }
 
 .cart-button:hover {
@@ -69,7 +71,37 @@ a:hover {
 	padding: 20px 0 0;
 }
 
+.button {
+	text-align: center;
+}
 
+// Attributes
+
+.cart-row h4 {
+	color: darken($neos-gray, 50%);
+}
+
+
+// Media Queries 
+
+@media screen and (max-width: 767px) {
+	
+	 h1 {
+	 	font-size: 2.7em;
+	 }
+
+	 .product-name {
+	 	font-size: 1.2em;
+	 }
+
+	 .product-description {
+	 	font-size: 0.9em;
+	 }
+
+	 .product-price {
+	 	font-size: 0.9em;
+	 }
+}
 
 
 

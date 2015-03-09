@@ -2,25 +2,29 @@
 <div>
     <f:if condition="{product}">
         <f:then>
-            <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
-                <div class="listing-image img-responsive product-teaser"><img src="{product.masterVariant.images.0.medium}">
-                    <h3 class="product-name">{product.name}</h3>
+            <div class="row">
+                <div class="col-sm-6">
+                    <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
+                        <div class="listing-image img-responsive product-teaser"><img src="{product.masterVariant.images.0.medium}">
+                            <h3 class="product-name">{product.name}</h3>
+                        </div>
+                    </f:link.action>
                 </div>
-            </f:link.action>
+                <div class="col-sm-6">
+                    <div{attributes -> f:format.raw()}>
+                        {neos:contentElement.editable(property: 'text')}
+                    </div>
+                </div>
+            </div>
             <div class="listing-info">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                         <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
                         </f:link.action>
                         <p class="product-description">{product.description}</p>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                         <p class="product-price">{product.masterVariant.prices.0.value}</p>
-                    </div>
-                    <div class="col-md-4">
-                        <div{attributes -> f:format.raw()}>
-                            {neos:contentElement.editable(property: 'text')}
-                        </div>
                     </div>
                 </div>
             </div>
