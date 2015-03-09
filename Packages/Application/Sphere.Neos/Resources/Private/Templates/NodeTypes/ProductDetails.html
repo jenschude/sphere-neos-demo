@@ -28,6 +28,17 @@
 							</f:link.action>
 						</div>
 					</div>
+					<div>
+						<h4>Attributes</h4>
+						<table>
+						<f:for each="{attributes}" as="attribute">
+							<tr>
+								<td>{attribute.label}<td>
+								<td>{attribute.value}<td>
+							</tr>
+						</f:for>
+						</table>
+					</div>
 				</div>
 			</div>
 		</f:then>

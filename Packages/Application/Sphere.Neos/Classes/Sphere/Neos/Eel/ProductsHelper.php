@@ -53,6 +53,11 @@ class ProductsHelper implements ProtectedContextAwareInterface {
 		return $this->productService->findProducts($search);
 	}
 
+	public function getAttributes($product)
+	{
+		return $this->productService->getAttributes($product);
+	}
+
 	public function getCart()
 	{
 		return $this->cartService->getCart();
