@@ -10,7 +10,7 @@ prototype(Sphere.Neos:ProductDetails) < prototype(TYPO3.TypoScript:Template) {
 
 	productSlug = ${request.arguments.productSlug}
 	product = ${q(SphereProducts.findProductBySlug(this.productSlug)).get(0)}
-	attributes = ${q(SphereProducts.getAttributes(this.product)).get()}
+	attributes = ${q(SphereProducts.getProductAttributes(this.product)).get()}
 
 	@cache {
 		mode = 'cached'
@@ -30,13 +30,19 @@ prototype(Sphere.Neos:ProductDetails) < prototype(TYPO3.TypoScript:Template) {
 #
 root.@cache.entryIdentifier.productSlug = ${request.arguments.productSlug}
 
+#
+# Make sure that, if it exists, the productSlug HTTP argument is considered while building the identifier for cache
+# entries. This is necessary to make sure that on the Product Details page, each product gets its own cache entry.
+#
 prototype(TYPO3.Neos:Page) {
 	@cache.entryIdentifier.productSlug = ${request.arguments.productSlug}
 }
 
+#
+# Teaser for a single product, specified by an SKU
+#
 prototype(Sphere.Neos:ProductTeaser) < prototype(TYPO3.Neos:Content) {
 	productDetailsNode = ${q(site).find('product').get(0)}
-
 	product = ${q(SphereProducts.findProductBySku(this.sku)).get(0)}
 
 	@cache {
@@ -44,6 +50,21 @@ prototype(Sphere.Neos:ProductTeaser) < prototype(TYPO3.Neos:Content) {
 	}
 }
 
+#
+#
+#
+prototype(Sphere.Neos:ProductTeaserContent) < prototype(TYPO3.Neos.NodeTypes:Text) {
+	productDetailsNode = ${q(site).find('product').get(0)}
+	product = ${q(SphereProducts.findProductBySku(this.sku)).get(0)}
+
+	@cache {
+		maximumLifetime = 1
+	}
+}
+
+#
+# A list of products, based on a query specified by the "q" request argument
+#
 prototype(Sphere.Neos:ProductsList) < prototype(TYPO3.Neos:Content) {
 	searchForm = TYPO3.TypoScript:Template {
 		templatePath = 'resource://Sphere.Neos/Private/Templates/NodeTypes/SearchForm.html'
@@ -60,15 +81,9 @@ prototype(Sphere.Neos:ProductsList) < prototype(TYPO3.Neos:Content) {
 	}
 }
 
-prototype(Sphere.Neos:ProductTeaserContent) < prototype(TYPO3.Neos.NodeTypes:Text) {
-	productDetailsNode = ${q(site).find('product').get(0)}
-	product = ${q(SphereProducts.findProductBySku(this.sku)).get(0)}
-
-	@cache {
-		maximumLifetime = 1
-	}
-}
-
+#
+# The current product cart
+#
 prototype(Sphere.Neos:ProductCart) < prototype(TYPO3.Neos:Content) {
 	productDetailsNode = ${q(site).find('product').get(0)}
 	cart = ${q(SphereProducts.getCart()).get(0)}

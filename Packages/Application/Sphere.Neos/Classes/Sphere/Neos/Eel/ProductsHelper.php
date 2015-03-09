@@ -1,13 +1,16 @@
 <?php
 namespace Sphere\Neos\Eel;
 
-/*                                                                                                  *
- *                                                                                                  */
+/*                                                                        *
+ * This script belongs to the Neos package "Sphere.Neos".                 *
+ *                                                                        */
 
-use Sphere\Core\Client;
+use Sphere\Core\Model\Common\LocalizedString;
 use Sphere\Core\Model\Product\Product;
-use Sphere\Neos\Domain\Service\CartService;
-use Sphere\Neos\Domain\Service\ProductService;
+use Sphere\Core\Model\Product\ProductProjection;
+use Sphere\Neos\Client;
+use Sphere\Neos\Domain\Model\Cart;
+use Sphere\Neos\Domain\Repository\ProductRepository;
 use TYPO3\Eel\ProtectedContextAwareInterface;
 use TYPO3\Flow\Annotations as Flow;
 
@@ -15,52 +18,88 @@ class ProductsHelper implements ProtectedContextAwareInterface {
 
 	/**
 	 * @Flow\Inject
-	 * @var ProductService
+	 * @var ProductRepository
 	 */
-	protected $productService;
+	protected $productRepository;
 
 	/**
 	 * @Flow\Inject
-	 * @var CartService
+	 * @var Cart
 	 */
-	protected $cartService;
+	protected $cart;
+
 	/**
-	 *
+	 * @Flow\Inject
+	 * @var Client
+	 */
+	protected $client;
+
+	/**
+	 * Find a product by the given SKU
 	 *
 	 * @param string $sku
 	 * @return Product
 	 */
 	public function findProductBySku($sku) {
-		return $this->productService->findProductBySku($sku);
+		return $this->productRepository->findOneBySku($sku);
 	}
 
 	/**
-	 *
+	 * Find a product by the given slug
 	 *
 	 * @param string $slug
 	 * @return Product
 	 */
 	public function findProductBySlug($slug) {
-		return $this->productService->findProductBySlug($slug);
+		return $this->productRepository->findOneBySlug($slug);
 	}
 
 	/**
-	 * @param string $search
+	 * Find products by the given query string
+	 *
+	 * @param string $query
 	 * @return array
 	 */
-	public function findProducts($search = null)
-	{
-		return $this->productService->findProducts($search);
+	public function findProducts($query = NULL) {
+		return $this->productRepository->findByQuery($query);
 	}
 
-	public function getAttributes($product)
-	{
-		return $this->productService->getAttributes($product);
+	/**
+	 *
+	 *
+	 * @param ProductProjection $product
+	 * @return array
+	 */
+	public function getProductAttributes(ProductProjection $product) {
+		$productType = $product->getProductType()->getObj();
+		if ($productType === NULL) {
+			return array();
+		}
+
+		$labels = [];
+		foreach ($productType['attributes'] as $attribute) {
+			$labels[$attribute['name']] = new LocalizedString($attribute['label'], $this->client->getContext());
+		}
+		$attributes = [];
+		foreach ($product->getMasterVariant()->getAttributes() as $attribute) {
+			$data = [];
+			$data['name'] = $attribute->getName();
+			$data['value'] = $attribute->getValue();
+			$data['label'] = $labels[$data['name']];
+			$attributes[] = $data;
+		}
+
+		return $attributes;
 	}
 
-	public function getCart()
-	{
-		return $this->cartService->getCart();
+	/**
+	 * Retrieve the current cart
+	 *
+	 * @return Cart
+	 */
+
+	public function getCart() {
+		return $this->cart;
 	}
 
 	/**

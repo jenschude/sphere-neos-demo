@@ -1,45 +1,58 @@
 <?php
-/**
- * @author @ct-jensschulze <jens.schulze@commercetools.de>
- */
 namespace Sphere\Neos\Controller;
 
-use Sphere\Neos\Domain\Service\CartService;
+/*                                                                        *
+ * This script belongs to the Neos package "Sphere.Neos".                 *
+ *                                                                        */
+
+use Sphere\Core\Model\Product\ProductProjection;
+use Sphere\Neos\Domain\Model\Cart;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Mvc\Controller\ActionController;
 
-class CartController extends ActionController
-{
-    /**
-     * @Flow\Inject
-     * @var CartService
-     */
-    protected $cartService;
+class CartController extends ActionController {
 
-    public function addItemAction()
-    {
-        if ($this->request->hasArgument('productId')) {
-            $productId = $this->request->getArgument('productId');
-            $this->cartService->addLineItem($productId, 1, 1);
-        }
-        $this->redirectToUri('/en/cart.html');
-    }
+	/**
+	 * @Flow\Inject
+	 * @var Cart
+	 */
+	protected $cart;
 
-    public function removeItemAction()
-    {
-        if ($this->request->hasArgument('itemId')) {
-            $itemId = $this->request->getArgument('itemId');
-            $this->cartService->removeLineItem($itemId);
-        }
-        $this->redirectToUri('/en/cart.html');
-    }
+	/**
+	 * Adds the given product to the cart
+	 *
+	 * @param ProductProjection $product
+	 * @param integer $amount
+	 * @return void
+	 */
+	public function addProductAction(ProductProjection $product, $amount = 1) {
+		$this->cart->addProduct($product, $amount);
+		// FIXME: redirect should use node:
+		$this->redirectToUri('/en/cart.html');
+	}
 
-    public function updateCartAction()
-    {
-        if ($this->request->hasArgument('items')) {
-            $items = $this->request->getArgument('items');
-            $this->cartService->updateQuantity($items);
-        }
-        $this->redirectToUri('/en/cart.html');
-    }
+	/**
+	 * Removes the given line item from the cart
+	 *
+	 * @param string $itemId
+	 * @return void
+	 */
+	public function removeItemAction($itemId) {
+		$this->cart->removeItem($itemId);
+		// FIXME: redirect should use node:
+		$this->redirectToUri('/en/cart.html');
+	}
+
+	/**
+	 * Updates the quantity of items which are already present in the cart
+	 *
+	 * @param array $quantities
+	 * @return void
+	 */
+	public function updateQuantitiesAction($quantities) {
+		$this->cart->updateQuantities($quantities);
+		// FIXME: redirect should use node:
+		$this->redirectToUri('/en/cart.html');
+	}
+
 }

@@ -10,7 +10,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-4">
-						<p class="product-description">{product.description}</p>
+						<span class="product-description">{product.description -> f:format.raw()}</span>
 						<p class="product-description">{productSlug}</p>
 					</div>
 					<div class="col-md-2">
@@ -35,7 +35,7 @@
 						</table>
 					</div>
 					<div class="col-md-6 button">
-						<f:link.action package="Sphere.Neos" class="cart-button" controller="Cart" action="addItem" arguments="{productId: product.id}">
+						<f:link.action package="Sphere.Neos" class="cart-button" controller="Cart" action="addProduct" arguments="{product: product.id}">
 						<span><f:translate package="Sphere.Neos">Add to cart</f:translate></span>
 						</f:link.action>
 					</div>

@@ -3,7 +3,7 @@
     <h3><f:translate package="Sphere.Neos">Your cart</f:translate></h3>
     <f:if condition="{cart}">
         <f:then>
-            <form action="/my/cart/updateCart">
+			<f:form action="updateQuantities" controller="Cart" package="Sphere.Neos">
             <table>
                 <tr>
                     <th></th>
@@ -25,35 +25,35 @@
                     <td>{cart.totalPrice}</td>
                 </tr>
             </table>
-            </form>
+            </f:form>
         </f:then>
     </f:if>
 </div>
 
 <f:section name="productItem">
-    <f:if condition="{lineItem}">
-        <f:then>
-            <tr>
-                <td>
-                    <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: lineItem.productId}">
-                        <img src="{lineItem.variant.images.0.small}">
-                    </f:link.action>
-                </td>
-                <td>
-                    <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: lineItem.productId}">
-                    {lineItem.name}
-                    </f:link.action>
-                </td>
-                <td><input type="text" name="items[{lineItem.id}]" size="3" value="{lineItem.quantity}"></td>
-                <td>{lineItem.price}</td>
-                <td>{lineItem.total}</td>
-                <td>
-                    <f:link.action package="Sphere.Neos" controller="Cart" action="removeItem" arguments="{itemId: lineItem.id}">
-                        x
-                    </f:link.action>
-                </td>
-            </tr>
-        </f:then>
-    </f:if>
+	<f:if condition="{lineItem}">
+		<f:then>
+			<tr>
+				<td>
+					<f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: lineItem.productId}">
+						<img src="{lineItem.variant.images.0.small}">
+					</f:link.action>
+				</td>
+				<td>
+					<f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: lineItem.productId}">
+						{lineItem.name}
+					</f:link.action>
+				</td>
+				<td><input type="text" name="quantities[{lineItem.id}]" size="3" value="{lineItem.quantity}"></td>
+				<td>{lineItem.price}</td>
+				<td>{lineItem.total}</td>
+				<td>
+					<f:link.action package="Sphere.Neos" controller="Cart" action="removeItem" arguments="{itemId: lineItem.id}">
+						x
+					</f:link.action>
+				</td>
+			</tr>
+		</f:then>
+	</f:if>
 </f:section>
 
