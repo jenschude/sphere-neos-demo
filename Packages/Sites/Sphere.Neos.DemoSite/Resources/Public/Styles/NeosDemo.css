@@ -303,6 +303,8 @@ ul.neos-list-disc { list-style-type: disc; }
 ul.neos-list-circle { list-style-type: circle; }
 ul.neos-list-square { list-style-type: square; }
 
+.row-margin { margin-bottom: 0; }
+
 .product-teaser { background-color: #FEFEFE; border-radius: 3px; border: 0.1em solid rgba(0, 0, 0, 0.1); box-shadow: 3px 3px 7px #bcbcbc; }
 
 .listing-image { text-align: center; padding: 20px; }
@@ -319,7 +321,7 @@ a:hover { text-decoration: none; }
 
 .text-field { font-size: 1em; padding: 20px 15px; }
 
-.cart-button { padding: 7px 7px; color: #FF8700; text-transform: uppercase; border: 2px solid #FF8700; border-radius: 3px; }
+.cart-button { padding: 7px 17px; color: #FF8700; text-transform: uppercase; border: 2px solid #FF8700; border-radius: 3px; }
 
 .cart-button:hover { color: #FEFEFE; background-color: #FF8700; }
 

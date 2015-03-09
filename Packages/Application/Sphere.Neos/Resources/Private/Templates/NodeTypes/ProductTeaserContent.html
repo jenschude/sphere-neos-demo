@@ -2,7 +2,7 @@
 <div>
     <f:if condition="{product}">
         <f:then>
-            <div class="row">
+            <div class="row row-margin">
                 <div class="col-sm-6">
                     <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
                         <div class="listing-image img-responsive product-teaser"><img src="{product.masterVariant.images.0.medium}">
@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="listing-info">
-                <div class="row">
+                <div class="row row-margin">
                     <div class="col-sm-6">
                         <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
                         </f:link.action>
