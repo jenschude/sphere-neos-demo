@@ -8,13 +8,15 @@ TODO link to a live URL with demo data
 
 First go to the [SPHERE.IO Merchant Center](http://admin.sphere.io/) and create a test project (agree to insert test data). Make sure to put down your API credentials somewhere because you will need them when connecting SPHERE.IO to TYPO3 Neos.
 
-Local technical prerequisites:
+# Local technical prerequisites:
 
  * Virtualbox installed [download](http://www.virtualbox.org/) or `brew install virtualbox`
  * Vagrant installed [download](https://www.vagrantup.com/downloads.html) or `brew install vagrant vagrant-manager`
  * an SSH shell (Mac OS built-in or the phpStorm integrated one)
 
-Steps to start the demo system:
+(If you would like to use the `brew` method, install [Homebrew](http://brew.sh/) first - it's a package manager for Mac OSX.)
+
+# Steps to start the demo system:
 
  1. Install the vagrant plugin hostsupdater for automatically managing the hosts file with vagrant
 	`vagrant plugin install vagrant-hostsupdater`
