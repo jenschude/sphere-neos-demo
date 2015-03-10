@@ -68,6 +68,7 @@ page = Page {
 			breadcrumb = BreadcrumbMenu
 
 			languageMenu = TYPO3.Neos:DimensionMenu {
+				@class = '\\Sphere\\Neos\\TypoScript\\SphereDimensionMenuImplementation'
 				dimension = 'language'
 				templatePath = 'resource://Sphere.Neos.DemoSite/Private/Templates/TypoScriptObjects/LanguageMenu.html'
 			}
