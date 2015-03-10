@@ -60,7 +60,7 @@ class ProductRepository {
 	 */
 	public function findByQuery($query = NULL) {
 		// FIXME: Implement language
-		$language = 'EN';
+		$language = 'en';
 
 		$request = new ProductsSearchRequest($this->client->getContext());
 		$request->addParam('text.' . $language, $query);

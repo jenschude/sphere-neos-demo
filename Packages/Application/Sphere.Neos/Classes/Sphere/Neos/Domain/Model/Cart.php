@@ -181,7 +181,7 @@ class Cart {
 	 * Creates a new Cart via the SPHERE.IO API
 	 *
 	 * @return \Sphere\Core\Model\Cart\Cart
-	 * @Flow\session(autoStart = true)
+	 * @Flow\Session(autoStart = true)
 	 */
 	protected function createNewCartIfNecessary() {
 		if ($this->id !== NULL) {
