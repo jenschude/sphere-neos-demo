@@ -1,17 +1,17 @@
 # sphere-neos-demo
 
-A Content Commerce technology demo that shows how to create a [Neos](http://neos.typo3.org/) based website with eCommerce functionalities using the [SPHERE.IO](http://dev.sphere.io) eCommerce-as-an-API Platform.
+A Content Commerce technology demo that shows how to create a [TYPO3 Neos](http://neos.typo3.org/) based website with eCommerce functionalities using the [SPHERE.IO](http://dev.sphere.io) hosted E-Commerce-API.
 
 TODO link to a live URL with demo data
 
-## Getting Started (Mac OS X)
+## Getting Started (Mac OSX)
 
-First go to the [SPHERE.IO Merchant Center](http://admin.sphere.io/) and create a test project (say yes to test data)
+First go to the [SPHERE.IO Merchant Center](http://admin.sphere.io/) and create a test project (agree to insert test data). Make sure to put down your API credentials somewhere because you will need them when connecting SPHERE.IO to TYPO3 Neos.
 
 Local technical prerequisites:
 
  * Virtualbox installed [download](http://www.virtualbox.org/) or `brew install virtualbox`
- * Vagrant installed [download](https://www.vagrantup.com/downloads.html) or or `brew install vagrant vagrant-manager`
+ * Vagrant installed [download](https://www.vagrantup.com/downloads.html) or `brew install vagrant vagrant-manager`
  * an SSH shell (Mac OS built-in or the phpStorm integrated one)
 
 Steps to start the demo system:
