@@ -34,6 +34,10 @@ page = Page {
 		sectionName = 'body'
 
 		parts {
+			searchForm = TYPO3.TypoScript:Template {
+				templatePath = 'resource://Sphere.Neos.DemoSite/Private/Templates/TypoScriptObjects/SearchForm.html'
+				searchPage = ${q(site).find('product-search').get(0)}
+			}
 
 			cartInfo = TYPO3.TypoScript:Template {
 				templatePath = 'resource://Sphere.Neos.DemoSite/Private/Templates/TypoScriptObjects/Cart.html'

@@ -15,8 +15,47 @@
       <uriPathSegment __type="string">home</uriPathSegment>
      </properties>
     </variant>
+    <node identifier="80041f51-1677-ac93-e859-be8811eecf48" nodeName="product-search">
+     <variant sortingIndex="500" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Page" version="5" removed="" hidden="" hiddenInIndex="1">
+      <dimensions>
+       <language>en</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2015-03-10T15:10:26+01:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2015-03-10T15:13:36+01:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-10T15:13:36+01:00</lastPublicationDateTime>
+      <properties>
+       <uriPathSegment __type="string">product-search</uriPathSegment>
+       <title __type="string">Search</title>
+      </properties>
+     </variant>
+     <node identifier="5de09fae-c29b-f9ae-08be-81e8419f961b" nodeName="main">
+      <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>en</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2015-03-10T15:10:26+01:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2015-03-10T15:13:36+01:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-10T15:13:36+01:00</lastPublicationDateTime>
+       <properties/>
+      </variant>
+      <node identifier="295b562f-9659-3c43-f7e0-cf75a3d7e76a" nodeName="node-54fefd98296c9">
+       <variant sortingIndex="100" workspace="live" nodeType="Sphere.Neos:ProductsList" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions>
+         <language>en</language>
+        </dimensions>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2015-03-10T15:20:08+01:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2015-03-10T15:20:10+01:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-10T15:20:10+01:00</lastPublicationDateTime>
+        <properties/>
+       </variant>
+      </node>
+     </node>
+    </node>
     <node identifier="99f0677b-e0aa-8368-ab3d-dc0ddcbb39b8" nodeName="cart">
-     <variant sortingIndex="350" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Page" version="4" removed="" hidden="" hiddenInIndex="">
+     <variant sortingIndex="350" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Page" version="4" removed="" hidden="" hiddenInIndex="1">
       <dimensions>
        <language>en</language>
       </dimensions>
@@ -40,18 +79,18 @@
        <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastPublicationDateTime>
        <properties/>
       </variant>
-     </node>
-     <node identifier="b6d49eaa-1f4c-f603-4a8d-d72170574b3e" nodeName="teaser">
-      <variant sortingIndex="200" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
-       <dimensions>
-        <language>en</language>
-       </dimensions>
-       <accessRoles __type="array"/>
-       <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:02:35+00:00</creationDateTime>
-       <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastModificationDateTime>
-       <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+00:00</lastPublicationDateTime>
-       <properties/>
-      </variant>
+      <node identifier="c59c0e54-ac8c-ee3f-8e9a-3fcb4b88327c" nodeName="node-54fefe0e433b6">
+       <variant sortingIndex="100" workspace="live" nodeType="Sphere.Neos:ProductCart" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions>
+         <language>en</language>
+        </dimensions>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2015-03-10T15:22:06+01:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2015-03-10T15:23:09+01:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-10T15:23:09+01:00</lastPublicationDateTime>
+        <properties/>
+       </variant>
+      </node>
      </node>
     </node>
     <node identifier="d26adfe2-0b44-c2e4-015b-b0f5940afa46" nodeName="categories">
