@@ -7,6 +7,7 @@ namespace Sphere\Neos\Domain\Model;
 
 use Sphere\Core\Model\Cart\CartDraft;
 use Sphere\Core\Model\Cart\LineItemCollection;
+use Sphere\Core\Model\Common\Money;
 use Sphere\Core\Model\Product\ProductProjection;
 use Sphere\Core\Model\Product\ProductProjectionCollection;
 use Sphere\Core\Request\Carts\CartCreateRequest;
@@ -71,7 +72,7 @@ class Cart {
 	 * @return void
 	 */
 	protected function initializeObject($reason) {
-		if ($reason === ObjectManagerInterface::INITIALIZATIONCAUSE_RECREATED) {
+		if ($reason === ObjectManagerInterface::INITIALIZATIONCAUSE_RECREATED && !is_null($this->id)) {
 			$request = $request = new CartFetchByIdRequest($this->id);
 			$this->remoteCart = $this->client->execute($request)->toObject();
 			$this->remoteCart->getLineItems()->setType('\Sphere\Neos\Domain\Model\LineItem');
@@ -194,6 +195,14 @@ class Cart {
 		}
 	}
 
+	public function getTotalPrice()
+	{
+		if ($this->remoteCart instanceof \Sphere\Core\Model\Cart\Cart) {
+			return $this->remoteCart->getTotalPrice();
+		} else {
+			return new Money($this->currency, 0, $this->client->getContext());
+		}
+	}
 	/**
 	 * Returns TRUE if this cart contains any items
 	 *
@@ -216,7 +225,7 @@ class Cart {
 	 */
 	protected function createNewCartIfNecessary() {
 		if ($this->id !== NULL) {
-			return;
+			return null;
 		}
 
 		$cartDraft = new CartDraft($this->currency);

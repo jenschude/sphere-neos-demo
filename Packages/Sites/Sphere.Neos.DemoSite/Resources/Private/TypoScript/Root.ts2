@@ -34,6 +34,12 @@ page = Page {
 		sectionName = 'body'
 
 		parts {
+
+			cartInfo = TYPO3.TypoScript:Template {
+				templatePath = 'resource://Sphere.Neos.DemoSite/Private/Templates/TypoScriptObjects/Cart.html'
+                cart = ${q(SphereProducts.getCart()).get(0)}
+			}
+
 			mainMenu = Menu {
 				templatePath = 'resource://Sphere.Neos.DemoSite/Private/Templates/TypoScriptObjects/MainMenu.html'
 				itemCollection = ${q(site).add(q(site).children('[instanceof TYPO3.Neos:Document]')).get()}
