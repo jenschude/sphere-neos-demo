@@ -20,19 +20,19 @@ First go to the [SPHERE.IO Merchant Center](http://admin.sphere.io/) and create 
 
  1. Install the vagrant plugin hostsupdater for automatically managing the hosts file with vagrant
 	`vagrant plugin install vagrant-hostsupdater`
- 1. clone this repository into an empty directory
+ 1. Clone this repository into an empty directory
  	`git clone https://github.com/ct-jensschulze/sphere-neos-demo`
- 1. switch to the project folder
+ 1. Switch to the project folder
  	`cd sphere-neos-demo`
- 1. download composer if not installed on system
+ 1. Download composer if not installed on system
   	`curl -sS https://getcomposer.org/installer | php`
- 1. install required packages with composer
+ 1. Install required packages with composer
  	`php composer.phar install -o` or with composer installed just `composer install -o`
- 1. Add SPHERE.IO credentials to Configuration\Settings.yaml
+ 1. Add SPHERE.IO credentials to `Configuration\Settings.yaml`
  1. start the vagrant box
-	`vagrant up`
+	`vagrant up --provider=virtualbox`
  1. login to the vagrant box using `vagrant ssh` and run the setup script
-   /var/www/sphere-neos-demo/setup-vagrant.sh
+   `/var/www/sphere-neos-demo/setup-vagrant.sh`
 
 The Frontend is located at
 
