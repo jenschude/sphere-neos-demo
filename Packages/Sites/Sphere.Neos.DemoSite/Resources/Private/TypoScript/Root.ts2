@@ -34,9 +34,14 @@ page = Page {
 		sectionName = 'body'
 
 		parts {
+			searchForm = TYPO3.TypoScript:Template {
+				templatePath = 'resource://Sphere.Neos.DemoSite/Private/Templates/TypoScriptObjects/SearchForm.html'
+				searchPage = ${q(site).find('product-search').get(0)}
+			}
 
 			cartInfo = TYPO3.TypoScript:Template {
 				templatePath = 'resource://Sphere.Neos.DemoSite/Private/Templates/TypoScriptObjects/Cart.html'
+				cartPage = ${q(site).find('cart').get(0)}
                 cart = ${q(SphereProducts.getCart()).get(0)}
 				@cache {
 					maximumLifetime = 1
@@ -64,6 +69,7 @@ page = Page {
 			breadcrumb = BreadcrumbMenu
 
 			languageMenu = TYPO3.Neos:DimensionMenu {
+				@class = '\\Sphere\\Neos\\TypoScript\\SphereDimensionMenuImplementation'
 				dimension = 'language'
 				templatePath = 'resource://Sphere.Neos.DemoSite/Private/Templates/TypoScriptObjects/LanguageMenu.html'
 			}
