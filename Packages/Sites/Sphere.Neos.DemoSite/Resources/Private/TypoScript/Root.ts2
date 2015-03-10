@@ -38,6 +38,9 @@ page = Page {
 			cartInfo = TYPO3.TypoScript:Template {
 				templatePath = 'resource://Sphere.Neos.DemoSite/Private/Templates/TypoScriptObjects/Cart.html'
                 cart = ${q(SphereProducts.getCart()).get(0)}
+				@cache {
+					maximumLifetime = 1
+				}
 			}
 
 			mainMenu = Menu {
