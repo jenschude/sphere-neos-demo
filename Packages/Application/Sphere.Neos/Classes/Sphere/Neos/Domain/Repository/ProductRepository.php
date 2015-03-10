@@ -6,6 +6,7 @@ namespace Sphere\Neos\Domain\Repository;
  *                                                                        */
 
 use Sphere\Core\Model\Product\ProductProjection;
+use Sphere\Core\Model\Product\ProductProjectionCollection;
 use Sphere\Core\Request\Products\ProductProjectionFetchByIdRequest;
 use Sphere\Core\Request\Products\ProductProjectionFetchBySkuRequest;
 use Sphere\Core\Request\Products\ProductProjectionFetchBySlugRequest;
@@ -63,14 +64,18 @@ class ProductRepository {
 		$language = 'en';
 
 		$request = new ProductsSearchRequest($this->client->getContext());
-		$request->addParam('text.' . $language, $query);
+		if (!is_null($query)) {
+			$request->addParam('text.' . $language, $query);
+		}
 
 		$response = $this->client->execute(new ProductsSearchRequest());
-		$productProjection = $response->toObject();
-		if (!$productProjection instanceof ProductProjection) {
+
+		$productProjectionCollection = $response->toObject();
+
+		if (!$productProjectionCollection instanceof ProductProjectionCollection) {
 			return NULL;
 		}
-		return $productProjection;
+		return $productProjectionCollection;
 	}
 
 	/**

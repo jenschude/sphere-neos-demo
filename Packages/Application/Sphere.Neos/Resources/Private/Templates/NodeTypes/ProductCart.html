@@ -35,12 +35,12 @@
 		<f:then>
 			<tr>
 				<td>
-					<f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: lineItem.productId}">
+					<f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: lineItem.slug.localized}">
 						<img src="{lineItem.variant.images.0.small}">
 					</f:link.action>
 				</td>
 				<td>
-					<f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: lineItem.productId}">
+					<f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: lineItem.slug.localized}">
 						{lineItem.name}
 					</f:link.action>
 				</td>

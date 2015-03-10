@@ -8,12 +8,14 @@ namespace Sphere\Neos\Domain\Model;
 use Sphere\Core\Model\Cart\CartDraft;
 use Sphere\Core\Model\Cart\LineItemCollection;
 use Sphere\Core\Model\Product\ProductProjection;
+use Sphere\Core\Model\Product\ProductProjectionCollection;
 use Sphere\Core\Request\Carts\CartCreateRequest;
 use Sphere\Core\Request\Carts\CartFetchByIdRequest;
 use Sphere\Core\Request\Carts\CartUpdateRequest;
 use Sphere\Core\Request\Carts\Command\CartAddLineItemAction;
 use Sphere\Core\Request\Carts\Command\CartChangeLineItemQuantityAction;
 use Sphere\Core\Request\Carts\Command\CartRemoveLineItemAction;
+use Sphere\Core\Request\Products\ProductProjectionQueryRequest;
 use Sphere\Neos\Client;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Log\SystemLoggerInterface;
@@ -72,7 +74,33 @@ class Cart {
 		if ($reason === ObjectManagerInterface::INITIALIZATIONCAUSE_RECREATED) {
 			$request = $request = new CartFetchByIdRequest($this->id);
 			$this->remoteCart = $this->client->execute($request)->toObject();
+			$this->remoteCart->getLineItems()->setType('\Sphere\Neos\Domain\Model\LineItem');
 			$this->systemLogger->log(sprintf('Found existing cart "%s" for Neos session %s.', $this->id, $this->session->getId()), LOG_DEBUG);
+			$this->retrieveLineItemSlugs();
+		}
+	}
+
+	protected function retrieveLineItemSlugs()
+	{
+		$productIds = [];
+		foreach ($this->getLineItems() as $lineItem) {
+			$productIds[] = $lineItem->getProductId();
+		}
+		if (count($productIds) > 0) {
+			$request = new ProductProjectionQueryRequest();
+			$request->where(sprintf('id in ("%s")', implode('","', $productIds)));
+			/**
+			 * @var ProductProjectionCollection $products
+			 */
+			$products = $this->client->execute($request)->toObject();
+			$this->systemLogger->log(sprintf('Retrieve cart "%s" product slugs for Neos session %s.', $this->id, $this->session->getId()), LOG_DEBUG);
+			/**
+			 * @var LineItem $lineItem
+			 */
+			foreach ($this->getLineItems() as $lineItem) {
+				$product = $products->getById($lineItem->getProductId());
+				$lineItem->setSlug($product->getSlug());
+			}
 		}
 	}
 
@@ -99,10 +127,12 @@ class Cart {
 		$updateItemRequest->addAction(new CartAddLineItemAction($product->getId(), $product->getMasterVariant()->getId(), $quantity));
 
 		$response = $this->client->execute($updateItemRequest);
-		if ($response->getResponse()->getStatusCode() !== 200) {
+		if ($response->isError()) {
 			$this->systemLogger->log(sprintf('Error while trying to add product "%s" (%s) to cart #%s: %s', $product->getName(), $product->getId(), $this->remoteCart->getId(), $response->getResponse()->getBody()), LOG_ERR);
 		} else {
 			$this->remoteCart = $response->toObject();
+			$this->remoteCart->getLineItems()->setType('\Sphere\Neos\Domain\Model\LineItem');
+			$this->retrieveLineItemSlugs();
 			$this->systemLogger->log(sprintf('Added product "%s" (%s) to cart #%s.', $product->getName(), $product->getId(), $this->remoteCart->getId()), LOG_DEBUG);
 		}
 	}
@@ -119,10 +149,12 @@ class Cart {
 			$updateItemRequest->addAction(new CartRemoveLineItemAction($itemId));
 
 			$response = $this->client->execute($updateItemRequest);
-			if ($response->getResponse()->getStatusCode() !== 200) {
+			if ($response->isError()) {
 				$this->systemLogger->log(sprintf('Error while trying to remove line item "%s" from cart #%s: %s', $itemId, $this->remoteCart->getId(), $response->getResponse()->getBody()), LOG_ERR);
 			} else {
 				$this->remoteCart = $response->toObject();
+				$this->remoteCart->getLineItems()->setType('\Sphere\Neos\Domain\Model\LineItem');
+				$this->retrieveLineItemSlugs();
 				$this->systemLogger->log(sprintf('Removed line item "%s" from cart #%s.', $itemId, $this->remoteCart->getId()), LOG_DEBUG);
 			}
 		}
@@ -141,10 +173,12 @@ class Cart {
 				$updateItemRequest->addAction(new CartChangeLineItemQuantityAction($itemId, (integer)$quantity));
 			}
 			$response = $this->client->execute($updateItemRequest);
-			if ($response->getResponse()->getStatusCode() !== 200) {
+			if ($response->isError()) {
 				$this->systemLogger->log(sprintf('Error while trying to update quantities for cart #%s: %s', $this->remoteCart->getId(), $response->getResponse()->getBody()), LOG_ERR);
 			} else {
 				$this->remoteCart = $response->toObject();
+				$this->remoteCart->getLineItems()->setType('\Sphere\Neos\Domain\Model\LineItem');
+				$this->retrieveLineItemSlugs();
 				$this->systemLogger->log(sprintf('Updated quantities for cart #%s.', $this->remoteCart->getId()), LOG_DEBUG);
 			}
 		}
@@ -193,6 +227,7 @@ class Cart {
 		$request = new CartCreateRequest($cartDraft);
 
 		$this->remoteCart = $this->client->execute($request)->toObject();
+		$this->remoteCart->getLineItems()->setType('\Sphere\Neos\Domain\Model\LineItem');
 		$this->id = $this->remoteCart->getId();
 		$this->systemLogger->log(sprintf('Created a new cart "%s" for Neos session %s.', $this->id, $this->session->getId()), LOG_DEBUG);
 	}
