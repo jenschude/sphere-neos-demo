@@ -60,8 +60,8 @@ class ProductsHelper implements ProtectedContextAwareInterface {
 	 * @param string $query
 	 * @return array
 	 */
-	public function findProducts($query = NULL) {
-		return $this->productRepository->findByQuery($query);
+	public function findProducts($query = NULL, $defaultQuery = NULL) {
+		return $this->productRepository->findByQuery($query, $defaultQuery);
 	}
 
 	/**

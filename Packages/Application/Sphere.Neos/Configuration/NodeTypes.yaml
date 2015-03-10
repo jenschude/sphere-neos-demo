@@ -56,7 +56,7 @@
           label: 'Products List'
           position: 10
   properties:
-    search:
+    defaultSearch:
       type: string
       ui:
         label: 'Search'

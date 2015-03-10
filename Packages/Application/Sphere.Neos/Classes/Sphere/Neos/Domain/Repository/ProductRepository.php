@@ -59,16 +59,20 @@ class ProductRepository {
 	 * @param string $query
 	 * @return
 	 */
-	public function findByQuery($query = NULL) {
+	public function findByQuery($query = NULL, $defaultQuery = null) {
 		// FIXME: Implement language
 		$language = 'en';
 
+		if (empty($query)) {
+			$query = $defaultQuery;
+		}
+
 		$request = new ProductsSearchRequest($this->client->getContext());
-		if (!is_null($query)) {
+		if (!empty($query)) {
 			$request->addParam('text.' . $language, $query);
 		}
 
-		$response = $this->client->execute(new ProductsSearchRequest());
+		$response = $this->client->execute($request);
 
 		$productProjectionCollection = $response->toObject();
 

@@ -73,7 +73,7 @@ prototype(Sphere.Neos:ProductsList) < prototype(TYPO3.Neos:Content) {
 	productDetailsNode = ${q(site).find('product').get(0)}
 	searchQuery = ${request.arguments.q}
 
-	products = ${q(SphereProducts.findProducts(this.searchQuery)).get()}
+	products = ${q(SphereProducts.findProducts(this.searchQuery, this.defaultSearch)).get()}
 	firstProduct = ${q(this.products).get(0)}
 
 	@cache {
