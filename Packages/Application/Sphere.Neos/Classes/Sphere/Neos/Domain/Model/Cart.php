@@ -132,7 +132,6 @@ class Cart {
 		} else {
 			$this->remoteCart = $response->toObject();
 			$this->remoteCart->getLineItems()->setType('\Sphere\Neos\Domain\Model\LineItem');
-			$this->retrieveLineItemSlugs();
 			$this->systemLogger->log(sprintf('Added product "%s" (%s) to cart #%s.', $product->getName(), $product->getId(), $this->remoteCart->getId()), LOG_DEBUG);
 		}
 	}
@@ -154,7 +153,6 @@ class Cart {
 			} else {
 				$this->remoteCart = $response->toObject();
 				$this->remoteCart->getLineItems()->setType('\Sphere\Neos\Domain\Model\LineItem');
-				$this->retrieveLineItemSlugs();
 				$this->systemLogger->log(sprintf('Removed line item "%s" from cart #%s.', $itemId, $this->remoteCart->getId()), LOG_DEBUG);
 			}
 		}
@@ -178,7 +176,6 @@ class Cart {
 			} else {
 				$this->remoteCart = $response->toObject();
 				$this->remoteCart->getLineItems()->setType('\Sphere\Neos\Domain\Model\LineItem');
-				$this->retrieveLineItemSlugs();
 				$this->systemLogger->log(sprintf('Updated quantities for cart #%s.', $this->remoteCart->getId()), LOG_DEBUG);
 			}
 		}
