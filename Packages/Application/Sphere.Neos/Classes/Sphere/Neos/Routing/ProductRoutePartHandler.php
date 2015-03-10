@@ -2,15 +2,11 @@
 namespace Sphere\Neos\Routing;
 
 /*                                                                        *
- * This script belongs to the TYPO3 Flow package "Sphere.Neos".           *
- *                                                                        *
- * It is free software; you can redistribute it and/or modify it under    *
- * the terms of the GNU General Public License, either version 3 of the   *
- * License, or (at your option) any later version.                        *
+ * This script belongs to the Neos package "Sphere.Neos".                 *
  *                                                                        */
 
 use Sphere\Core\Model\Product\ProductProjection;
-use Sphere\Neos\Domain\Service\ProductService;
+use Sphere\Neos\Domain\Repository\ProductRepository;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Log\SystemLoggerInterface;
 use TYPO3\Flow\Mvc\Routing\DynamicRoutePart;
@@ -28,29 +24,31 @@ class ProductRoutePartHandler extends DynamicRoutePart {
 
 	/**
 	 * @Flow\Inject
-	 * @var ProductService
+	 * @var ProductRepository
 	 */
 	protected $productService;
 
 	/**
-	 *
+	 * Matches the given request path (ie. a segment of the URL used in the HTTP request) and checks if a product with
+	 * the corresponding slug exists.
 	 *
 	 * @param string $requestPath Part of the full request path, ie. the slug of the product
 	 * @return bool TRUE if the $requestPath could be matched, otherwise FALSE
 	 */
 	protected function matchValue($requestPath) {
 		$this->systemLogger->log(sprintf('Trying to find product "%s".', $requestPath), LOG_DEBUG);
-		$product = $this->productService->findProductBySlug($requestPath);
+		$product = $this->productService->findOneBySlug($requestPath);
 		if ($product instanceof ProductProjection) {
-			$this->systemLogger->log(sprintf('SPHERE.IO product "%s" matched route part in "%s".', $requestPath, $this->name), LOG_DEBUG);
+			$this->systemLogger->log(sprintf('SPHERE.IO product "%s" (%s) matched route part in "%s".', $product->getName(), $product->getId(), $this->name), LOG_DEBUG);
 			$this->value = $requestPath;
+			return TRUE;
+		} else {
+			return FALSE;
 		}
-		return TRUE;
 	}
 
 	/**
-	 *
-	 *
+	 * Takes the given product slug and assumes that it is a valid one (without further checking if it actually exists)
 	 *
 	 * @param string $productSlug
 	 * @return boolean TRUE if value could be resolved successfully, otherwise FALSE.

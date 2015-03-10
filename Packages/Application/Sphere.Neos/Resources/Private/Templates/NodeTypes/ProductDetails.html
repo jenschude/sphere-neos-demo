@@ -9,8 +9,8 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-4">
-						<p class="product-description">{product.description}</p>
+					<div class="col-md-4">
+						<span class="product-description">{product.description -> f:format.raw()}</span>
 						<p class="product-description">{productSlug}</p>
 					</div>
 					<div class="col-sm-2">
@@ -23,8 +23,8 @@
 					</div>
 				</div>
 				<div class="row cart-row">
-					<div class="col-sm-6">
-						<h4>Attributes</h4>
+					<div class="col-md-6">
+						<h4><f:translate package="Sphere.Neos">Attributes</f:translate></h4>
 						<table>
 						<f:for each="{attributes}" as="attribute">
 							<tr>
@@ -34,16 +34,16 @@
 						</f:for>
 						</table>
 					</div>
-					<div class="col-sm-6 button">
-						<f:link.action package="Sphere.Neos" class="cart-button" controller="Cart" action="addItem" arguments="{productId: product.id}">
-						<span>Add to cart</span>
+					<div class="col-md-6 button">
+						<f:link.action package="Sphere.Neos" class="cart-button" controller="Cart" action="addProduct" arguments="{product: product.id}">
+						<span><f:translate package="Sphere.Neos">Add to cart</f:translate></span>
 						</f:link.action>
 					</div>
 				</div>
 			</div>
 		</f:then>
 		<f:else>
-			Please provide an SKU for this product teaser.
+			<f:translate package="Sphere.Neos">Product not found</f:translate>
 		</f:else>
 	</f:if>
 </div>

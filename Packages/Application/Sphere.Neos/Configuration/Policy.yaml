@@ -1,0 +1,18 @@
+#                                                                        #
+# Security policy for the Sphere.Neos package                            #
+#                                                                        #
+
+privilegeTargets:
+
+  'TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+
+    'Sphere.Neos:CartAccess':
+      matcher: 'method(Sphere\Neos\Controller\CartController->(addProduct|removeItem|updateQuantities)Action())'
+
+roles:
+
+  'TYPO3.Flow:Everybody':
+    privileges:
+      -
+        privilegeTarget: 'Sphere.Neos:CartAccess'
+        permission: GRANT

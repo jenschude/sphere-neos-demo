@@ -13,7 +13,7 @@
 					<div class="col-xs-6">
 						<f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
 						</f:link.action>
-						<p class="product-description">{product.description}</p>
+						<span class="product-description">{product.description -> f:format.raw()}</span>
 					</div>
 					<div class="col-xs-6">
 						<p class="product-price">{product.masterVariant.prices.0.value}</p>
@@ -23,7 +23,7 @@
 
 		</f:then>
 		<f:else>
-			Please provide an SKU for this product teaser.
+			<f:translate package="Sphere.Neos">Please provide an SKU for this product teaser</f:translate>
 		</f:else>
 	</f:if>
 </div>
