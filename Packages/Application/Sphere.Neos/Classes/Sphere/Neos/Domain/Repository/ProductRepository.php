@@ -92,18 +92,24 @@ class ProductRepository {
 		if ($slug == '') {
 			return NULL;
 		}
-		if (!isset($this->productProjectionsBySlug[$slug])) {
-			$request = new ProductProjectionFetchBySlugRequest($slug, $this->client->getContext());
-			$request->expand('productType');
-			$response = $this->client->execute($request);
-			$productProjection = $response->toObject();
-			if (!$productProjection instanceof ProductProjection) {
-				return NULL;
-			}
-			$this->productProjectionsById[$productProjection->getId()] = $productProjection;
-			$this->productProjectionsBySlug[$productProjection->getSlug()->__toString()] = $productProjection;
+		if (isset($this->productProjectionsBySlug[$slug])) {
+			return $this->productProjectionsBySlug[$slug];
 		}
-		return $this->productProjectionsBySlug[$slug];
+		if (isset($this->productProjectionsById[$slug])) {
+			return $this->productProjectionsById[$slug];
+		}
+
+		$request = new ProductProjectionFetchBySlugRequest($slug, $this->client->getContext());
+		$request->expand('productType');
+		$response = $this->client->execute($request);
+		$productProjection = $response->toObject();
+		if (!$productProjection instanceof ProductProjection) {
+			return NULL;
+		}
+		$this->productProjectionsById[$productProjection->getId()] = $productProjection;
+		$this->productProjectionsBySlug[$productProjection->getSlug()->__toString()] = $productProjection;
+
+		return $productProjection;
 	}
 
 	/**

@@ -26,6 +26,10 @@
                 <source>Total price</source>
                 <target xml:lang="de">Total price</target>
             </trans-unit>
+            <trans-unit id="cart.noProducts" xml:space="preserve" approved="yes">
+                <source>No products in cart</source>
+                <target xml:lang="de">No products in cart</target>
+            </trans-unit>
             <trans-unit id="product.details.productFacts" xml:space="preserve" approved="yes">
                 <source>Product Facts</source>
                 <target xml:lang="de">Product Facts</target>

@@ -19,12 +19,9 @@
             <div class="listing-info">
                 <div class="row row-margin">
                     <div class="col-xs-6">
-                        <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
-                        </f:link.action>
-                        <p class="product-description">{product.description}</p>
+                        <p class="product-price">{product.masterVariant.prices.0.value}</p>
                     </div>
                     <div class="col-xs-6">
-                        <p class="product-price">{product.masterVariant.prices.0.value}</p>
                     </div>
                 </div>
             </div>

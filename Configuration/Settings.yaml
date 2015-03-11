@@ -7,3 +7,6 @@ Sphere:
       clientId: 'your client id'
       clientSecret: 'your client secret'
       project: 'your-project-name'
+    project:
+      currency: 'EUR'
+      country: 'DE'

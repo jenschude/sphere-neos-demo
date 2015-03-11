@@ -87,7 +87,9 @@ class Client extends OriginalClient {
 		$languages = array_reverse($fallBack);
 
 		// FIXME: derive languages from content dimension "language"
-		$languages = array('en');
+		if (empty($languages)) {
+			$languages = array('en', 'de');
+		}
 
 		$this->context = new Context();
 		$this->context->setGraceful(TRUE)

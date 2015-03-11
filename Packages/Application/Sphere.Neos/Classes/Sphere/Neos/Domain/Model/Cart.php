@@ -41,6 +41,14 @@ class Cart {
 	 */
 	protected $currency = 'EUR';
 
+	protected $country = 'DE';
+
+	/**
+	 * @Flow\InjectConfiguration
+	 * @var array
+	 */
+	protected $settings;
+
 	/**
 	 * @Flow\Inject
 	 * @var Client
@@ -72,6 +80,8 @@ class Cart {
 	 * @return void
 	 */
 	protected function initializeObject($reason) {
+		$this->country = $this->settings['project']['country'];
+		$this->currency = $this->settings['project']['currency'];
 		if ($reason === ObjectManagerInterface::INITIALIZATIONCAUSE_RECREATED && !is_null($this->id)) {
 			$request = $request = new CartFetchByIdRequest($this->id);
 			$this->remoteCart = $this->client->execute($request)->toObject();
@@ -229,7 +239,7 @@ class Cart {
 		}
 
 		$cartDraft = new CartDraft($this->currency);
-		$cartDraft->setCountry('DE');
+		$cartDraft->setCountry($this->country);
 		$request = new CartCreateRequest($cartDraft);
 
 		$this->remoteCart = $this->client->execute($request)->toObject();

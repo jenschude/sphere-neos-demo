@@ -49,8 +49,10 @@ class CartController extends ActionController {
 	 * @param array $quantities
 	 * @return void
 	 */
-	public function updateQuantitiesAction($quantities) {
-		$this->cart->updateQuantities($quantities);
+	public function updateQuantitiesAction($quantities = null) {
+		if (!is_null($quantities)) {
+			$this->cart->updateQuantities($quantities);
+		}
 		// FIXME: redirect should use node:
 		$this->redirectToUri('/en/cart.html');
 	}

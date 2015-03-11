@@ -1,10 +1,9 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 <div>
     <h3 class="your-cart"><f:translate package="Sphere.Neos">Your cart</f:translate></h3>
-    <f:if condition="{cart}">
+    <f:if condition="{cart.lineItems -> f:count()} > 0">
         <f:then>
 			<f:form action="updateQuantities" controller="Cart" package="Sphere.Neos">
-
             <div class="row cart-labels">
                 <div class="col-md-1 col-md-offset-2">
                     <f:translate package="Sphere.Neos">Name</f:translate>
@@ -19,7 +18,7 @@
                     <f:translate package="Sphere.Neos">Total</f:translate>
                 </div>
             </div>
-            
+
 
 
             <div class="row cart-list">
@@ -28,7 +27,7 @@
                         <f:render section="productItem" arguments="{lineItem: lineItem, productDetailsNode: productDetailsNode}" />
                     </f:for>
                 </div>
-            </div>        
+            </div>
 
             <div class="row">
                 <div class="col-md-1 col-md-offset-9">
@@ -39,12 +38,11 @@
                     {cart.totalPrice}
                 </div>
             </div>
-
-
-
-
             </f:form>
         </f:then>
+        <f:else>
+            <f:translate package="Sphere.Neos">No products in cart</f:translate>
+        </f:else>
     </f:if>
 </div>
 
