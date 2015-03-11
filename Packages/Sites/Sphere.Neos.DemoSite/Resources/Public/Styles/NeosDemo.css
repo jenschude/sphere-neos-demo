@@ -315,6 +315,8 @@ ul.neos-list-square { list-style-type: square; }
 
 a:hover { text-decoration: none; }
 
+.product-facts td { padding: 5px; }
+
 .listing-info { padding: 20px 0 0; }
 
 .product-price { text-align: right; height: 1em; }
