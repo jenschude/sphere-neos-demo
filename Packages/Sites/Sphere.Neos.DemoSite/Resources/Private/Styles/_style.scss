@@ -180,6 +180,18 @@ a:hover {
 	display: none;
 }
 
+.navbar-brand-ct {
+  background-image: url('../Images/commercetools-logo.png');
+  background-repeat: no-repeat;
+  background-size: 130px 32px;
+  width: 144px;
+  height: 32px;
+
+  @media #{$screen-sm} {
+	background-image: url('../Images/commercetools-logo@2x.png');
+	background-size: 130px 32px;
+  }
+}
 
 // Media Queries
 
