@@ -1,4 +1,5 @@
 .idea
+.vagrant
 nginx.conf
 /Build/
 /Configuration/Production/*
@@ -15,7 +16,9 @@ nginx.conf
 /Web/
 /bin/
 /Readme.txt
+/Readme.rst
 /Upgrading.txt
+/Upgrading.rst
 /flow
 /flow.bat
 

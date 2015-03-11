@@ -10,8 +10,8 @@ First go to the [SPHERE.IO Merchant Center](http://admin.sphere.io/) and create 
 
 ### Local technical prerequisites:
 
- * Virtualbox installed [download](http://www.virtualbox.org/) or `brew install virtualbox`
- * Vagrant installed [download](https://www.vagrantup.com/downloads.html) or `brew install vagrant vagrant-manager`
+ * Virtualbox installed [download](http://www.virtualbox.org/) or `brew install brew-cask` and `brew tap caskroom/cask` and `brew cask install virtualbox`
+ * Vagrant installed [download](https://www.vagrantup.com/downloads.html) or `brew cask install vagrant vagrant-manager`
  * an SSH shell (Mac OS built-in or the phpStorm integrated one)
 
 (If you would like to use the `brew` method, install [Homebrew](http://brew.sh/) first - it's a package manager for Mac OSX.)
@@ -27,7 +27,7 @@ First go to the [SPHERE.IO Merchant Center](http://admin.sphere.io/) and create 
  1. Download composer if not installed on system
   	`curl -sS https://getcomposer.org/installer | php`
  1. Install required packages with composer
- 	`php composer.phar install -o` or with composer installed just `composer install -o`
+ 	`php composer.phar install -o --ignore-platform-reqs` or with composer installed just `composer install -o --ignore-platform-reqs`
  1. Add SPHERE.IO credentials to `Configuration\Settings.yaml`
  1. start the vagrant box
 	`vagrant up --provider=virtualbox`
@@ -36,7 +36,7 @@ First go to the [SPHERE.IO Merchant Center](http://admin.sphere.io/) and create 
 
 The Frontend is located at
 
-* [http://sphere-neos-demo.vm/](http://sphere-neos-demo.vm/)
+* [http://sphere-neos-demo.vm/](http://sphere-neos-demo.vm/) (try Safari or Firefox if Chrome's aggressive DNS caching makes the site not show up)
 
 The Backend is located at
 
@@ -45,7 +45,7 @@ The Backend is located at
  * User: admin
  * Password: password
 
-For development enable the rsync using `vagrant rsync-auto`
+For development enable synchronization between your working directory and the VM using `vagrant rsync-auto`
 
 ### TODOS:
 
