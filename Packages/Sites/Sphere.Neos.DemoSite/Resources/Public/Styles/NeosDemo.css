@@ -331,8 +331,32 @@ a:hover { text-decoration: none; }
 
 .cart-row h4 { color: #7f7f7f; }
 
+.cartInfo { text-align: right; }
+
+.total-price { display: none; }
+
+.glyphicon-shopping-cart { font-size: 1.8em; color: #000; padding: 0 20px; }
+
+.glyphicon-shopping-cart:hover { color: #FF8700; }
+
+.update-button { background-color: #fff; border: none; border: 2px solid #FF8700; border-radius: 3px; }
+
+.update-button:hover { color: white; background-color: #FF8700; }
+
+.item-name { font-size: 1.5em; text-align: center; color: #FF8700; padding: 20px 0 0; margin: 0; }
+
+.your-cart { text-align: center; padding: 20px 0; }
+
+.search-form { text-align: right; padding: 0 20px 20px; }
+
+.search-form input[type=submit] { background-color: #FEFEFE; border: none; }
+
+.breadcrumb { display: none; }
+
 @media screen and (max-width: 767px) { h1 { font-size: 2.7em; }
   .product-name { font-size: 1.4em; }
   .product-description { font-size: 1em; }
   .product-price { font-size: 0.9em; }
-  .cart-row h4 { font-size: 1em; } }
+  .cart-row h4 { font-size: 1em; }
+  .search-form input[type=submit] { font-size: 1em; } }
+@media screen and (max-width: 991px) { .cart-labels { display: none; } }

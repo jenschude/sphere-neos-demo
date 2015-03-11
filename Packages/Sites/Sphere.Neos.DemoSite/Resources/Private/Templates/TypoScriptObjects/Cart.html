@@ -1,6 +1,6 @@
 <div class="cartInfo">
-    <p><f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: cartPage}">Cart</f:link.action></p>
-    <table>
+    <p><f:link.action package="TYPO3.Neos" controller="Frontend\Node" class="glyphicon glyphicon-shopping-cart" action="show" format="html" arguments="{node: cartPage}"></f:link.action></p>
+    <table class="total-price">
         <tr>
             <td><f:translate>Total price</f:translate></td>
             <td>{cart.totalPrice}</td>

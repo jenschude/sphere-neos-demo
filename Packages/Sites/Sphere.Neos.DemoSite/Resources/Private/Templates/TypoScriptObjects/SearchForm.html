@@ -1,5 +1,5 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
-<f:form actionUri="{neos:uri.node(node: searchPage)}" method="post">
+<f:form actionUri="{neos:uri.node(node: searchPage)}" method="post" class="search-form">
     <input name="q" type="text" />
     <input type="submit" value="<f:translate package="Sphere.Neos">Search</f:translate>">
 </f:form>
