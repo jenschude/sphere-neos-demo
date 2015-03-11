@@ -44,8 +44,20 @@ a:hover {
 	text-decoration: none;
 }
 
-.product-facts td {
-  padding: 5px;
+.product-facts {
+  margin: 10px;
+  width: 100%;
+  td {
+	padding: 5px;
+  }
+
+  .product-fact {
+	width: 25%;
+  }
+
+  .product-fact-value {
+	width: 75%;
+  }
 }
 
 // Listing Row

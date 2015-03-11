@@ -315,7 +315,10 @@ ul.neos-list-square { list-style-type: square; }
 
 a:hover { text-decoration: none; }
 
+.product-facts { margin: 10px; width: 100%; }
 .product-facts td { padding: 5px; }
+.product-facts .product-fact { width: 25%; }
+.product-facts .product-fact-value { width: 75%; }
 
 .listing-info { padding: 20px 0 0; }
 
