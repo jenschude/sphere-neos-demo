@@ -93,7 +93,9 @@ class ProductRepository {
 			return NULL;
 		}
 		if (!isset($this->productProjectionsBySlug[$slug])) {
-			$response = $this->client->execute(new ProductProjectionFetchBySlugRequest($slug, $this->client->getContext()));
+			$request = new ProductProjectionFetchBySlugRequest($slug, $this->client->getContext());
+			$request->expand('productType');
+			$response = $this->client->execute($request);
 			$productProjection = $response->toObject();
 			if (!$productProjection instanceof ProductProjection) {
 				return NULL;
@@ -115,7 +117,9 @@ class ProductRepository {
 			return NULL;
 		}
 		if (!isset($this->productProjectionsBySku[$sku])) {
-			$response = $this->client->execute(new ProductProjectionFetchBySkuRequest($sku, $this->client->getContext()));
+			$request = new ProductProjectionFetchBySkuRequest($sku, $this->client->getContext());
+			$request->expand('productType');
+			$response = $this->client->execute($request);
 			$productProjection = $response->toObject();
 			if (!$productProjection instanceof ProductProjection) {
 				return NULL;
@@ -138,7 +142,9 @@ class ProductRepository {
 			return NULL;
 		}
 		if (!isset($this->productProjectionsById[$id])) {
-			$response = $this->client->execute(new ProductProjectionFetchByIdRequest($id, $this->client->getContext()));
+			$request = new ProductProjectionFetchByIdRequest($id, $this->client->getContext());
+			$request->expand('productType');
+			$response = $this->client->execute($request);
 			$productProjection = $response->toObject();
 			if (!$productProjection instanceof ProductProjection) {
 				return NULL;

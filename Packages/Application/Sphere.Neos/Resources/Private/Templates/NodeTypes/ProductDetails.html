@@ -11,10 +11,28 @@
 				<div class="row">
 					<div class="col-md-4">
 						<span class="product-description">{product.description -> f:format.raw()}</span>
-						<p class="product-description">{productSlug}</p>
 					</div>
 					<div class="col-md-2">
 						<p class="product-price">{product.masterVariant.prices.0.value}</p>
+						<p class="product-price">
+						<f:if condition="{product.masterVariant.availability}">
+							<f:then>
+								<f:if condition="{product.masterVariant.availability.isOnStock == true}">
+									<f:then>
+										<f:translate package="Sphere.Neos">On Stock</f:translate>
+									</f:then>
+									<f:else>
+										<f:translate
+											package="Sphere.Neos"
+											arguments="{0: product.masterVariant.availability.restockableInDays}"
+											id="product.details.restockable">
+											Restockable in {0} days
+										</f:translate>
+									</f:else>
+								</f:if>
+							</f:then>
+						</f:if>
+						</p>
 					</div>
 					<div class="col-md-6">
 						<div class="listing-image img-responsive product-teaser">
@@ -24,7 +42,7 @@
 				</div>
 				<div class="row cart-row">
 					<div class="col-md-6">
-						<h4><f:translate package="Sphere.Neos">Attributes</f:translate></h4>
+						<h4><f:translate package="Sphere.Neos">Product Facts</f:translate></h4>
 						<table>
 						<f:for each="{attributes}" as="attribute">
 							<tr>

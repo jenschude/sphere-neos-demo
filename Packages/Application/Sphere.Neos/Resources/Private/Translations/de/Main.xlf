@@ -26,9 +26,17 @@
                 <source>Total price</source>
                 <target xml:lang="de">Gesamtpreis</target>
             </trans-unit>
-            <trans-unit id="product.details.attributes" xml:space="preserve" approved="yes">
-                <source>Attributes</source>
-                <target xml:lang="de">Attribute</target>
+            <trans-unit id="product.details.productFacts" xml:space="preserve" approved="yes">
+                <source>Product Facts</source>
+                <target xml:lang="de">Produktdetails</target>
+            </trans-unit>
+            <trans-unit id="product.details.onStock" xml:space="preserve" approved="yes">
+                <source>On Stock</source>
+                <target xml:lang="de">Sofort lieferbar</target>
+            </trans-unit>
+            <trans-unit id="product.details.restockable" xml:space="preserve" approved="yes">
+                <source>Restockable in {0} days</source>
+                <target xml:lang="de">Wieder lieferbar in {0} Tagen</target>
             </trans-unit>
             <trans-unit id="product.details.addToCart" xml:space="preserve" approved="yes">
                 <source>Add to cart</source>
