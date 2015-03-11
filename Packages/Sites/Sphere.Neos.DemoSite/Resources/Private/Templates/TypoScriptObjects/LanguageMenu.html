@@ -12,7 +12,7 @@
 		<li{ts:render(path:'{item.state}.attributes', context: {item: item}) -> f:format.raw()}>
 			<f:if condition="{item.node}">
 				<f:then>
-					<neos:link.node node="{item.node}"><span class="language-menu-full">{item.label}</span><span class="language-menu-short" title="{item.label}">{item.preset.uriSegment}</span></neos:link.node>
+					<neos:link.node node="{item.node}" arguments="{productSlug: productSlug}"><span class="language-menu-full">{item.label}</span><span class="language-menu-short" title="{item.label}">{item.preset.uriSegment}</span></neos:link.node>
 				</f:then>
 				<f:else>
 					<span class="language-menu-full">{item.label}</span><span class="language-menu-short" title="{item.label}">{item.preset.uriSegment}</span>

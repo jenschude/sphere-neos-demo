@@ -71,7 +71,11 @@ page = Page {
 			languageMenu = TYPO3.Neos:DimensionMenu {
 				@class = '\\Sphere\\Neos\\TypoScript\\SphereDimensionMenuImplementation'
 				dimension = 'language'
+				productSlug = ${request.arguments.productSlug}
 				templatePath = 'resource://Sphere.Neos.DemoSite/Private/Templates/TypoScriptObjects/LanguageMenu.html'
+				@cache {
+					maximumLifetime = 1
+				}
 			}
 		}
 
