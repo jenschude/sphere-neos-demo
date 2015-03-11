@@ -331,7 +331,7 @@ a:hover { text-decoration: none; }
 
 .cart-row h4 { color: #7f7f7f; }
 
-.cartInfo { text-align: right; }
+.cartInfo { text-align: right; float: right; }
 
 .total-price { display: none; }
 
