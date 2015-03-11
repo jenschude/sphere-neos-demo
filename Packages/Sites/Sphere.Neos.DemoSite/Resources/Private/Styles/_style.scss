@@ -25,7 +25,7 @@ $neos-orange: #FF8700;
 	padding: 20px;
 }
 
-// Product Name 
+// Product Name
 
 .product-name {
 	font-size: 1.8em;
@@ -33,6 +33,11 @@ $neos-orange: #FF8700;
 	color: $neos-orange;
 	padding: 20px 0 0;
 	margin: 0;
+	height: 47px;
+}
+
+.product-teaser-image {
+	height: 150px;
 }
 
 a:hover {
@@ -49,6 +54,7 @@ a:hover {
 
 .product-price {
 	text-align: right;
+	height: 1em;
 }
 
 // Product Description
@@ -93,7 +99,7 @@ a:hover {
 	color: darken($neos-gray, 50%);
 }
 
-// Cart 
+// Cart
 
 .cartInfo {
 	text-align: right;
@@ -159,10 +165,10 @@ a:hover {
 }
 
 
-// Media Queries 
+// Media Queries
 
 @media screen and (max-width: 767px) {
-	
+
 	 h1 {
 	 	font-size: 2.7em;
 	 }

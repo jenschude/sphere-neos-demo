@@ -5,7 +5,7 @@
             <div class="row row-margin">
                 <div class="col-xs-6">
                     <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: product.slug.localized}">
-                        <div class="listing-image img-responsive product-teaser"><img src="{product.masterVariant.images.0.medium}">
+                        <div class="listing-image img-responsive product-teaser"><img class="product-teaser-image" src="{product.masterVariant.images.0.medium}">
                             <h3 class="product-name">{product.name}</h3>
                         </div>
                     </f:link.action>
