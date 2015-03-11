@@ -14,7 +14,7 @@
     '@controller': 'Frontend\Node'
     '@action':     'show'
     '@format':     'html'
-    'node':        '/sites/spheredemosite/product@live;language=en'
+    'node':        '/sites/spheredemosite/product@live;language=en,de'
   routeParts:
     'node':
       handler:     'TYPO3\Neos\Routing\FrontendNodeRoutePartHandlerInterface'
