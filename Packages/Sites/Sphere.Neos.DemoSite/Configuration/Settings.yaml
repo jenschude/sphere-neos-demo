@@ -37,7 +37,7 @@ TYPO3:
           'all': ~
           'en':
             label: 'English'
-            values: ['en', 'de']
+            values: ['en']
             uriSegment: 'en'
           'de':
             label: 'German'
