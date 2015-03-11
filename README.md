@@ -2,7 +2,7 @@
 
 A Content Commerce technology demo that shows how to create a [TYPO3 Neos](http://neos.typo3.org/) based website with eCommerce functionalities using the [SPHERE.IO](http://dev.sphere.io) hosted E-Commerce-API.
 
-TODO link to a live URL with demo data
+You can give it a try at our [Live Demo](http://sphere-neos.flownative.com/).
 
 ## Getting Started (Mac OSX)
 
