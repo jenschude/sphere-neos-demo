@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ef954d405776af6da77019fdd7bd1709",
+    "hash": "089ead7a96bf7d8a1dec8a4ef3e55c0e",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -623,12 +623,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "fca67c4a5a6f4334e8b6a57410f7b386b012ab01"
+                "reference": "efe104057657c5d62f714e00ae30fa2a51e688e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/fca67c4a5a6f4334e8b6a57410f7b386b012ab01",
-                "reference": "fca67c4a5a6f4334e8b6a57410f7b386b012ab01",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/efe104057657c5d62f714e00ae30fa2a51e688e3",
+                "reference": "efe104057657c5d62f714e00ae30fa2a51e688e3",
                 "shasum": ""
             },
             "require": {
@@ -673,7 +673,7 @@
                 "database",
                 "migrations"
             ],
-            "time": "2015-03-06 20:53:13"
+            "time": "2015-03-11 16:28:22"
         },
         {
             "name": "doctrine/orm",
@@ -1221,16 +1221,16 @@
         },
         {
             "name": "sphere/php-sdk",
-            "version": "dev-feature/js/Issue-8-cart-endpoint",
+            "version": "v1.0.0-alpha.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sphereio/sphere-php-sdk.git",
-                "reference": "a0301c89632f8db60a3d7aae72a500c334f5796e"
+                "reference": "8612fb0052c910b5782def2b4e962acd4f2e062e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sphereio/sphere-php-sdk/zipball/a0301c89632f8db60a3d7aae72a500c334f5796e",
-                "reference": "a0301c89632f8db60a3d7aae72a500c334f5796e",
+                "url": "https://api.github.com/repos/sphereio/sphere-php-sdk/zipball/8612fb0052c910b5782def2b4e962acd4f2e062e",
+                "reference": "8612fb0052c910b5782def2b4e962acd4f2e062e",
                 "shasum": ""
             },
             "require": {
@@ -1267,7 +1267,7 @@
                 "MIT"
             ],
             "description": "The Sphere.IO PHP SDK",
-            "time": "2015-03-10 10:11:02"
+            "time": "2015-03-11 13:56:24"
         },
         {
             "name": "symfony/console",
@@ -1456,7 +1456,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Flow.git",
-                "reference": "9c4f1b68e899e86fd2d10502be553fb363cb4201"
+                "reference": "d0b5076c25d06b42419adc0051b01522f9364aa7"
             },
             "require": {
                 "composer/installers": "~1.0.2",
@@ -1491,7 +1491,7 @@
             ],
             "description": "TYPO3 Flow Application Framework",
             "homepage": "http://flow.typo3.org",
-            "time": "2015-03-06 13:44:47"
+            "time": "2015-03-10 19:46:42"
         },
         {
             "name": "typo3/fluid",
@@ -1499,7 +1499,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Fluid.git",
-                "reference": "f3a5f160760e8eade006bff9c6009abd1662bb92"
+                "reference": "1b7db7d9b495f969e422b2db95a7afef11c77a4f"
             },
             "require": {
                 "typo3/flow": "*"
@@ -1515,7 +1515,7 @@
                 "LGPL-3.0+"
             ],
             "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 Neos, also backported to TYPO3 CMS",
-            "time": "2015-03-02 18:28:34"
+            "time": "2015-03-11 08:27:24"
         },
         {
             "name": "typo3/form",
@@ -1595,7 +1595,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Media.git",
-                "reference": "8e0179aab00a95e915b9b7676e0cd781a966b211"
+                "reference": "cf78396c97a2986446e4308d893829c1752a2c0b"
             },
             "require": {
                 "php": ">=5.4.0",
@@ -1613,7 +1613,7 @@
                 "GPL-3.0+"
             ],
             "description": "The Media package",
-            "time": "2015-03-09 10:40:30"
+            "time": "2015-03-09 22:03:08"
         },
         {
             "name": "typo3/neos",
@@ -1621,7 +1621,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Neos.git",
-                "reference": "8b3fd1a46535623cac4c4421209787a91f683d9a"
+                "reference": "84687fae547e30037bba087a26e5be7e64eca06b"
             },
             "require": {
                 "typo3/flow": "*",
@@ -1651,7 +1651,7 @@
                 "GPL-3.0+"
             ],
             "description": "The next generation of the popular open-source CMS.",
-            "time": "2015-03-08 19:24:01"
+            "time": "2015-03-11 21:49:31"
         },
         {
             "name": "typo3/neos-kickstarter",
@@ -1733,7 +1733,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Party.git",
-                "reference": "7c455134c3cd7a118d5687a697e4e2fe8e832314"
+                "reference": "1f78f6ca3cce12afbd5c8d12279daa42480200c1"
             },
             "require": {
                 "typo3/flow": "*"
@@ -1749,7 +1749,7 @@
                 "LGPL-3.0+"
             ],
             "description": "A PHP implementation of the OASIS Customer Information Quality (CIQ) XML Standard.",
-            "time": "2015-02-26 07:35:38"
+            "time": "2015-03-09 21:13:39"
         },
         {
             "name": "typo3/setup",
@@ -1757,7 +1757,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Setup.git",
-                "reference": "c8a78f4893697072486733f1a7aa921c081665e9"
+                "reference": "83c538e9520f725d7ab8c38c19d09206b3e495a1"
             },
             "require": {
                 "typo3/flow": "*",
@@ -1775,7 +1775,7 @@
                 "LGPL-3.0+"
             ],
             "description": "An extensible setup tool for TYPO3 Flow based applications",
-            "time": "2015-03-06 12:52:38"
+            "time": "2015-03-10 10:32:48"
         },
         {
             "name": "typo3/twitter-bootstrap",
@@ -1807,7 +1807,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.TYPO3CR.git",
-                "reference": "8c1232834bfe42cf6b5ee90cdd2e111d8c9300fd"
+                "reference": "c519bd970443823e5916ca51c08c97fc35dfe2d0"
             },
             "require": {
                 "gedmo/doctrine-extensions": "2.3.*",
@@ -1825,7 +1825,7 @@
                 "GPL-3.0+"
             ],
             "description": "Content repository based on TYPO3 Flow, specifically made for TYPO3 Neos.",
-            "time": "2015-03-06 14:00:40"
+            "time": "2015-03-11 18:57:38"
         },
         {
             "name": "typo3/typoscript",
@@ -2958,7 +2958,7 @@
         "typo3/typo3cr": 20,
         "typo3/typoscript": 20,
         "google/apiclient": 10,
-        "sphere/php-sdk": 20,
+        "sphere/php-sdk": 15,
         "typo3/buildessentials": 20,
         "flowpack/behat": 20,
         "typo3-ci/typo3flow": 20
