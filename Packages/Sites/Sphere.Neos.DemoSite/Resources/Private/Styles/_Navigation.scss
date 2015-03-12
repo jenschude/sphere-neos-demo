@@ -63,7 +63,7 @@
 
 // Second level navigation which is contained in the first level navigation and shown for small devices
 .second-level-navigation {
-	margin-left: 155px;
+	margin-left: 235px;
 	margin-bottom: 0;
 	min-height: 40px;
 	padding-bottom: 8px;
@@ -91,15 +91,15 @@
 .navbar-brand {
 	background-image: url('../Images/logo.png');
 	background-repeat: no-repeat;
-	background-size: 100px 32px;
+	background-size: 205px 43px;
 	text-indent: -999px;
-	width: 135px;
-	height: 32px;
+	width: 215px;
+	height: 43px;
 	margin-right: 20px;
 
 	@media #{$screen-sm} {
 		background-image: url('../Images/logo@2x.png');
-		background-size: 100px 32px;
+		background-size: 205px 43px;
 		margin-left: 20px;
 	}
 }

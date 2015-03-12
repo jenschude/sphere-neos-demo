@@ -204,14 +204,14 @@ img { max-width: 100%; height: auto; }
 .first-level-navigation a { font-size: 1.3em; }
 @media only screen and (max-width: 767px) { .first-level-navigation .nav-pills > li { float: none; margin-right: 0px; } }
 
-.second-level-navigation { margin-left: 155px; margin-bottom: 0; min-height: 40px; padding-bottom: 8px; }
+.second-level-navigation { margin-left: 235px; margin-bottom: 0; min-height: 40px; padding-bottom: 8px; }
 @media only screen and (max-width: 767px) { .second-level-navigation { display: none; } }
 .second-level-navigation .nav-pills > li { margin-right: 30px; }
 .second-level-navigation .nav-pills > li > a { font-size: 12px; line-height: 20px; font-family: 'Noto Sans Regular', serif; }
 .second-level-navigation .nav-pills > li:last-of-type { margin-right: 0; }
 
-.navbar-brand { background-image: url("../Images/logo.png"); background-repeat: no-repeat; background-size: 100px 32px; text-indent: -999px; width: 135px; height: 32px; margin-right: 20px; }
-@media only screen and (max-width: 767px) { .navbar-brand { background-image: url("../Images/logo@2x.png"); background-size: 100px 32px; margin-left: 20px; } }
+.navbar-brand { background-image: url("../Images/logo.png"); background-repeat: no-repeat; background-size: 205px 43px; text-indent: -999px; width: 215px; height: 43px; margin-right: 20px; }
+@media only screen and (max-width: 767px) { .navbar-brand { background-image: url("../Images/logo@2x.png"); background-size: 205px 43px; margin-left: 20px; } }
 
 .navbar-default { background-color: transparent; border: none; }
 .navbar-default .navbar-header { padding-bottom: 18px; }
@@ -309,7 +309,7 @@ ul.neos-list-square { list-style-type: square; }
 
 .listing-image { text-align: center; padding: 20px; }
 
-.product-name { font-size: 1.8em; text-align: center; color: #FF8700; padding: 20px 0 0; margin: 0; height: 47px; }
+.product-name { font-size: 1.8em; text-align: center; color: #FF8700; padding: 20px 0 0; margin: 0; height: 94px; }
 
 .product-teaser-image { height: 150px; }
 
@@ -359,9 +359,6 @@ a:hover { text-decoration: none; }
 .search-form input[type=submit] { background-color: #FEFEFE; border: none; }
 
 .breadcrumb { display: none; }
-
-.navbar-brand-ct { background-image: url("../Images/commercetools-logo.png"); background-repeat: no-repeat; background-size: 130px 32px; width: 144px; height: 32px; }
-@media only screen and (max-width: 767px) { .navbar-brand-ct { background-image: url("../Images/commercetools-logo@2x.png"); background-size: 130px 32px; } }
 
 @media screen and (max-width: 767px) { h1 { font-size: 2.7em; }
   .product-name { font-size: 1.4em; }
