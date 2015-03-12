@@ -84,10 +84,17 @@ class Cart {
 		$this->currency = $this->settings['project']['currency'];
 		if ($reason === ObjectManagerInterface::INITIALIZATIONCAUSE_RECREATED && !is_null($this->id)) {
 			$request = $request = new CartFetchByIdRequest($this->id);
-			$this->remoteCart = $this->client->execute($request)->toObject();
-			$this->remoteCart->getLineItems()->setType('\Sphere\Neos\Domain\Model\LineItem');
-			$this->systemLogger->log(sprintf('Found existing cart "%s" for Neos session %s.', $this->id, $this->session->getId()), LOG_DEBUG);
-			$this->retrieveLineItemSlugs();
+			$response = $this->client->execute($request);
+			if (!$response->isError()) {
+				$this->remoteCart = $response->toObject();
+				$this->remoteCart->getLineItems()->setType('\Sphere\Neos\Domain\Model\LineItem');
+				$this->systemLogger->log(sprintf('Found existing cart "%s" for Neos session %s.', $this->id, $this->session->getId()), LOG_DEBUG);
+				$this->retrieveLineItemSlugs();
+			} else {
+				$this->systemLogger->log(sprintf('Cart "%s" not found for Neos session %s.', $this->id, $this->session->getId()), LOG_DEBUG);
+				$this->id = null;
+				$this->remoteCart = null;
+			}
 		}
 	}
 
