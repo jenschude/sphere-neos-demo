@@ -30,6 +30,10 @@
                 <source>No products in cart</source>
                 <target xml:lang="de">No products in cart</target>
             </trans-unit>
+            <trans-unit id="cart.update" xml:space="preserve" approved="yes">
+                <source>Update</source>
+                <target xml:lang="de">Update</target>
+            </trans-unit>
             <trans-unit id="product.details.productFacts" xml:space="preserve" approved="yes">
                 <source>Product Facts</source>
                 <target xml:lang="de">Product Facts</target>
