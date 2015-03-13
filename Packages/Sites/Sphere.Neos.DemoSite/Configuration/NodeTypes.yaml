@@ -77,6 +77,16 @@
                 label: '25% / 25% / 25% / 25%'
 
 ##
+# A "Registration" plugin that allows creation of Neos user accounts through the Frontend
+# Warning: This is not to be used on productive Websites!
+#
+'Sphere.Neos.DemoSite:Registration':
+  superTypes: ['TYPO3.Neos:Plugin']
+  ui:
+    label: 'Editor Registration Plugin'
+    icon: 'icon-user'
+
+##
 # Adjust the "Form" node type:
 # Remove the empty select option and register the "contact-form"-Form
 #

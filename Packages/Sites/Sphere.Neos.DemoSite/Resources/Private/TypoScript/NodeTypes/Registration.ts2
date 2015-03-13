@@ -1,0 +1,9 @@
+namespace: Site=Sphere.Neos.DemoSite
+
+##
+# "Registration" element, extending "Plugin"
+#
+prototype(Site:Registration) < prototype(Plugin) {
+	package = 'Sphere.Neos.DemoSite'
+	controller = 'Registration'
+}

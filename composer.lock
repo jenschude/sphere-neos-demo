@@ -623,12 +623,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "efe104057657c5d62f714e00ae30fa2a51e688e3"
+                "reference": "7fc9125b7b2e329c55040feb53c443fbf974dd54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/efe104057657c5d62f714e00ae30fa2a51e688e3",
-                "reference": "efe104057657c5d62f714e00ae30fa2a51e688e3",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/7fc9125b7b2e329c55040feb53c443fbf974dd54",
+                "reference": "7fc9125b7b2e329c55040feb53c443fbf974dd54",
                 "shasum": ""
             },
             "require": {
@@ -673,7 +673,7 @@
                 "database",
                 "migrations"
             ],
-            "time": "2015-03-11 16:28:22"
+            "time": "2015-03-12 22:57:04"
         },
         {
             "name": "doctrine/orm",
@@ -1456,7 +1456,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Flow.git",
-                "reference": "d0b5076c25d06b42419adc0051b01522f9364aa7"
+                "reference": "95e6940b9e539e01a0c78981270d0f8630b43949"
             },
             "require": {
                 "composer/installers": "~1.0.2",
@@ -1491,7 +1491,7 @@
             ],
             "description": "TYPO3 Flow Application Framework",
             "homepage": "http://flow.typo3.org",
-            "time": "2015-03-10 19:46:42"
+            "time": "2015-03-12 11:10:55"
         },
         {
             "name": "typo3/fluid",
@@ -1621,7 +1621,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Neos.git",
-                "reference": "84687fae547e30037bba087a26e5be7e64eca06b"
+                "reference": "98957b46677b9e329779ca763c5ccd8a73d4f786"
             },
             "require": {
                 "typo3/flow": "*",
@@ -1651,7 +1651,7 @@
                 "GPL-3.0+"
             ],
             "description": "The next generation of the popular open-source CMS.",
-            "time": "2015-03-11 21:49:31"
+            "time": "2015-03-12 13:54:00"
         },
         {
             "name": "typo3/neos-kickstarter",
@@ -2964,6 +2964,7 @@
         "typo3-ci/typo3flow": 20
     },
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }

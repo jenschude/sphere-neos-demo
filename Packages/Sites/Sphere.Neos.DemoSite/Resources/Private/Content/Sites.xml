@@ -68,16 +68,6 @@
        <title __type="string">Products</title>
        <layout __type="string">default</layout>
        <subpageLayout __type="string">default</subpageLayout>
-       <titleOverride __type="string"></titleOverride>
-       <metaDescription __type="string"></metaDescription>
-       <metaKeywords __type="string"></metaKeywords>
-       <metaRobotsNoindex __type="boolean"></metaRobotsNoindex>
-       <metaRobotsNofollow __type="boolean"></metaRobotsNofollow>
-       <twitterCardType __type="string"></twitterCardType>
-       <twitterCardCreator __type="string"></twitterCardCreator>
-       <twitterCardTitle __type="string"></twitterCardTitle>
-       <twitterCardDescription __type="string"></twitterCardDescription>
-       <twitterCardImage __type="string"></twitterCardImage>
       </properties>
      </variant>
      <variant sortingIndex="250" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Page" version="2" removed="" hidden="" hiddenInIndex="">
@@ -93,16 +83,6 @@
        <title __type="string">Produkte</title>
        <layout __type="string">default</layout>
        <subpageLayout __type="string">default</subpageLayout>
-       <titleOverride __type="string"></titleOverride>
-       <metaDescription __type="string"></metaDescription>
-       <metaKeywords __type="string"></metaKeywords>
-       <metaRobotsNoindex __type="boolean"></metaRobotsNoindex>
-       <metaRobotsNofollow __type="boolean"></metaRobotsNofollow>
-       <twitterCardType __type="string"></twitterCardType>
-       <twitterCardCreator __type="string"></twitterCardCreator>
-       <twitterCardTitle __type="string"></twitterCardTitle>
-       <twitterCardDescription __type="string"></twitterCardDescription>
-       <twitterCardImage __type="string"></twitterCardImage>
       </properties>
      </variant>
      <node identifier="eff08c73-57df-6a24-7434-fcb817faa701" nodeName="main">
@@ -196,13 +176,7 @@
          <lastModificationDateTime __type="object" __classname="DateTime">2015-03-12T13:56:38+01:00</lastModificationDateTime>
          <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-12T13:54:20+01:00</lastPublicationDateTime>
          <properties>
-          <caption __type="string"></caption>
-          <alignment __type="string"></alignment>
-          <image __type="object" __identifier="d3d0b4a7-3eaf-3069-6e80-2ef4af80b0be" __classname="TYPO3\Media\Domain\Model\ImageVariant" __encoding="json">{&quot;__identity&quot;:&quot;d3d0b4a7-3eaf-3069-6e80-2ef4af80b0be&quot;,&quot;originalAsset&quot;:{&quot;__identity&quot;:&quot;69a85727-a679-db5c-b82f-443fcbe00dbf&quot;,&quot;title&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;128475484_97e52f4979_o.jpg&quot;,&quot;hash&quot;:&quot;502455bb42c528c7bc2d078299a1b591de5d162d&quot;,&quot;__identity&quot;:&quot;4d2a3ac5-a356-cdb6-4b27-5e91207c3458&quot;}},&quot;adjustments&quot;:[{&quot;height&quot;:1923,&quot;maximumHeight&quot;:null,&quot;maximumWidth&quot;:null,&quot;minimumHeight&quot;:null,&quot;minimumWidth&quot;:null,&quot;position&quot;:20,&quot;ratioMode&quot;:null,&quot;width&quot;:2566,&quot;__identity&quot;:&quot;308fbe07-26e9-ecf8-ce2d-9d931c05a463&quot;,&quot;__type&quot;:&quot;TYPO3\\Media\\Domain\\Model\\Adjustment\\ResizeImageAdjustment&quot;}]}</image>
-          <alternativeText __type="string"></alternativeText>
-          <title __type="string"></title>
-          <link __type="string"></link>
-          <hasCaption __type="boolean"></hasCaption>
+          <image __type="object" __identifier="d3d0b4a7-3eaf-3069-6e80-2ef4af80b0be" __classname="TYPO3\Media\Domain\Model\ImageVariant" __encoding="json">{&quot;__identity&quot;:&quot;d3d0b4a7-3eaf-3069-6e80-2ef4af80b0be&quot;,&quot;originalAsset&quot;:{&quot;__identity&quot;:&quot;69a85727-a679-db5c-b82f-443fcbe00dbf&quot;,&quot;title&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;128475484_97e52f4979_o.jpg&quot;,&quot;hash&quot;:&quot;502455bb42c528c7bc2d078299a1b591de5d162d&quot;,&quot;__identity&quot;:&quot;4d2a3ac5-a356-cdb6-4b27-5e91207c3458&quot;}},&quot;adjustments&quot;:[{&quot;height&quot;:1923,&quot;maximumHeight&quot;:null,&quot;maximumWidth&quot;:null,&quot;minimumHeight&quot;:null,&quot;minimumWidth&quot;:null,&quot;position&quot;:20,&quot;ratioMode&quot;:null,&quot;width&quot;:2566,&quot;__identity&quot;:&quot;793d0d49-8632-c669-e424-a2b1828159e7&quot;,&quot;__type&quot;:&quot;TYPO3\\Media\\Domain\\Model\\Adjustment\\ResizeImageAdjustment&quot;}]}</image>
          </properties>
         </variant>
        </node>
@@ -218,37 +192,67 @@
         <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-12T13:54:20+01:00</lastPublicationDateTime>
         <properties/>
        </variant>
-       <node identifier="3977bcc4-7ce3-e92c-5a30-3cacf2f01ea7" nodeName="node-55018d44e485f">
-        <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Html" version="2" removed="" hidden="" hiddenInIndex="">
-         <dimensions>
-          <language>de</language>
-         </dimensions>
-         <accessRoles __type="array"/>
-         <creationDateTime __type="object" __classname="DateTime">2015-03-12T14:16:47+01:00</creationDateTime>
-         <lastModificationDateTime __type="object" __classname="DateTime">2015-03-12T14:16:52+01:00</lastModificationDateTime>
-         <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-12T14:16:52+01:00</lastPublicationDateTime>
-         <properties>
-          <source __type="string">&lt;h3&gt;Willkommen zu unserer SPHERE.IO/TYPO3 Neos Demo&lt;/h3&gt;
-
-&lt;p&gt;In dieser Demo-Installation kannst Du unsere SPHERE.IO/Neos-Integration ausprobieren.
-  &lt;br /&gt;  
-  Im &lt;a href=&quot;/neos/login/&quot;&gt;Backend&lt;/a&gt; (U: &lt;em&gt;demo&lt;/em&gt;; P: &lt;em&gt;demo&lt;/em&gt;) kannst du nach Herzenslust Inhaltselemente erstellen und Produkte aus SPHERE.IO einfügen.&lt;/p&gt;</source>
-         </properties>
-        </variant>
-        <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Html" version="10" removed="" hidden="" hiddenInIndex="">
+       <node identifier="1bd149b0-4ba3-8677-3d50-9abd295f828f" nodeName="node-5502be1bc4f00">
+        <variant sortingIndex="150" workspace="live" nodeType="Sphere.Neos.DemoSite:Registration" version="4" removed="" hidden="" hiddenInIndex="">
          <dimensions>
           <language>en</language>
          </dimensions>
          <accessRoles __type="array"/>
-         <creationDateTime __type="object" __classname="DateTime">2015-03-12T13:57:40+01:00</creationDateTime>
-         <lastModificationDateTime __type="object" __classname="DateTime">2015-03-12T14:17:44+01:00</lastModificationDateTime>
-         <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-12T14:02:23+01:00</lastPublicationDateTime>
+         <creationDateTime __type="object" __classname="DateTime">2015-03-13T11:38:19+01:00</creationDateTime>
+         <lastModificationDateTime __type="object" __classname="DateTime">2015-03-13T11:41:59+01:00</lastModificationDateTime>
+         <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-13T11:41:59+01:00</lastPublicationDateTime>
+         <properties/>
+        </variant>
+       </node>
+       <node identifier="8c3d20fc-1bbb-a637-2fb7-a327f08eafba" nodeName="node-5502c142d90e6">
+        <variant sortingIndex="125" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Headline" version="6" removed="" hidden="" hiddenInIndex="">
+         <dimensions>
+          <language>de</language>
+         </dimensions>
+         <accessRoles __type="array"/>
+         <creationDateTime __type="object" __classname="DateTime">2015-03-13T11:58:56+01:00</creationDateTime>
+         <lastModificationDateTime __type="object" __classname="DateTime">2015-03-13T12:00:28+01:00</lastModificationDateTime>
+         <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-13T12:00:28+01:00</lastPublicationDateTime>
          <properties>
-          <source __type="string">&lt;h3&gt;Welcome to our SPHERE.IO/TYPO3 Neos Demo&lt;/h3&gt;
-
-&lt;p&gt;In this demo installation, you can test-drive our SPHERE.IO/Neos integration.
-  &lt;br /&gt;  
-  Go to the &lt;a href=&quot;/neos/login/&quot;&gt;backend&lt;/a&gt; (U: &lt;em&gt;demo&lt;/em&gt;; P: &lt;em&gt;demo&lt;/em&gt;) to play around with different content and commerce elements.&lt;/p&gt;</source>
+          <title __type="string">&lt;h3&gt;Willkommen zu unserer SPHERE.IO / Neos Demo Site&lt;/h3&gt;</title>
+         </properties>
+        </variant>
+        <variant sortingIndex="125" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Headline" version="13" removed="" hidden="" hiddenInIndex="">
+         <dimensions>
+          <language>en</language>
+         </dimensions>
+         <accessRoles __type="array"/>
+         <creationDateTime __type="object" __classname="DateTime">2015-03-13T11:51:46+01:00</creationDateTime>
+         <lastModificationDateTime __type="object" __classname="DateTime">2015-03-13T11:54:07+01:00</lastModificationDateTime>
+         <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-13T11:54:07+01:00</lastPublicationDateTime>
+         <properties>
+          <title __type="string">&lt;h3&gt;Welcome to our SPHERE.IO / Neos Demo&lt;/h3&gt;</title>
+         </properties>
+        </variant>
+       </node>
+       <node identifier="f03b3153-faa4-0534-dec6-27c693b37230" nodeName="node-5502c17edbf4c">
+        <variant sortingIndex="138" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Text" version="27" removed="" hidden="" hiddenInIndex="">
+         <dimensions>
+          <language>de</language>
+         </dimensions>
+         <accessRoles __type="array"/>
+         <creationDateTime __type="object" __classname="DateTime">2015-03-13T11:59:11+01:00</creationDateTime>
+         <lastModificationDateTime __type="object" __classname="DateTime">2015-03-13T12:00:28+01:00</lastModificationDateTime>
+         <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-13T12:00:28+01:00</lastPublicationDateTime>
+         <properties>
+          <text __type="string">&lt;p&gt;Auf dieser Demo Site kannst due unsere Integration von SPHERE.IO mit Neos ausprobieren. Erstelle dir einfach einen Demo-Account oder probiere es mit einer lokalen virtuellen Maschine – die Anleitung dazu gibt es auf &lt;a href=&quot;https://github.com/ct-jensschulze/sphere-neos-demo&quot; target=&quot;_blank&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;</text>
+         </properties>
+        </variant>
+        <variant sortingIndex="138" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Text" version="24" removed="" hidden="" hiddenInIndex="">
+         <dimensions>
+          <language>en</language>
+         </dimensions>
+         <accessRoles __type="array"/>
+         <creationDateTime __type="object" __classname="DateTime">2015-03-13T11:52:46+01:00</creationDateTime>
+         <lastModificationDateTime __type="object" __classname="DateTime">2015-03-13T11:54:07+01:00</lastModificationDateTime>
+         <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-13T11:54:07+01:00</lastPublicationDateTime>
+         <properties>
+          <text __type="string">&lt;p&gt;In this demo site, you can test-drive our SPHERE.IO / Neos integration. Just create your own demo account, or create your own local setup following the instructions at &lt;a href=&quot;https://github.com/ct-jensschulze/sphere-neos-demo&quot; target=&quot;_blank&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;</text>
          </properties>
         </variant>
        </node>
@@ -269,6 +273,31 @@
        <title __type="string">Product</title>
       </properties>
      </variant>
+     <variant sortingIndex="300" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Page" version="3" removed="" hidden="" hiddenInIndex="1">
+      <dimensions>
+       <language>de</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2015-03-13T11:57:49+01:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2015-03-13T11:57:56+01:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-13T11:57:56+01:00</lastPublicationDateTime>
+      <properties>
+       <uriPathSegment __type="string">product</uriPathSegment>
+       <title __type="string">Produkt</title>
+       <titleOverride __type="string"></titleOverride>
+       <metaDescription __type="string"></metaDescription>
+       <metaKeywords __type="string"></metaKeywords>
+       <metaRobotsNoindex __type="boolean"></metaRobotsNoindex>
+       <metaRobotsNofollow __type="boolean"></metaRobotsNofollow>
+       <twitterCardType __type="string"></twitterCardType>
+       <twitterCardCreator __type="string"></twitterCardCreator>
+       <twitterCardTitle __type="string"></twitterCardTitle>
+       <twitterCardDescription __type="string"></twitterCardDescription>
+       <twitterCardImage __type="string"></twitterCardImage>
+       <layout __type="string"></layout>
+       <subpageLayout __type="string"></subpageLayout>
+      </properties>
+     </variant>
      <node identifier="46458063-11de-167d-88b3-832f6577be24" nodeName="main">
       <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
        <dimensions>
@@ -278,6 +307,16 @@
        <creationDateTime __type="object" __classname="DateTime">2015-02-20T13:02:28+01:00</creationDateTime>
        <lastModificationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+01:00</lastModificationDateTime>
        <lastPublicationDateTime __type="object" __classname="DateTime">2015-02-20T13:03:25+01:00</lastPublicationDateTime>
+       <properties/>
+      </variant>
+      <variant sortingIndex="100" workspace="live" nodeType="TYPO3.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2015-03-13T11:57:49+01:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2015-03-13T11:57:56+01:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-13T11:57:56+01:00</lastPublicationDateTime>
        <properties/>
       </variant>
       <node identifier="a9eee33f-92fc-e9b5-514f-147460326f47" nodeName="node-54e76aa0dcb21">
@@ -359,31 +398,6 @@
      </variant>
     </node>
     <node identifier="00102c20-f5bc-b7a4-dd18-590d49ce5101" nodeName="tips">
-     <variant sortingIndex="400" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Page" version="3" removed="" hidden="" hiddenInIndex="">
-      <dimensions>
-       <language>de</language>
-      </dimensions>
-      <accessRoles __type="array"/>
-      <creationDateTime __type="object" __classname="DateTime">2015-03-12T14:11:41+01:00</creationDateTime>
-      <lastModificationDateTime __type="object" __classname="DateTime">2015-03-12T14:13:01+01:00</lastModificationDateTime>
-      <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-12T14:11:44+01:00</lastPublicationDateTime>
-      <properties>
-       <uriPathSegment __type="string">gear</uriPathSegment>
-       <title __type="string">Ausrüstung für die nächste Saison</title>
-       <titleOverride __type="string"></titleOverride>
-       <metaDescription __type="string"></metaDescription>
-       <metaKeywords __type="string"></metaKeywords>
-       <metaRobotsNoindex __type="boolean"></metaRobotsNoindex>
-       <metaRobotsNofollow __type="boolean"></metaRobotsNofollow>
-       <twitterCardType __type="string"></twitterCardType>
-       <twitterCardCreator __type="string"></twitterCardCreator>
-       <twitterCardTitle __type="string"></twitterCardTitle>
-       <twitterCardDescription __type="string"></twitterCardDescription>
-       <twitterCardImage __type="string"></twitterCardImage>
-       <layout __type="string"></layout>
-       <subpageLayout __type="string"></subpageLayout>
-      </properties>
-     </variant>
      <variant sortingIndex="400" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Page" version="5" removed="" hidden="" hiddenInIndex="">
       <dimensions>
        <language>en</language>
@@ -395,6 +409,19 @@
       <properties>
        <uriPathSegment __type="string">tips</uriPathSegment>
        <title __type="string">Gear up for this season!</title>
+      </properties>
+     </variant>
+     <variant sortingIndex="400" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Page" version="3" removed="" hidden="" hiddenInIndex="">
+      <dimensions>
+       <language>de</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2015-03-12T14:11:41+01:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2015-03-12T14:13:01+01:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-12T14:11:44+01:00</lastPublicationDateTime>
+      <properties>
+       <uriPathSegment __type="string">gear</uriPathSegment>
+       <title __type="string">Ausrüstung für die nächste Saison</title>
       </properties>
      </variant>
      <node identifier="746702ef-6c19-4fca-8fc6-8b0fbb82338c" nodeName="main">
@@ -567,18 +594,6 @@
        </node>
       </node>
       <node identifier="0087e561-64d1-14de-bc80-b0da2c382cd0" nodeName="node-55017b76473ff">
-       <variant sortingIndex="125" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Html" version="6" removed="" hidden="" hiddenInIndex="">
-        <dimensions>
-         <language>en</language>
-        </dimensions>
-        <accessRoles __type="array"/>
-        <creationDateTime __type="object" __classname="DateTime">2015-03-12T12:40:41+01:00</creationDateTime>
-        <lastModificationDateTime __type="object" __classname="DateTime">2015-03-12T12:41:49+01:00</lastModificationDateTime>
-        <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-12T12:41:49+01:00</lastPublicationDateTime>
-        <properties>
-         <source __type="string">&lt;h3&gt;Gear up for this season!&lt;/h3&gt;</source>
-        </properties>
-       </variant>
        <variant sortingIndex="125" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Html" version="2" removed="" hidden="" hiddenInIndex="">
         <dimensions>
          <language>de</language>
@@ -589,6 +604,18 @@
         <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-12T14:13:01+01:00</lastPublicationDateTime>
         <properties>
          <source __type="string">&lt;h3&gt;Ausrüstung für die nächste Saison&lt;/h3&gt;</source>
+        </properties>
+       </variant>
+       <variant sortingIndex="125" workspace="live" nodeType="TYPO3.Neos.NodeTypes:Html" version="6" removed="" hidden="" hiddenInIndex="">
+        <dimensions>
+         <language>en</language>
+        </dimensions>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2015-03-12T12:40:41+01:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2015-03-12T12:41:49+01:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2015-03-12T12:41:49+01:00</lastPublicationDateTime>
+        <properties>
+         <source __type="string">&lt;h3&gt;Gear up for this season!&lt;/h3&gt;</source>
         </properties>
        </variant>
       </node>

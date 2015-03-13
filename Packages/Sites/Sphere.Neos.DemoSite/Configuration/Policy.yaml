@@ -1,0 +1,14 @@
+#                                                                        #
+# Security policy for the Sphere.Neos.DemoSite package                   #
+#                                                                        #
+
+privilegeTargets:
+  TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
+    Sphere_Neos-DemoSite_RegistrationAccess:
+      matcher: method(Sphere\Neos\DemoSite\Controller\RegistrationController->(index|newAccount|createAccount|createTemporaryAccount)Action())
+roles:
+  'TYPO3.Flow:Everybody':
+    privileges:
+      -
+        privilegeTarget: Sphere_Neos-DemoSite_RegistrationAccess
+        permission: GRANT
