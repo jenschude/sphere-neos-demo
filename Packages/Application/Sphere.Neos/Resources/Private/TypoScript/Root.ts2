@@ -9,7 +9,7 @@ prototype(Sphere.Neos:ProductDetails) < prototype(TYPO3.TypoScript:Template) {
 	templatePath = 'resource://Sphere.Neos/Private/Templates/NodeTypes/ProductDetails.html'
 
 	productSlug = ${request.arguments.productSlug}
-	product = ${q(SphereProducts.findProductBySlug(this.productSlug)).get(0)}
+	product = ${q(SphereProducts.findProductBySlug(this.productSlug, node)).get(0)}
 	attributes = ${q(SphereProducts.getProductAttributes(this.product)).get()}
 
 	@cache {
@@ -43,7 +43,7 @@ prototype(TYPO3.Neos:Page) {
 #
 prototype(Sphere.Neos:ProductTeaser) < prototype(TYPO3.Neos:Content) {
 	productDetailsNode = ${q(site).find('product').get(0)}
-	product = ${q(SphereProducts.findProductBySku(this.sku)).get(0)}
+	product = ${q(SphereProducts.findProductBySku(this.sku, node)).get(0)}
 
 	@cache {
 		maximumLifetime = 1
@@ -55,7 +55,7 @@ prototype(Sphere.Neos:ProductTeaser) < prototype(TYPO3.Neos:Content) {
 #
 prototype(Sphere.Neos:ProductTeaserContent) < prototype(TYPO3.Neos.NodeTypes:Text) {
 	productDetailsNode = ${q(site).find('product').get(0)}
-	product = ${q(SphereProducts.findProductBySku(this.sku)).get(0)}
+	product = ${q(SphereProducts.findProductBySku(this.sku, node)).get(0)}
 
 	@cache {
 		maximumLifetime = 1
@@ -73,7 +73,7 @@ prototype(Sphere.Neos:ProductsList) < prototype(TYPO3.Neos:Content) {
 	productDetailsNode = ${q(site).find('product').get(0)}
 	searchQuery = ${request.arguments.q}
 
-	products = ${q(SphereProducts.findProducts(this.searchQuery, this.defaultSearch)).get()}
+	products = ${q(SphereProducts.findProducts(this.searchQuery, this.defaultSearch, node)).get()}
 	firstProduct = ${q(this.products).get(0)}
 
 	@cache {
@@ -86,7 +86,7 @@ prototype(Sphere.Neos:ProductsList) < prototype(TYPO3.Neos:Content) {
 #
 prototype(Sphere.Neos:ProductCart) < prototype(TYPO3.Neos:Content) {
 	productDetailsNode = ${q(site).find('product').get(0)}
-	cart = ${q(SphereProducts.getCart()).get(0)}
+	cart = ${q(SphereProducts.getCart(node)).get(0)}
 
 	@cache {
 		maximumLifetime = 1

@@ -83,13 +83,7 @@ class Client extends OriginalClient {
 	 * @return void
 	 */
 	public function initializeObject() {
-		$fallBack = $this->i18nService->getConfiguration()->getFallbackRule()['order'];
-		$languages = array_reverse($fallBack);
-
-		// FIXME: derive languages from content dimension "language"
-		if (empty($languages)) {
-			$languages = array('en', 'de');
-		}
+		$languages = array('en', 'de');
 
 		$this->context = new Context();
 		$this->context->setGraceful(TRUE)

@@ -5,6 +5,7 @@ namespace Sphere\Neos\Eel;
  * This script belongs to the Neos package "Sphere.Neos".                 *
  *                                                                        */
 
+use Sphere\Core\Model\Common\Context;
 use Sphere\Core\Model\Common\LocalizedString;
 use Sphere\Core\Model\Product\Product;
 use Sphere\Core\Model\Product\ProductProjection;
@@ -13,6 +14,7 @@ use Sphere\Neos\Domain\Model\Cart;
 use Sphere\Neos\Domain\Repository\ProductRepository;
 use TYPO3\Eel\ProtectedContextAwareInterface;
 use TYPO3\Flow\Annotations as Flow;
+use TYPO3\TYPO3CR\Domain\Model\Node;
 
 class ProductsHelper implements ProtectedContextAwareInterface {
 
@@ -40,8 +42,8 @@ class ProductsHelper implements ProtectedContextAwareInterface {
 	 * @param string $sku
 	 * @return Product
 	 */
-	public function findProductBySku($sku) {
-		return $this->productRepository->findOneBySku($sku);
+	public function findProductBySku($sku, Node $node) {
+		return $this->productRepository->findOneBySku($sku, $node);
 	}
 
 	/**
@@ -50,8 +52,8 @@ class ProductsHelper implements ProtectedContextAwareInterface {
 	 * @param string $slug
 	 * @return Product
 	 */
-	public function findProductBySlug($slug) {
-		return $this->productRepository->findOneBySlug($slug);
+	public function findProductBySlug($slug, Node $node) {
+		return $this->productRepository->findOneBySlug($slug, $node);
 	}
 
 	/**
@@ -60,8 +62,8 @@ class ProductsHelper implements ProtectedContextAwareInterface {
 	 * @param string $query
 	 * @return array
 	 */
-	public function findProducts($query = NULL, $defaultQuery = NULL) {
-		return $this->productRepository->findByQuery($query, $defaultQuery);
+	public function findProducts($query = NULL, $defaultQuery = NULL, Node $node) {
+		return $this->productRepository->findByQuery($query, $defaultQuery, $node);
 	}
 
 	/**
@@ -88,7 +90,6 @@ class ProductsHelper implements ProtectedContextAwareInterface {
 			$data['label'] = $labels[$data['name']];
 			$attributes[] = $data;
 		}
-
 		return $attributes;
 	}
 

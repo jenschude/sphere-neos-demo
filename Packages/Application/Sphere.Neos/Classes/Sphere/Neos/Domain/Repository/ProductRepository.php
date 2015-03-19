@@ -13,6 +13,7 @@ use Sphere\Core\Request\Products\ProductProjectionFetchBySlugRequest;
 use Sphere\Core\Request\Products\ProductsSearchRequest;
 use Sphere\Neos\Client;
 use TYPO3\Flow\Annotations as Flow;
+use TYPO3\TYPO3CR\Domain\Model\Node;
 
 /**
  *
@@ -82,24 +83,36 @@ class ProductRepository {
 		return $productProjectionCollection;
 	}
 
+	protected function getContext(Node $node = null)
+	{
+		$context = $this->client->getContext();
+		if (!is_null($node)) {
+			$context->setLanguages($node->getContext()->getDimensions()['language']);
+		}
+
+		return $context;
+	}
+
 	/**
 	 * Finds a ProductProjection by searching for a product (variant) with the given slug
 	 *
 	 * @param string $slug The slug, for example "long-sleeve-shirt-xl"
 	 * @return ProductProjection The found product or NULL
 	 */
-	public function findOneBySlug($slug) {
+	public function findOneBySlug($slug, Node $node = null) {
 		if ($slug == '') {
 			return NULL;
 		}
 		if (isset($this->productProjectionsBySlug[$slug])) {
+			$this->productProjectionsBySlug[$slug]->setContext($this->getContext($node));
 			return $this->productProjectionsBySlug[$slug];
 		}
 		if (isset($this->productProjectionsById[$slug])) {
+			$this->productProjectionsById[$slug]->setContext($this->getContext($node));
 			return $this->productProjectionsById[$slug];
 		}
 
-		$request = new ProductProjectionFetchBySlugRequest($slug, $this->client->getContext());
+		$request = new ProductProjectionFetchBySlugRequest($slug, $this->getContext($node));
 		$request->expand('productType');
 		$response = $this->client->execute($request);
 		$productProjection = $response->toObject();
@@ -118,12 +131,12 @@ class ProductRepository {
 	 * @param string $sku The SKU, for example "rocket-r58-mark2"
 	 * @return ProductProjection The found product or NULL
 	 */
-	public function findOneBySku($sku) {
+	public function findOneBySku($sku, Node $node = null) {
 		if ($sku == '') {
 			return NULL;
 		}
 		if (!isset($this->productProjectionsBySku[$sku])) {
-			$request = new ProductProjectionFetchBySkuRequest($sku, $this->client->getContext());
+			$request = new ProductProjectionFetchBySkuRequest($sku, $this->getContext($node));
 			$request->expand('productType');
 			$response = $this->client->execute($request);
 			$productProjection = $response->toObject();
@@ -143,12 +156,12 @@ class ProductRepository {
 	 * @param string $id The id, for example "308913e8-2d04-4468-938b-ecb8a51dac4e"
 	 * @return ProductProjection The found product or NULL
 	 */
-	public function findOneById($id) {
+	public function findOneById($id, Node $node = null) {
 		if ($id == '') {
 			return NULL;
 		}
 		if (!isset($this->productProjectionsById[$id])) {
-			$request = new ProductProjectionFetchByIdRequest($id, $this->client->getContext());
+			$request = new ProductProjectionFetchByIdRequest($id, $this->getContext($node));
 			$request->expand('productType');
 			$response = $this->client->execute($request);
 			$productProjection = $response->toObject();
@@ -158,6 +171,8 @@ class ProductRepository {
 			$this->productProjectionsById[$id] = $productProjection;
 			$this->productProjectionsBySlug[$productProjection->getSlug()->__toString()] = $productProjection;
 		}
+		$this->productProjectionsById[$id]->setContext($this->getContext($node));
+
 		return $this->productProjectionsById[$id];
 	}
 
