@@ -15,6 +15,7 @@ use Sphere\Core\Request\Carts\CartFetchByIdRequest;
 use Sphere\Core\Request\Carts\CartUpdateRequest;
 use Sphere\Core\Request\Carts\Command\CartAddLineItemAction;
 use Sphere\Core\Request\Carts\Command\CartChangeLineItemQuantityAction;
+use Sphere\Core\Request\Carts\Command\CartRecalculateAction;
 use Sphere\Core\Request\Carts\Command\CartRemoveLineItemAction;
 use Sphere\Core\Request\Products\ProductProjectionQueryRequest;
 use Sphere\Neos\Client;
@@ -188,6 +189,7 @@ class Cart {
 			foreach ($quantities as $itemId => $quantity) {
 				$updateItemRequest->addAction(new CartChangeLineItemQuantityAction($itemId, (integer)$quantity));
 			}
+            $updateItemRequest->addAction(new CartRecalculateAction());
 			$response = $this->client->execute($updateItemRequest);
 			if ($response->isError()) {
 				$this->systemLogger->log(sprintf('Error while trying to update quantities for cart #%s: %s', $this->remoteCart->getId(), $response->getResponse()->getBody()), LOG_ERR);

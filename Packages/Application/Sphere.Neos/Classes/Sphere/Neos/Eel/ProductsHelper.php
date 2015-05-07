@@ -79,8 +79,8 @@ class ProductsHelper implements ProtectedContextAwareInterface {
 		}
 
 		$labels = [];
-		foreach ($productType['attributes'] as $attribute) {
-			$labels[$attribute['name']] = new LocalizedString($attribute['label'], $this->client->getContext());
+		foreach ($productType->getAttributes() as $attribute) {
+			$labels[$attribute->getName()] = $attribute->getLabel();
 		}
 		$attributes = [];
 		foreach ($product->getMasterVariant()->getAttributes() as $attribute) {
