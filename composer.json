@@ -29,7 +29,7 @@
 
     "google/apiclient": "@beta",
 
-    "sphere/php-sdk": "dev-master"
+    "sphere/php-sdk": "^1.0@beta"
   },
   "require-dev": {
     "typo3/buildessentials": "dev-master",

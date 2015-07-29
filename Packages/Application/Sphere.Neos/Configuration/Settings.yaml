@@ -22,3 +22,9 @@ TYPO3:
   TypoScript:
     defaultContext:
       SphereProducts: 'Sphere\Neos\Eel\ProductsHelper'
+  Flow:
+    reflection:
+      ignoredTags:
+        'apidoc': TRUE
+        'sideeffect': TRUE
+        'description': TRUE

@@ -5,8 +5,6 @@ namespace Sphere\Neos\Eel;
  * This script belongs to the Neos package "Sphere.Neos".                 *
  *                                                                        */
 
-use Sphere\Core\Model\Common\Context;
-use Sphere\Core\Model\Common\LocalizedString;
 use Sphere\Core\Model\Product\Product;
 use Sphere\Core\Model\Product\ProductProjection;
 use Sphere\Neos\Client;

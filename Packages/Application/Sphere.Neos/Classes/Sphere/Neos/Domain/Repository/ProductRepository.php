@@ -7,10 +7,10 @@ namespace Sphere\Neos\Domain\Repository;
 
 use Sphere\Core\Model\Product\ProductProjection;
 use Sphere\Core\Model\Product\ProductProjectionCollection;
-use Sphere\Core\Request\Products\ProductProjectionFetchByIdRequest;
-use Sphere\Core\Request\Products\ProductProjectionFetchBySkuRequest;
-use Sphere\Core\Request\Products\ProductProjectionFetchBySlugRequest;
-use Sphere\Core\Request\Products\ProductsSearchRequest;
+use Sphere\Core\Request\Products\ProductProjectionByIdGetRequest;
+use Sphere\Core\Request\Products\ProductProjectionBySkuGetRequest;
+use Sphere\Core\Request\Products\ProductProjectionBySlugGetRequest;
+use Sphere\Core\Request\Products\ProductProjectionSearchRequest;
 use Sphere\Neos\Client;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\TYPO3CR\Domain\Model\Node;
@@ -68,7 +68,7 @@ class ProductRepository {
 			$query = $defaultQuery;
 		}
 
-		$request = new ProductsSearchRequest($this->client->getContext());
+		$request = ProductProjectionSearchRequest::of($this->client->getContext());
 		if (!empty($query)) {
 			$request->addParam('text.' . $language, $query);
 		}
@@ -112,7 +112,7 @@ class ProductRepository {
 			return $this->productProjectionsById[$slug];
 		}
 
-		$request = new ProductProjectionFetchBySlugRequest($slug, $this->getContext($node));
+		$request = ProductProjectionBySlugGetRequest::ofSlugAndContext($slug, $this->getContext($node));
 		$request->expand('productType');
 		$response = $this->client->execute($request);
 		$productProjection = $response->toObject();
@@ -136,7 +136,7 @@ class ProductRepository {
 			return NULL;
 		}
 		if (!isset($this->productProjectionsBySku[$sku])) {
-			$request = new ProductProjectionFetchBySkuRequest($sku, $this->getContext($node));
+			$request = ProductProjectionBySkuGetRequest::ofSku($sku, $this->getContext($node));
 			$request->expand('productType');
 			$response = $this->client->execute($request);
 			$productProjection = $response->toObject();
@@ -161,7 +161,7 @@ class ProductRepository {
 			return NULL;
 		}
 		if (!isset($this->productProjectionsById[$id])) {
-			$request = new ProductProjectionFetchByIdRequest($id, $this->getContext($node));
+			$request = ProductProjectionByIdGetRequest::ofId($id, $this->getContext($node));
 			$request->expand('productType');
 			$response = $this->client->execute($request);
 			$productProjection = $response->toObject();

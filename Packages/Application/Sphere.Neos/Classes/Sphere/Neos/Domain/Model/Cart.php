@@ -10,8 +10,8 @@ use Sphere\Core\Model\Cart\LineItemCollection;
 use Sphere\Core\Model\Common\Money;
 use Sphere\Core\Model\Product\ProductProjection;
 use Sphere\Core\Model\Product\ProductProjectionCollection;
+use Sphere\Core\Request\Carts\CartByIdGetRequest;
 use Sphere\Core\Request\Carts\CartCreateRequest;
-use Sphere\Core\Request\Carts\CartFetchByIdRequest;
 use Sphere\Core\Request\Carts\CartUpdateRequest;
 use Sphere\Core\Request\Carts\Command\CartAddLineItemAction;
 use Sphere\Core\Request\Carts\Command\CartChangeLineItemQuantityAction;
@@ -84,41 +84,15 @@ class Cart {
 		$this->country = $this->settings['project']['country'];
 		$this->currency = $this->settings['project']['currency'];
 		if ($reason === ObjectManagerInterface::INITIALIZATIONCAUSE_RECREATED && !is_null($this->id)) {
-			$request = $request = new CartFetchByIdRequest($this->id);
+			$request = $request = CartByIdGetRequest::ofId($this->id);
 			$response = $this->client->execute($request);
 			if (!$response->isError()) {
 				$this->remoteCart = $response->toObject();
-				$this->remoteCart->getLineItems()->setType('\Sphere\Neos\Domain\Model\LineItem');
 				$this->systemLogger->log(sprintf('Found existing cart "%s" for Neos session %s.', $this->id, $this->session->getId()), LOG_DEBUG);
-				$this->retrieveLineItemSlugs();
 			} else {
 				$this->systemLogger->log(sprintf('Cart "%s" not found for Neos session %s.', $this->id, $this->session->getId()), LOG_DEBUG);
 				$this->id = null;
 				$this->remoteCart = null;
-			}
-		}
-	}
-
-	protected function retrieveLineItemSlugs()
-	{
-		$productIds = [];
-		foreach ($this->getLineItems() as $lineItem) {
-			$productIds[] = $lineItem->getProductId();
-		}
-		if (count($productIds) > 0) {
-			$request = new ProductProjectionQueryRequest();
-			$request->where(sprintf('id in ("%s")', implode('","', $productIds)));
-			/**
-			 * @var ProductProjectionCollection $products
-			 */
-			$products = $this->client->execute($request)->toObject();
-			$this->systemLogger->log(sprintf('Retrieve cart "%s" product slugs for Neos session %s.', $this->id, $this->session->getId()), LOG_DEBUG);
-			/**
-			 * @var LineItem $lineItem
-			 */
-			foreach ($this->getLineItems() as $lineItem) {
-				$product = $products->getById($lineItem->getProductId());
-				$lineItem->setSlug($product->getSlug());
 			}
 		}
 	}
@@ -142,15 +116,14 @@ class Cart {
 	public function addProduct(ProductProjection $product, $quantity = 1) {
 		$this->createNewCartIfNecessary();
 
-		$updateItemRequest = new CartUpdateRequest($this->remoteCart->getId(), $this->remoteCart->getVersion());
-		$updateItemRequest->addAction(new CartAddLineItemAction($product->getId(), $product->getMasterVariant()->getId(), $quantity));
+		$updateItemRequest = CartUpdateRequest::ofIdAndVersion($this->remoteCart->getId(), $this->remoteCart->getVersion());
+		$updateItemRequest->addAction(CartAddLineItemAction::ofProductIdVariantIdAndQuantity($product->getId(), $product->getMasterVariant()->getId(), $quantity));
 
 		$response = $this->client->execute($updateItemRequest);
 		if ($response->isError()) {
 			$this->systemLogger->log(sprintf('Error while trying to add product "%s" (%s) to cart #%s: %s', $product->getName(), $product->getId(), $this->remoteCart->getId(), $response->getResponse()->getBody()), LOG_ERR);
 		} else {
 			$this->remoteCart = $response->toObject();
-			$this->remoteCart->getLineItems()->setType('\Sphere\Neos\Domain\Model\LineItem');
 			$this->systemLogger->log(sprintf('Added product "%s" (%s) to cart #%s.', $product->getName(), $product->getId(), $this->remoteCart->getId()), LOG_DEBUG);
 		}
 	}
@@ -163,15 +136,14 @@ class Cart {
 	 */
 	public function removeItem($itemId) {
 		if ($this->remoteCart instanceof \Sphere\Core\Model\Cart\Cart) {
-			$updateItemRequest = new CartUpdateRequest($this->remoteCart->getId(), $this->remoteCart->getVersion());
-			$updateItemRequest->addAction(new CartRemoveLineItemAction($itemId));
+			$updateItemRequest = CartUpdateRequest::ofIdAndVersion($this->remoteCart->getId(), $this->remoteCart->getVersion());
+			$updateItemRequest->addAction(CartRemoveLineItemAction::ofLineItemId($itemId));
 
 			$response = $this->client->execute($updateItemRequest);
 			if ($response->isError()) {
 				$this->systemLogger->log(sprintf('Error while trying to remove line item "%s" from cart #%s: %s', $itemId, $this->remoteCart->getId(), $response->getResponse()->getBody()), LOG_ERR);
 			} else {
 				$this->remoteCart = $response->toObject();
-				$this->remoteCart->getLineItems()->setType('\Sphere\Neos\Domain\Model\LineItem');
 				$this->systemLogger->log(sprintf('Removed line item "%s" from cart #%s.', $itemId, $this->remoteCart->getId()), LOG_DEBUG);
 			}
 		}
@@ -185,17 +157,16 @@ class Cart {
 	 */
 	public function updateQuantities(array $quantities) {
 		if ($this->remoteCart instanceof \Sphere\Core\Model\Cart\Cart) {
-			$updateItemRequest = new CartUpdateRequest($this->remoteCart->getId(), $this->remoteCart->getVersion());
+			$updateItemRequest = CartUpdateRequest::ofIdAndVersion($this->remoteCart->getId(), $this->remoteCart->getVersion());
 			foreach ($quantities as $itemId => $quantity) {
-				$updateItemRequest->addAction(new CartChangeLineItemQuantityAction($itemId, (integer)$quantity));
+				$updateItemRequest->addAction(CartChangeLineItemQuantityAction::ofLineItemIdAndQuantity($itemId, (integer)$quantity));
 			}
-            $updateItemRequest->addAction(new CartRecalculateAction());
+            $updateItemRequest->addAction(CartRecalculateAction::of());
 			$response = $this->client->execute($updateItemRequest);
 			if ($response->isError()) {
 				$this->systemLogger->log(sprintf('Error while trying to update quantities for cart #%s: %s', $this->remoteCart->getId(), $response->getResponse()->getBody()), LOG_ERR);
 			} else {
 				$this->remoteCart = $response->toObject();
-				$this->remoteCart->getLineItems()->setType('\Sphere\Neos\Domain\Model\LineItem');
 				$this->systemLogger->log(sprintf('Updated quantities for cart #%s.', $this->remoteCart->getId()), LOG_DEBUG);
 			}
 		}
@@ -210,7 +181,7 @@ class Cart {
 		if ($this->remoteCart instanceof \Sphere\Core\Model\Cart\Cart) {
 			return $this->remoteCart->getLineItems();
 		} else {
-			return new LineItemCollection();
+			return LineItemCollection::of();
 		}
 	}
 
@@ -219,7 +190,7 @@ class Cart {
 		if ($this->remoteCart instanceof \Sphere\Core\Model\Cart\Cart) {
 			return $this->remoteCart->getTotalPrice();
 		} else {
-			return new Money($this->currency, 0, $this->client->getContext());
+			return Money::of($this->client->getContext())->setCurrencyCode($this->currency)->setCentAmount(0);
 		}
 	}
 	/**
@@ -247,12 +218,11 @@ class Cart {
 			return null;
 		}
 
-		$cartDraft = new CartDraft($this->currency);
+		$cartDraft = CartDraft::ofCurrency($this->currency);
 		$cartDraft->setCountry($this->country);
-		$request = new CartCreateRequest($cartDraft);
+		$request = CartCreateRequest::ofDraft($cartDraft);
 
 		$this->remoteCart = $this->client->execute($request)->toObject();
-		$this->remoteCart->getLineItems()->setType('\Sphere\Neos\Domain\Model\LineItem');
 		$this->id = $this->remoteCart->getId();
 		$this->systemLogger->log(sprintf('Created a new cart "%s" for Neos session %s.', $this->id, $this->session->getId()), LOG_DEBUG);
 	}

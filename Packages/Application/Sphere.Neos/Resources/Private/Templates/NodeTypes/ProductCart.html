@@ -49,12 +49,12 @@
 		<f:then>
             <div class="row">
                 <div class="col-md-2">
-                    <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: lineItem.slug.localized}">
+                    <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: lineItem.productSlug.localized}">
                     <img src="{lineItem.variant.images.0.small}">
                     </f:link.action>
                 </div>
                 <div class="col-md-2">
-                    <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: lineItem.slug.localized}" class="item-name">
+                    <f:link.action package="TYPO3.Neos" controller="Frontend\Node" action="show" format="html" arguments="{node: productDetailsNode.contextPath, productSlug: lineItem.productSlug.localized}" class="item-name">
                         {lineItem.name}
                     </f:link.action>
                 </div>

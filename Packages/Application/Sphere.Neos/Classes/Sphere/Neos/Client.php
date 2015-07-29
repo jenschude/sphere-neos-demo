@@ -85,14 +85,13 @@ class Client extends OriginalClient {
 	public function initializeObject() {
 		$languages = array('en', 'de');
 
-		$this->context = new Context();
+		$this->context = Context::of();
 		$this->context->setGraceful(TRUE)
 			->setLanguages($languages)
 			->setLocale((string)$this->i18nService->getConfiguration()->getCurrentLocale());
 
-		$config = new Config();
-		$config->fromArray($this->settings['client'])->setContext($this->context);
-		$this->originalClient = new OriginalClient($config);
+		$config = Config::fromArray($this->settings['client'])->setContext($this->context);
+		$this->originalClient = OriginalClient::ofConfig($config);
 	}
 
 
